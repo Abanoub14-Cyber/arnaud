@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Mentions légales" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Mentions légales" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Mentions légales et informations sur l'éditeur du site Makeset." %}{% endblock %}
+
+{% block content %}
+<section class="pt-40 pb-24 px-6 max-w-3xl mx-auto">
+  <c-eyebrow class="mb-4">{% trans "Légal" %}</c-eyebrow>
+  <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4 text-balance">{% trans "Mentions légales" %}</h1>
+  <p class="text-on-surface-variant mb-12">{% trans "Dernière mise à jour : 1er mai 2026." %}</p>
+
+  <div class="space-y-10 text-on-surface-variant leading-relaxed">
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Hébergement" %}</h2>
+      <p>{% trans "Le site est hébergé sur une infrastructure dédiée gérée par l'éditeur, dans un datacenter localisé en Union européenne. Pour toute question sur l'hébergement, écrivez à" %} <a href="mailto:contact@makeset.be" class="text-primary hover:underline">contact@makeset.be</a>.</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Propriété intellectuelle" %}</h2>
+      <p>{% trans "L'ensemble des contenus présents sur ce site (textes, images, code source, illustrations, logo) est la propriété exclusive de Makeset, sauf mention contraire. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation préalable écrite est interdite et susceptible de constituer une contrefaçon au sens des articles XI.165 et suivants du Code de droit économique belge." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Données personnelles" %}</h2>
+      <p>{% trans "Le traitement des données personnelles est décrit en détail dans la" %} <a href="{% url 'legal_privacy' %}" class="text-primary hover:underline">{% trans "politique de confidentialité" %}</a>. {% trans "L'usage des cookies est décrit dans la" %} <a href="{% url 'cookies' %}" class="text-primary hover:underline">{% trans "politique cookies" %}</a>.</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Responsabilité" %}</h2>
+      <p>{% trans "Makeset met tout en œuvre pour offrir aux utilisateurs des informations et outils disponibles et vérifiés, mais ne saurait être tenue responsable des erreurs, d'une absence de disponibilité des fonctionnalités ou de la présence éventuelle de virus sur son site. Les liens externes pointant vers d'autres sites ne sauraient engager la responsabilité de Makeset, qui ne contrôle pas leur contenu." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Droit applicable et juridiction" %}</h2>
+      <p>{% trans "Les présentes mentions légales sont soumises au droit belge. En cas de litige, et après échec de toute tentative de résolution amiable, les tribunaux francophones de l'arrondissement de Bruxelles seront seuls compétents." %}</p>
+    </div>
+
+    <div class="pt-6 border-t border-outline-variant/30">
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Contact et coordonnées" %}</h2>
+      <div class="grid sm:grid-cols-2 gap-6 text-sm">
+        <div>
+          <h3 class="font-bold text-on-surface mb-2">{% trans "Éditeur" %}</h3>
+          <p>Makeset</p>
+          <p>{% trans "Avenue de la Couronne 378" %}</p>
+          <p>{% trans "1050 Ixelles, Belgique" %}</p>
+          <p class="mt-2">{% trans "TVA / Numéro d'entreprise" %} : BE 0898.341.645</p>
+          <p>{% trans "Directeur de la publication" %} : Arnaud de Makeset</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-on-surface mb-2">{% trans "Contact" %}</h3>
+          <p>{% trans "Email" %} : <a href="mailto:contact@makeset.be" class="text-primary hover:underline">contact@makeset.be</a></p>
+          <p>{% trans "Téléphone" %} : <a href="tel:+32495332892" class="text-primary hover:underline">+32 495 33 28 92</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

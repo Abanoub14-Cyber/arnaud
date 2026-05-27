@@ -1,0 +1,24 @@
+{% load i18n %}
+<c-vars article />
+<a href="{{ article.get_absolute_url }}" class="block rounded-xl glass ambient-shadow overflow-hidden transition-all hover:-translate-y-1 group h-full flex flex-col">
+  {% if article.cover %}
+    <div class="aspect-[16/10] overflow-hidden bg-surface-container-low">
+      <img src="{{ article.cover.url }}" alt="{{ article.cover_alt|default:article.title }}"
+           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+           loading="lazy" width="800" height="500">
+    </div>
+  {% endif %}
+  <div class="p-6 flex flex-col flex-1">
+    <div class="flex items-center gap-2 text-xs text-on-surface-variant uppercase tracking-widest mb-3">
+      <time datetime="{{ article.published_at|date:'c' }}">{{ article.published_at|date:"d M Y" }}</time>
+      <span>·</span>
+      <span>{{ article.reading_time }} {% trans "min" %}</span>
+    </div>
+    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors text-balance">{{ article.title }}</h3>
+    <p class="text-on-surface-variant leading-relaxed mb-4 flex-1 line-clamp-2">{{ article.excerpt }}</p>
+    <div class="text-primary font-bold flex items-center gap-1 mt-auto">
+      {% trans "Lire la suite" %}
+      <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+    </div>
+  </div>
+</a>

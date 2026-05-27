@@ -1,0 +1,4979 @@
+# Makeset.be — English translations
+# Copyright (C) 2026 Makeset
+# This file is distributed under the same license as the makeset package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: makeset 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-17 20:57+0200\n"
+"PO-Revision-Date: 2026-05-01 12:35+0200\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps/blog/models.py:8 apps/contact/models.py:19
+#: templates/partials/contact_form.html:33
+msgid "Nom"
+msgstr "Name"
+
+#: apps/blog/models.py:11
+msgid "Tag"
+msgstr "Tag"
+
+#: apps/blog/models.py:12 apps/blog/models.py:29
+msgid "Tags"
+msgstr "Tags"
+
+#: apps/blog/models.py:20
+msgid "Slug"
+msgstr "Slug"
+
+#: apps/blog/models.py:21
+msgid "Titre"
+msgstr "Title"
+
+#: apps/blog/models.py:22
+msgid "Extrait"
+msgstr "Excerpt"
+
+#: apps/blog/models.py:22
+msgid "1 ou 2 phrases qui résument l'article."
+msgstr "One or two sentences summarising the article."
+
+#: apps/blog/models.py:23
+msgid "Corps HTML"
+msgstr "Body HTML"
+
+#: apps/blog/models.py:23
+msgid "Contenu de l'article en HTML."
+msgstr "Article content as HTML."
+
+#: apps/blog/models.py:24
+msgid "Image de couverture"
+msgstr "Cover image"
+
+#: apps/blog/models.py:25
+msgid "Texte alternatif"
+msgstr "Alt text"
+
+#: apps/blog/models.py:26
+msgid "Meta description"
+msgstr "Meta description"
+
+#: apps/blog/models.py:27
+msgid "Temps de lecture (min)"
+msgstr "Reading time (min)"
+
+#: apps/blog/models.py:31
+msgid "Date de publication"
+msgstr "Publication date"
+
+#: apps/blog/models.py:32
+msgid "Publié"
+msgstr "Published"
+
+#: apps/blog/models.py:38
+msgid "Article"
+msgstr "Article"
+
+#: apps/blog/models.py:39
+msgid "Articles"
+msgstr "Articles"
+
+#: apps/blog/urls.py:7 apps/blog/urls.py:8
+msgid "blog/"
+msgstr "blog/"
+
+#: apps/contact/forms.py:39
+msgid "Votre nom"
+msgstr "Your name"
+
+#: apps/contact/forms.py:41
+msgid "Optionnel"
+msgstr "Optional"
+
+#: apps/contact/forms.py:42
+msgid "Décrivez votre projet ou votre question."
+msgstr "Describe your project or question."
+
+#: apps/contact/forms.py:48
+msgid "Décrivez un peu plus votre projet (au moins 20 caractères)."
+msgstr "Describe your project a bit more (at least 20 characters)."
+
+#: apps/contact/forms.py:56 apps/contact/forms.py:63 apps/contact/forms.py:66
+msgid "Erreur de validation. Rechargez la page et réessayez."
+msgstr "Validation error. Reload the page and try again."
+
+#: apps/contact/forms.py:68
+msgid "Le formulaire a expiré. Rechargez la page et réessayez."
+msgstr "Form expired. Reload the page and try again."
+
+#: apps/contact/models.py:12 templates/pages/home.html:72
+#: templates/pages/services/cybersecurite.html:16
+#: templates/pages/services/cybersecurite.html:48
+#: templates/pages/services/index.html:25
+#: templates/pages/services/index.html:44 templates/partials/footer.html:17
+msgid "Cybersécurité"
+msgstr "Cybersecurity"
+
+#: apps/contact/models.py:13 templates/pages/home.html:76
+#: templates/pages/services/index.html:26
+#: templates/pages/services/index.html:48 templates/pages/services/web.html:16
+#: templates/pages/services/web.html:46 templates/partials/footer.html:18
+msgid "Web & Apps"
+msgstr "Web & Apps"
+
+#: apps/contact/models.py:14 templates/pages/home.html:80
+#: templates/pages/services/ia_automation.html:5
+#: templates/pages/services/ia_automation.html:16
+#: templates/pages/services/ia_automation.html:35
+#: templates/pages/services/index.html:27
+#: templates/pages/services/index.html:52 templates/partials/footer.html:19
+msgid "IA & Automatisation"
+msgstr "AI & Automation"
+
+#: apps/contact/models.py:15 templates/pages/services/support.html:35
+#: templates/partials/footer.html:20
+msgid "Support"
+msgstr "Support"
+
+#: apps/contact/models.py:16
+msgid "Autre"
+msgstr "Other"
+
+#: apps/contact/models.py:20 apps/maketrust/forms.py:209
+#: apps/maketrust/models.py:54 templates/pages/legal/mentions.html:54
+#: templates/partials/contact_form.html:41
+msgid "Email"
+msgstr "Email"
+
+#: apps/contact/models.py:21 templates/partials/contact_form.html:49
+msgid "Entreprise"
+msgstr "Company"
+
+#: apps/contact/models.py:22
+msgid "Service"
+msgstr "Service"
+
+#: apps/contact/models.py:23 templates/partials/contact_form.html:84
+msgid "Message"
+msgstr "Message"
+
+#: apps/contact/models.py:33
+msgid "Message de contact"
+msgstr "Contact message"
+
+#: apps/contact/models.py:34
+msgid "Messages de contact"
+msgstr "Contact messages"
+
+#: apps/contact/urls.py:7
+msgid "contact/"
+msgstr "contact/"
+
+#: apps/contact/views.py:59
+msgid ""
+"Trop de soumissions. Réessayez dans une heure ou écrivez-nous directement à "
+"contact@makeset.be."
+msgstr ""
+"Too many submissions. Try again in an hour or email us directly at "
+"contact@makeset.be."
+
+#: apps/legal/urls.py:7
+msgid "mentions-legales/"
+msgstr "legal-notice/"
+
+#: apps/legal/urls.py:8
+msgid "confidentialite/"
+msgstr "privacy/"
+
+#: apps/legal/urls.py:9
+msgid "cgv/"
+msgstr "terms/"
+
+#: apps/legal/urls.py:10
+msgid "cookies/"
+msgstr "cookies/"
+
+#: apps/maketrust/findings.py:28
+msgid "Le domaine répond bien"
+msgstr "Domain resolves correctly"
+
+#: apps/maketrust/findings.py:29
+msgid "Votre site est joignable depuis Internet."
+msgstr "Your website is reachable from the Internet."
+
+#: apps/maketrust/findings.py:33
+msgid "Aucune adresse IP trouvée"
+msgstr "No IP address found"
+
+#: apps/maketrust/findings.py:34
+msgid "Personne ne peut joindre votre site, ni par IPv4 ni par IPv6."
+msgstr "Nobody can reach your site over either IPv4 or IPv6."
+
+#: apps/maketrust/findings.py:35
+msgid ""
+"Ajoutez un enregistrement A (IPv4) sur votre domaine. Vérifiez que votre "
+"hébergeur a bien publié les DNS."
+msgstr ""
+"Add an A (IPv4) record to your domain. Make sure your host has actually "
+"published the DNS."
+
+#: apps/maketrust/findings.py:38
+msgid "Pas d'IPv6 publié"
+msgstr "No IPv6 published"
+
+#: apps/maketrust/findings.py:39
+msgid ""
+"Les visiteurs sur réseau IPv6-only doivent passer par une translation NAT64, "
+"ce qui ralentit l'accès."
+msgstr ""
+"Visitors on IPv6-only networks have to go through a NAT64 translator, which "
+"slows down access."
+
+#: apps/maketrust/findings.py:40
+msgid ""
+"Ajoutez un enregistrement AAAA pointant vers l'IPv6 de votre serveur. La "
+"plupart des hébergeurs en fournissent une gratuitement."
+msgstr ""
+"Add an AAAA record pointing to your server's IPv6. Most hosts give you one "
+"for free."
+
+#: apps/maketrust/findings.py:43
+msgid "Serveur de mail configuré"
+msgstr "Mail server configured"
+
+#: apps/maketrust/findings.py:44
+msgid "Votre domaine peut recevoir des emails."
+msgstr "Your domain can receive emails."
+
+#: apps/maketrust/findings.py:48
+msgid "Aucun serveur de mail configuré"
+msgstr "No mail server configured"
+
+#: apps/maketrust/findings.py:49
+msgid "Aucun email envoyé à @votredomaine n'arrivera nulle part."
+msgstr "Email sent to @yourdomain will not arrive anywhere."
+
+#: apps/maketrust/findings.py:50
+msgid ""
+"Si c'est volontaire (domaine de site vitrine seulement), vous pouvez "
+"ignorer. Sinon, ajoutez un enregistrement MX pointant vers votre fournisseur "
+"(Google Workspace, Microsoft 365, OVH, etc.)."
+msgstr ""
+"If this is intentional (showcase-only domain), you can ignore. Otherwise, "
+"add an MX record pointing to your provider (Google Workspace, Microsoft 365, "
+"OVH, etc.)."
+
+#: apps/maketrust/findings.py:53
+msgid "Restriction CAA en place"
+msgstr "CAA restriction in place"
+
+#: apps/maketrust/findings.py:54
+msgid ""
+"Seules les autorités de certification que vous avez listées peuvent émettre "
+"un certificat HTTPS pour votre domaine."
+msgstr ""
+"Only the certificate authorities you listed are allowed to issue an HTTPS "
+"certificate for your domain."
+
+#: apps/maketrust/findings.py:58
+msgid "Aucune restriction CAA"
+msgstr "No CAA restriction"
+
+#: apps/maketrust/findings.py:59
+msgid ""
+"N'importe quelle autorité de certification dans le monde peut émettre un "
+"certificat valide pour votre domaine, ce qui élargit la surface d'attaque."
+msgstr ""
+"Any certificate authority in the world can issue a valid certificate for "
+"your domain, which widens your attack surface."
+
+#: apps/maketrust/findings.py:60
+msgid ""
+"Ajoutez un enregistrement CAA listant les CA autorisées. Exemple pour Let's "
+"Encrypt : 0 issue \"letsencrypt.org\""
+msgstr ""
+"Add a CAA record listing the allowed CAs. Example for Let's Encrypt: 0 issue "
+"\"letsencrypt.org\""
+
+#: apps/maketrust/findings.py:63
+msgid "Le domaine ne pointe vers aucune IP publique"
+msgstr "The domain points to no public IP"
+
+#: apps/maketrust/findings.py:64
+msgid ""
+"Le domaine n'est pas joignable, ou pointe vers une adresse interne (réseau "
+"privé)."
+msgstr ""
+"The domain is unreachable, or points to an internal (private network) "
+"address."
+
+#: apps/maketrust/findings.py:65
+msgid ""
+"Vérifiez vos enregistrements A/AAAA, et qu'ils ne pointent pas par erreur "
+"vers une IP en 10.x, 172.16-31.x ou 192.168.x."
+msgstr ""
+"Check your A/AAAA records, and that they don't accidentally point to a 10.x, "
+"172.16-31.x or 192.168.x IP."
+
+#: apps/maketrust/findings.py:70
+msgid "SPF présent"
+msgstr "SPF present"
+
+#: apps/maketrust/findings.py:71
+msgid ""
+"Vous déclarez officiellement quels serveurs ont le droit d'envoyer des "
+"emails à votre nom."
+msgstr ""
+"You officially declare which servers are allowed to send mail in your name."
+
+#: apps/maketrust/findings.py:75
+msgid "Aucun enregistrement SPF"
+msgstr "No SPF record"
+
+#: apps/maketrust/findings.py:76
+msgid ""
+"N'importe qui sur Internet peut envoyer un email en se faisant passer pour "
+"vous. Vos clients peuvent recevoir des fausses factures à votre nom."
+msgstr ""
+"Anyone on the Internet can send mail pretending to be you. Your customers "
+"can receive fake invoices in your name."
+
+#: apps/maketrust/findings.py:77
+msgid ""
+"Ajoutez un enregistrement TXT à votre domaine. Pour Google Workspace par "
+"exemple : v=spf1 include:_spf.google.com -all"
+msgstr ""
+"Add a TXT record to your domain. For Google Workspace for example: v=spf1 "
+"include:_spf.google.com -all"
+
+#: apps/maketrust/findings.py:80
+msgid "Plusieurs enregistrements SPF"
+msgstr "Multiple SPF records"
+
+#: apps/maketrust/findings.py:81
+msgid ""
+"Avoir plusieurs SPF rend la règle invalide, comme si aucun n'existait. Les "
+"serveurs receveurs ignoreront tout."
+msgstr ""
+"Having multiple SPF records makes the rule invalid, as if none existed. "
+"Receiving servers will ignore everything."
+
+#: apps/maketrust/findings.py:82
+msgid ""
+"Fusionnez tous vos enregistrements SPF en un seul. Concaténez les mécanismes "
+"include: et terminez par -all."
+msgstr ""
+"Merge all your SPF records into one. Concatenate the include: mechanisms and "
+"terminate with -all."
+
+#: apps/maketrust/findings.py:85
+msgid "Politique SPF stricte (-all)"
+msgstr "Strict SPF policy (-all)"
+
+#: apps/maketrust/findings.py:86
+msgid ""
+"Les emails non autorisés sont rejetés directement. C'est la configuration "
+"recommandée."
+msgstr ""
+"Unauthorised emails are rejected outright. This is the recommended "
+"configuration."
+
+#: apps/maketrust/findings.py:90
+msgid "Politique SPF molle (~all)"
+msgstr "Soft SPF policy (~all)"
+
+#: apps/maketrust/findings.py:91
+msgid ""
+"Les emails frauduleux passent en spam au lieu d'être bloqués, ce qui laisse "
+"une chance qu'ils arrivent dans la boîte du destinataire."
+msgstr ""
+"Fraudulent emails go to spam instead of being blocked, which still leaves a "
+"chance they reach the recipient's inbox."
+
+#: apps/maketrust/findings.py:92
+msgid ""
+"Quand vous êtes sûr de votre configuration, remplacez ~all par -all à la fin "
+"de votre enregistrement SPF."
+msgstr ""
+"Once you're confident in your configuration, replace ~all with -all at the "
+"end of your SPF record."
+
+#: apps/maketrust/findings.py:95
+msgid "Politique SPF neutre (?all)"
+msgstr "Neutral SPF policy (?all)"
+
+#: apps/maketrust/findings.py:96
+msgid ""
+"Vos emails légitimes ne sont pas mieux notés que les spoofés. Le SPF ne sert "
+"quasiment à rien."
+msgstr ""
+"Your legitimate emails aren't scored any better than spoofed ones. SPF "
+"basically does nothing."
+
+#: apps/maketrust/findings.py:97
+msgid ""
+"Remplacez ?all par -all (strict) ou ~all (transition). Le ?all désactive de "
+"fait la protection."
+msgstr ""
+"Replace ?all with -all (strict) or ~all (transition). ?all effectively "
+"disables the protection."
+
+#: apps/maketrust/findings.py:100
+msgid "Politique SPF totalement permissive (+all)"
+msgstr "Fully permissive SPF policy (+all)"
+
+#: apps/maketrust/findings.py:101
+msgid ""
+"Vous autorisez le monde entier à envoyer en votre nom. C'est pire que pas de "
+"SPF du tout."
+msgstr ""
+"You allow the entire world to send mail in your name. This is worse than "
+"having no SPF at all."
+
+#: apps/maketrust/findings.py:102
+msgid ""
+"Remplacez immédiatement +all par -all. Le +all est presque toujours une "
+"erreur de configuration."
+msgstr ""
+"Replace +all with -all immediately. +all is almost always a misconfiguration."
+
+#: apps/maketrust/findings.py:105
+msgid "SPF sans qualificateur final"
+msgstr "SPF without a terminal qualifier"
+
+#: apps/maketrust/findings.py:106
+msgid ""
+"Sans -all/~all/?all à la fin, les serveurs receveurs ne savent pas comment "
+"traiter les emails non listés."
+msgstr ""
+"Without -all/~all/?all at the end, receiving servers don't know how to "
+"handle non-listed emails."
+
+#: apps/maketrust/findings.py:107
+msgid "Ajoutez -all à la fin de votre enregistrement SPF."
+msgstr "Add -all at the end of your SPF record."
+
+#: apps/maketrust/findings.py:110
+msgid "Trop de requêtes DNS dans le SPF"
+msgstr "Too many DNS lookups in SPF"
+
+#: apps/maketrust/findings.py:111
+msgid ""
+"Le standard limite à 10 le nombre de mécanismes nécessitant une requête DNS. "
+"Au-delà, votre SPF est invalide."
+msgstr ""
+"The standard caps DNS-lookup-triggering mechanisms at 10. Beyond that, your "
+"SPF is invalid."
+
+#: apps/maketrust/findings.py:112
+msgid ""
+"Aplatissez votre SPF (remplacez les include: par les IP réelles), ou "
+"utilisez un service de SPF flattening."
+msgstr ""
+"Flatten your SPF (replace include: with the actual IPs), or use a SPF "
+"flattening service."
+
+#: apps/maketrust/findings.py:117
+msgid "DMARC présent"
+msgstr "DMARC present"
+
+#: apps/maketrust/findings.py:118
+msgid "Vous avez une politique anti-usurpation pour votre domaine."
+msgstr "You have an anti-spoofing policy for your domain."
+
+#: apps/maketrust/findings.py:122
+msgid "Aucun enregistrement DMARC"
+msgstr "No DMARC record"
+
+#: apps/maketrust/findings.py:123
+msgid ""
+"Sans DMARC, même avec SPF en place, les serveurs receveurs n'ont aucune "
+"politique claire pour traiter les tentatives de spoofing."
+msgstr ""
+"Without DMARC, even with SPF in place, receiving servers have no clear "
+"policy on how to handle spoofing attempts."
+
+#: apps/maketrust/findings.py:124
+msgid ""
+"Ajoutez un TXT sur _dmarc.votredomaine.be. Commencez en monitor : v=DMARC1; "
+"p=none; rua=mailto:vous@votredomaine.be. Surveillez quelques semaines puis "
+"durcissez."
+msgstr ""
+"Add a TXT on _dmarc.yourdomain.be. Start in monitor mode: v=DMARC1; p=none; "
+"rua=mailto:you@yourdomain.be. Watch for a few weeks, then tighten."
+
+#: apps/maketrust/findings.py:127
+msgid "Plusieurs enregistrements DMARC"
+msgstr "Multiple DMARC records"
+
+#: apps/maketrust/findings.py:128
+msgid ""
+"Avoir plusieurs DMARC rend la politique invalide, comme si aucune n'existait."
+msgstr ""
+"Having multiple DMARC records makes the policy invalid, as if none existed."
+
+#: apps/maketrust/findings.py:129
+msgid ""
+"Fusionnez tous vos enregistrements DMARC en un seul TXT sur "
+"_dmarc.votredomaine.be."
+msgstr ""
+"Merge all your DMARC records into a single TXT on _dmarc.yourdomain.be."
+
+#: apps/maketrust/findings.py:132
+msgid "Politique DMARC stricte (p=reject)"
+msgstr "Strict DMARC policy (p=reject)"
+
+#: apps/maketrust/findings.py:133
+msgid ""
+"Les emails frauduleux sont rejetés directement. C'est la configuration cible."
+msgstr ""
+"Fraudulent emails are rejected outright. This is the target configuration."
+
+#: apps/maketrust/findings.py:137
+msgid "Politique DMARC en quarantaine (p=quarantine)"
+msgstr "DMARC quarantine policy (p=quarantine)"
+
+#: apps/maketrust/findings.py:138
+msgid ""
+"Les emails frauduleux sont mis en spam mais pas rejetés. Une partie peut "
+"quand même être lue par le destinataire."
+msgstr ""
+"Fraudulent emails are sent to spam but not rejected. Some can still be read "
+"by the recipient."
+
+#: apps/maketrust/findings.py:139
+msgid ""
+"Quand vous êtes sûr que tous vos flux légitimes passent, faites évoluer "
+"p=quarantine vers p=reject."
+msgstr ""
+"Once you're confident all your legitimate flows pass, move p=quarantine up "
+"to p=reject."
+
+#: apps/maketrust/findings.py:142
+msgid "DMARC en mode monitor (p=none)"
+msgstr "DMARC in monitor mode (p=none)"
+
+#: apps/maketrust/findings.py:143
+msgid ""
+"Vous recevez des rapports mais aucun email frauduleux n'est bloqué. Les "
+"attaquants peuvent toujours se faire passer pour vous."
+msgstr ""
+"You receive reports but no fraudulent emails are blocked. Attackers can "
+"still impersonate you."
+
+#: apps/maketrust/findings.py:144
+msgid ""
+"Une fois que vos rapports DMARC montrent que vos flux légitimes passent (en "
+"général après 2 à 4 semaines), passez en p=quarantine puis p=reject."
+msgstr ""
+"Once your DMARC reports show your legitimate flows passing (usually after 2 "
+"to 4 weeks), move to p=quarantine and then p=reject."
+
+#: apps/maketrust/findings.py:147
+msgid "Politique DMARC invalide"
+msgstr "Invalid DMARC policy"
+
+#: apps/maketrust/findings.py:148
+msgid ""
+"La valeur du tag p= n'est pas reconnue. Votre DMARC est ignoré par les "
+"serveurs receveurs."
+msgstr ""
+"The p= tag value is not recognised. Your DMARC is ignored by receiving "
+"servers."
+
+#: apps/maketrust/findings.py:149
+msgid ""
+"Le tag p= doit valoir none, quarantine ou reject. Corrigez la valeur dans "
+"votre TXT _dmarc."
+msgstr ""
+"The p= tag must be one of none, quarantine, or reject. Fix the value in your "
+"_dmarc TXT."
+
+#: apps/maketrust/findings.py:152
+msgid "Sous-domaines non protégés (sp=none)"
+msgstr "Sub-domains not protected (sp=none)"
+
+#: apps/maketrust/findings.py:153
+msgid ""
+"Votre politique DMARC ne protège pas les sous-domaines comme "
+"support.votredomaine ou facture.votredomaine. Un attaquant peut spoofer ceux-"
+"ci."
+msgstr ""
+"Your DMARC policy does not protect sub-domains like support.yourdomain or "
+"invoice.yourdomain. An attacker can still spoof those."
+
+#: apps/maketrust/findings.py:154
+msgid ""
+"Retirez le tag sp=none ou alignez-le sur p (par exemple sp=reject) pour "
+"étendre la protection à tous vos sous-domaines."
+msgstr ""
+"Drop the sp=none tag, or align it with p (for example sp=reject) to extend "
+"protection to all your sub-domains."
+
+#: apps/maketrust/findings.py:157
+msgid "Aucune adresse de rapports DMARC"
+msgstr "No DMARC report address"
+
+#: apps/maketrust/findings.py:158
+msgid ""
+"Sans rua=, vous ne saurez jamais qui essaie d'usurper votre domaine. Vous "
+"êtes aveugle aux tentatives."
+msgstr ""
+"Without rua=, you'll never know who is trying to spoof your domain. You're "
+"blind to attempts."
+
+#: apps/maketrust/findings.py:159
+msgid ""
+"Ajoutez rua=mailto:dmarc@votredomaine.be à votre TXT _dmarc. Vous recevrez "
+"des rapports XML résumant les tentatives."
+msgstr ""
+"Add rua=mailto:dmarc@yourdomain.be to your _dmarc TXT. You'll receive XML "
+"reports summarising the attempts."
+
+#: apps/maketrust/findings.py:164
+msgid "Connexion HTTPS valide"
+msgstr "Valid HTTPS connection"
+
+#: apps/maketrust/findings.py:165
+msgid "Le certificat est correct et la chaîne de confiance se vérifie."
+msgstr "The certificate is correct and the trust chain validates."
+
+#: apps/maketrust/findings.py:169
+msgid "Impossible de tester HTTPS"
+msgstr "Cannot test HTTPS"
+
+#: apps/maketrust/findings.py:170
+msgid "Pas d'IP publique trouvée pour ouvrir une connexion TLS."
+msgstr "No public IP found to open a TLS connection."
+
+#: apps/maketrust/findings.py:174
+msgid "Chaîne de certification invalide"
+msgstr "Invalid certificate chain"
+
+#: apps/maketrust/findings.py:175
+msgid ""
+"Les navigateurs afficheront un avertissement rouge à vos visiteurs. La "
+"plupart partiront immédiatement."
+msgstr ""
+"Browsers will show a red security warning to your visitors. Most will leave "
+"immediately."
+
+#: apps/maketrust/findings.py:176
+msgid ""
+"Vérifiez que votre certificat inclut tous les certificats intermédiaires. "
+"Renouvelez via Let's Encrypt si vous utilisez certbot, ou corrigez la "
+"configuration dans votre reverse proxy."
+msgstr ""
+"Make sure your certificate includes all intermediate certificates. Renew via "
+"Let's Encrypt if you use certbot, or fix the configuration in your reverse "
+"proxy."
+
+#: apps/maketrust/findings.py:179
+msgid "Connexion HTTPS impossible"
+msgstr "HTTPS connection failed"
+
+#: apps/maketrust/findings.py:180
+msgid ""
+"Votre site n'a pas pu être joint en HTTPS, ou le serveur ne répond pas sur "
+"le port 443."
+msgstr ""
+"Your site couldn't be reached over HTTPS, or the server doesn't answer on "
+"port 443."
+
+#: apps/maketrust/findings.py:181
+msgid ""
+"Vérifiez que votre serveur écoute bien sur le port 443 et que le firewall "
+"(Cloudflare, Traefik, etc.) le laisse passer."
+msgstr ""
+"Check that your server listens on port 443 and that the firewall "
+"(Cloudflare, Traefik, etc.) lets it through."
+
+#: apps/maketrust/findings.py:184
+msgid "Aucun certificat retourné"
+msgstr "No certificate returned"
+
+#: apps/maketrust/findings.py:185
+msgid ""
+"Le serveur a accepté la connexion TLS mais n'a pas envoyé de certificat. "
+"Configuration cassée."
+msgstr ""
+"The server accepted the TLS connection but did not send a certificate. "
+"Broken configuration."
+
+#: apps/maketrust/findings.py:186
+msgid ""
+"Vérifiez la configuration TLS de votre serveur ou de votre reverse proxy."
+msgstr "Check the TLS configuration of your server or reverse proxy."
+
+#: apps/maketrust/findings.py:189
+msgid "Certificat HTTPS expiré"
+msgstr "HTTPS certificate expired"
+
+#: apps/maketrust/findings.py:190
+msgid ""
+"Tout visiteur voit un avertissement de sécurité rouge. C'est probablement "
+"votre plus gros problème actuel."
+msgstr ""
+"Every visitor sees a red security warning. This is probably your biggest "
+"current issue."
+
+#: apps/maketrust/findings.py:191
+msgid ""
+"Renouvelez immédiatement votre certificat. Si vous utilisez Let's Encrypt, "
+"vérifiez le renouvellement automatique (certbot renew)."
+msgstr ""
+"Renew your certificate immediately. If you use Let's Encrypt, check the auto-"
+"renewal (certbot renew)."
+
+#: apps/maketrust/findings.py:194
+msgid "Certificat HTTPS expire dans moins de 14 jours"
+msgstr "HTTPS certificate expires in under 14 days"
+
+#: apps/maketrust/findings.py:195
+msgid ""
+"Si rien n'est fait, votre site sera bientôt indisponible. Le renouvellement "
+"automatique a peut-être échoué."
+msgstr ""
+"If nothing is done, your site will soon be unavailable. Auto-renewal may "
+"have failed."
+
+#: apps/maketrust/findings.py:196
+msgid ""
+"Forcez un renouvellement maintenant et vérifiez que votre cron de "
+"renouvellement fonctionne."
+msgstr "Force a renewal now and verify that your renewal cron is working."
+
+#: apps/maketrust/findings.py:199
+msgid "Certificat HTTPS expire dans moins de 30 jours"
+msgstr "HTTPS certificate expires in under 30 days"
+
+#: apps/maketrust/findings.py:200
+msgid ""
+"Votre certificat va bientôt arriver à échéance. Le renouvellement devrait "
+"normalement déjà être planifié."
+msgstr ""
+"Your certificate is approaching expiry. Renewal should normally already be "
+"scheduled."
+
+#: apps/maketrust/findings.py:201
+msgid ""
+"Confirmez que votre renouvellement automatique fonctionne. La fenêtre de "
+"renouvellement Let's Encrypt commence à 30 jours avant expiration."
+msgstr ""
+"Confirm that your auto-renewal is working. The Let's Encrypt renewal window "
+"starts 30 days before expiry."
+
+#: apps/maketrust/findings.py:204
+msgid "Certificat HTTPS valide longtemps"
+msgstr "HTTPS certificate valid for a while"
+
+#: apps/maketrust/findings.py:205
+msgid "Votre certificat est valide pour plusieurs semaines."
+msgstr "Your certificate is valid for several more weeks."
+
+#: apps/maketrust/findings.py:209
+msgid "Certificat sur le mauvais domaine"
+msgstr "Certificate covers the wrong domain"
+
+#: apps/maketrust/findings.py:210
+msgid ""
+"Le certificat ne couvre pas votre domaine. Les navigateurs afficheront un "
+"avertissement de sécurité."
+msgstr ""
+"The certificate does not cover your domain. Browsers will show a security "
+"warning."
+
+#: apps/maketrust/findings.py:211
+msgid ""
+"Émettez un nouveau certificat couvrant le domaine, ou configurez votre "
+"serveur pour utiliser le bon certificat (SNI)."
+msgstr ""
+"Issue a new certificate that covers the domain, or configure your server to "
+"use the correct certificate (SNI)."
+
+#: apps/maketrust/findings.py:216
+msgid "Site accessible en HTTPS"
+msgstr "Site reachable over HTTPS"
+
+#: apps/maketrust/findings.py:217
+msgid "Le scanner a pu récupérer la page d'accueil pour analyser les en-têtes."
+msgstr "The scanner was able to fetch the home page to analyse the headers."
+
+#: apps/maketrust/findings.py:221
+msgid "Impossible de récupérer les en-têtes"
+msgstr "Cannot fetch headers"
+
+#: apps/maketrust/findings.py:222
+msgid "Pas d'IP publique trouvée."
+msgstr "No public IP found."
+
+#: apps/maketrust/findings.py:226
+msgid "La page d'accueil n'a pas répondu"
+msgstr "Home page did not respond"
+
+#: apps/maketrust/findings.py:227
+msgid ""
+"Le scanner n'a pas pu récupérer https://votredomaine/ : timeout ou erreur "
+"réseau."
+msgstr ""
+"The scanner could not fetch https://yourdomain/: timeout or network error."
+
+#: apps/maketrust/findings.py:228
+msgid "Vérifiez que votre site est joignable en HTTPS depuis l'extérieur."
+msgstr "Check that your site is reachable over HTTPS from the outside."
+
+#: apps/maketrust/findings.py:231
+msgid "HSTS absent"
+msgstr "HSTS missing"
+
+#: apps/maketrust/findings.py:232
+msgid ""
+"Un attaquant sur le réseau peut intercepter la première visite et rediriger "
+"vers une copie pirate de votre site."
+msgstr ""
+"An attacker on the network can intercept the first visit and redirect to a "
+"fake copy of your site."
+
+#: apps/maketrust/findings.py:233
+msgid ""
+"Ajoutez l'en-tête Strict-Transport-Security: max-age=31536000; "
+"includeSubDomains à toutes vos réponses HTTPS."
+msgstr ""
+"Add the Strict-Transport-Security: max-age=31536000; includeSubDomains "
+"header to every HTTPS response."
+
+#: apps/maketrust/findings.py:236
+msgid "Durée HSTS trop courte"
+msgstr "HSTS duration too short"
+
+#: apps/maketrust/findings.py:237
+msgid ""
+"Le navigateur oubliera trop vite que votre site impose HTTPS. Recommandé : "
+"au moins 6 mois."
+msgstr ""
+"The browser will too quickly forget that your site enforces HTTPS. "
+"Recommended: at least 6 months."
+
+#: apps/maketrust/findings.py:238
+msgid ""
+"Augmentez max-age à 31536000 (1 an) ou 63072000 (2 ans). Une fois testé, "
+"ajoutez preload."
+msgstr ""
+"Raise max-age to 31536000 (1 year) or 63072000 (2 years). Once tested, add "
+"preload."
+
+#: apps/maketrust/findings.py:241
+msgid "HSTS bien configuré"
+msgstr "HSTS properly configured"
+
+#: apps/maketrust/findings.py:242
+msgid ""
+"Les navigateurs forcent l'HTTPS pour votre domaine pendant une durée "
+"suffisante."
+msgstr "Browsers enforce HTTPS for your domain for a long enough duration."
+
+#: apps/maketrust/findings.py:246
+msgid "Aucune Content Security Policy"
+msgstr "No Content Security Policy"
+
+#: apps/maketrust/findings.py:247
+msgid ""
+"En cas de faille XSS, l'attaquant peut exécuter n'importe quel script dans "
+"le navigateur de vos visiteurs sans contrainte."
+msgstr ""
+"In case of an XSS flaw, an attacker can execute any script in your visitors' "
+"browsers with no constraint."
+
+#: apps/maketrust/findings.py:248
+msgid ""
+"Ajoutez une CSP. Pour un site classique : default-src 'self'; img-src 'self' "
+"data: https:; style-src 'self' 'unsafe-inline'. Adaptez à vos besoins réels."
+msgstr ""
+"Add a CSP. For a regular site: default-src 'self'; img-src 'self' data: "
+"https:; style-src 'self' 'unsafe-inline'. Adapt to your real needs."
+
+#: apps/maketrust/findings.py:251
+msgid "Content Security Policy en place"
+msgstr "Content Security Policy in place"
+
+#: apps/maketrust/findings.py:252
+msgid ""
+"Vous limitez ce que peut faire un script malveillant injecté dans la page."
+msgstr "You limit what a malicious script injected into the page can do."
+
+#: apps/maketrust/findings.py:256
+msgid "Protection anti-clickjacking absente"
+msgstr "Anti-clickjacking protection missing"
+
+#: apps/maketrust/findings.py:257
+msgid ""
+"Votre site peut être affiché dans une iframe sur un autre site, qui peut "
+"faire croire à vos visiteurs qu'ils cliquent sur autre chose."
+msgstr ""
+"Your site can be displayed inside an iframe on another site, which can trick "
+"your visitors into clicking on something else."
+
+#: apps/maketrust/findings.py:258
+msgid ""
+"Ajoutez l'en-tête X-Frame-Options: DENY (ou SAMEORIGIN) ou la directive CSP "
+"frame-ancestors 'self'."
+msgstr ""
+"Add the X-Frame-Options: DENY (or SAMEORIGIN) header or the CSP frame-"
+"ancestors 'self' directive."
+
+#: apps/maketrust/findings.py:261
+msgid "X-Content-Type-Options manquant"
+msgstr "X-Content-Type-Options missing"
+
+#: apps/maketrust/findings.py:262
+msgid ""
+"Les navigateurs peuvent deviner le type d'un fichier et exécuter du code "
+"dans un contexte inattendu."
+msgstr ""
+"Browsers can sniff the type of a file and run code in an unexpected context."
+
+#: apps/maketrust/findings.py:263
+msgid ""
+"Ajoutez l'en-tête X-Content-Type-Options: nosniff sur toutes vos réponses."
+msgstr "Add the X-Content-Type-Options: nosniff header to every response."
+
+#: apps/maketrust/findings.py:266
+msgid "Referrer-Policy non définie"
+msgstr "Referrer-Policy not set"
+
+#: apps/maketrust/findings.py:267
+msgid ""
+"Le navigateur peut transmettre l'URL complète de votre site (avec ses "
+"paramètres) aux sites externes que vos pages référencent."
+msgstr ""
+"The browser can pass your site's full URL (with parameters) to external "
+"sites your pages link to."
+
+#: apps/maketrust/findings.py:268
+msgid ""
+"Ajoutez Referrer-Policy: strict-origin-when-cross-origin. C'est un bon "
+"défaut pour la plupart des sites."
+msgstr ""
+"Add Referrer-Policy: strict-origin-when-cross-origin. That's a good default "
+"for most sites."
+
+#: apps/maketrust/findings.py:271
+msgid "La version du serveur web est exposée"
+msgstr "Web server version is exposed"
+
+#: apps/maketrust/findings.py:272
+msgid ""
+"Un attaquant qui scanne le web automatiquement peut cibler les "
+"vulnérabilités connues de votre version exacte."
+msgstr ""
+"An attacker scanning the web automatically can target known vulnerabilities "
+"in your exact version."
+
+#: apps/maketrust/findings.py:273
+msgid ""
+"Cachez ou simplifiez l'en-tête Server. Sous nginx : server_tokens off. Sous "
+"Apache : ServerTokens Prod."
+msgstr ""
+"Hide or simplify the Server header. With nginx: server_tokens off. With "
+"Apache: ServerTokens Prod."
+
+#: apps/maketrust/findings.py:276
+msgid "Permissions-Policy absent"
+msgstr "Permissions-Policy missing"
+
+#: apps/maketrust/findings.py:277
+msgid ""
+"Vous n'avez pas restreint l'accès aux API sensibles du navigateur (caméra, "
+"micro, géolocalisation). Une faille XSS pourrait abuser de ces capacités."
+msgstr ""
+"You haven't restricted access to sensitive browser APIs (camera, microphone, "
+"geolocation). An XSS flaw could abuse those capabilities."
+
+#: apps/maketrust/findings.py:278
+msgid ""
+"Ajoutez Permissions-Policy: camera=(), microphone=(), geolocation=(). "
+"Activez seulement les fonctionnalités dont vous avez vraiment besoin."
+msgstr ""
+"Add Permissions-Policy: camera=(), microphone=(), geolocation=(). Enable "
+"only the features you actually need."
+
+#: apps/maketrust/findings.py:281
+msgid "Cross-Origin-Opener-Policy absent"
+msgstr "Cross-Origin-Opener-Policy missing"
+
+#: apps/maketrust/findings.py:282
+msgid ""
+"Sans COOP, une fenêtre ouverte par votre site peut accéder à votre contexte "
+"d'origine, ouvrant la porte à des attaques de type Spectre."
+msgstr ""
+"Without COOP, a window opened by your site can access your origin context, "
+"opening the door to Spectre-class attacks."
+
+#: apps/maketrust/findings.py:283
+msgid ""
+"Ajoutez Cross-Origin-Opener-Policy: same-origin (le plus strict) ou same-"
+"origin-allow-popups si vous utilisez OAuth ou des popups tiers."
+msgstr ""
+"Add Cross-Origin-Opener-Policy: same-origin (strictest) or same-origin-allow-"
+"popups if you use OAuth or third-party popups."
+
+#: apps/maketrust/findings.py:286
+msgid "Cross-Origin-Embedder-Policy absent"
+msgstr "Cross-Origin-Embedder-Policy missing"
+
+#: apps/maketrust/findings.py:287
+msgid ""
+"Optionnel pour la plupart des sites. Requis uniquement si vous voulez "
+"activer l'isolation cross-origin pour SharedArrayBuffer ou WebAssembly "
+"threads."
+msgstr ""
+"Optional for most sites. Required only if you want to enable cross-origin "
+"isolation for SharedArrayBuffer or WebAssembly threads."
+
+#: apps/maketrust/findings.py:288
+msgid ""
+"Si vous n'utilisez pas SharedArrayBuffer, vous pouvez ignorer. Sinon : Cross-"
+"Origin-Embedder-Policy: require-corp."
+msgstr ""
+"If you don't use SharedArrayBuffer, you can ignore. Otherwise: Cross-Origin-"
+"Embedder-Policy: require-corp."
+
+#: apps/maketrust/findings.py:291
+msgid "Cross-Origin-Resource-Policy absent"
+msgstr "Cross-Origin-Resource-Policy missing"
+
+#: apps/maketrust/findings.py:292
+msgid ""
+"Sans CORP, vos ressources peuvent être embarquées par n'importe quel site. "
+"C'est rarement critique mais c'est un défaut moderne."
+msgstr ""
+"Without CORP, your resources can be embedded by any site. Rarely critical, "
+"but a modern default."
+
+#: apps/maketrust/findings.py:293
+msgid ""
+"Ajoutez Cross-Origin-Resource-Policy: same-site sur les réponses qui ne "
+"doivent pas être consommées ailleurs."
+msgstr ""
+"Add Cross-Origin-Resource-Policy: same-site on responses that shouldn't be "
+"consumed elsewhere."
+
+#: apps/maketrust/findings.py:298
+msgid "DKIM configuré"
+msgstr "DKIM configured"
+
+#: apps/maketrust/findings.py:299
+msgid ""
+"Vos emails sont signés cryptographiquement, ce qui empêche un attaquant de "
+"forger des messages crédibles à votre nom."
+msgstr ""
+"Your emails are cryptographically signed, which prevents an attacker from "
+"forging credible messages in your name."
+
+#: apps/maketrust/findings.py:303
+msgid "DKIM non vérifié (pas de MX)"
+msgstr "DKIM not checked (no MX)"
+
+#: apps/maketrust/findings.py:304
+msgid "Le domaine ne reçoit pas d'email, donc DKIM n'est pas applicable."
+msgstr "The domain doesn't receive email, so DKIM does not apply."
+
+#: apps/maketrust/findings.py:308
+msgid "DKIM non détecté sur les sélecteurs testés"
+msgstr "DKIM not detected on the selectors we probed"
+
+#: apps/maketrust/findings.py:309
+msgid ""
+"Aucun des sélecteurs DKIM connus que nous avons testés ne renvoie de clé "
+"publique. Soit votre domaine n'a pas DKIM, soit il utilise un sélecteur non-"
+"standard (Mailcow, Postfix custom, etc.) que nous ne pouvons pas deviner "
+"depuis le DNS seul."
+msgstr ""
+"None of the well-known DKIM selectors we probed returned a public key. "
+"Either your domain has no DKIM, or it uses a non-standard selector (Mailcow, "
+"custom Postfix, etc.) that we can't guess from DNS alone."
+
+#: apps/maketrust/findings.py:310
+msgid ""
+"Activez DKIM chez votre fournisseur email (Google Workspace, Microsoft 365, "
+"OVH, etc.). Vous obtiendrez un sélecteur et une clé publique à publier en "
+"TXT dans votre zone DNS. Sans DKIM, vos emails sont plus facilement marqués "
+"comme spam."
+msgstr ""
+"Enable DKIM at your email provider (Google Workspace, Microsoft 365, OVH, "
+"etc.). You'll get a selector and a public key to publish as a TXT record in "
+"your DNS zone. Without DKIM, your emails are more likely to be flagged as "
+"spam."
+
+#: apps/maketrust/findings.py:315
+msgid "DNSSEC actif"
+msgstr "DNSSEC active"
+
+#: apps/maketrust/findings.py:316
+msgid ""
+"Vos enregistrements DNS sont signés, un attaquant ne peut pas insérer de "
+"réponses falsifiées."
+msgstr "Your DNS records are signed; an attacker cannot inject forged answers."
+
+#: apps/maketrust/findings.py:320
+msgid "DNSSEC incomplet"
+msgstr "Incomplete DNSSEC"
+
+#: apps/maketrust/findings.py:321
+msgid ""
+"La signature DNSSEC est présente mais la chaîne de confiance avec votre "
+"registre est cassée. La protection ne s'applique pas."
+msgstr ""
+"The DNSSEC signature is present but the chain of trust with your registry is "
+"broken. The protection does not apply."
+
+#: apps/maketrust/findings.py:322
+msgid ""
+"Vérifiez que les enregistrements DS au niveau de votre registre (par exemple "
+"DNS Belgium pour les .be) correspondent bien aux DNSKEY publiés."
+msgstr ""
+"Check that the DS records at your registry (e.g. DNS Belgium for .be) match "
+"the published DNSKEY."
+
+#: apps/maketrust/findings.py:325
+msgid "DNSSEC non activé"
+msgstr "DNSSEC not enabled"
+
+#: apps/maketrust/findings.py:326
+msgid ""
+"Sans DNSSEC, un attaquant qui contrôle un résolveur DNS peut rediriger vos "
+"visiteurs vers un site pirate."
+msgstr ""
+"Without DNSSEC, an attacker controlling a DNS resolver can redirect your "
+"visitors to a fake site."
+
+#: apps/maketrust/findings.py:327
+msgid ""
+"La plupart des hébergeurs DNS proposent l'activation DNSSEC en un clic. "
+"C'est gratuit et n'a aucun impact sur les visiteurs."
+msgstr ""
+"Most DNS hosts offer one-click DNSSEC activation. It's free and has no "
+"visitor-side impact."
+
+#: apps/maketrust/findings.py:332
+msgid "Redirection HTTP non vérifiable"
+msgstr "HTTP redirect not testable"
+
+#: apps/maketrust/findings.py:333
+msgid "Pas d'IP publique pour tester."
+msgstr "No public IP to test."
+
+#: apps/maketrust/findings.py:337
+msgid "Port 80 fermé"
+msgstr "Port 80 closed"
+
+#: apps/maketrust/findings.py:338
+msgid ""
+"Le serveur ne répond pas en HTTP. C'est correct du point de vue sécurité, "
+"mais les visiteurs qui tapent l'URL sans https obtiendront une erreur de "
+"connexion."
+msgstr ""
+"The server does not answer over HTTP. That's fine for security, but visitors "
+"typing the URL without https will get a connection error."
+
+#: apps/maketrust/findings.py:339
+msgid ""
+"Idéalement, ouvrez le port 80 et faites une redirection 301 permanente vers "
+"HTTPS. Cela améliore l'expérience visiteur sans dégrader la sécurité."
+msgstr ""
+"Ideally, open port 80 and serve a 301 permanent redirect to HTTPS. This "
+"improves the visitor experience without degrading security."
+
+#: apps/maketrust/findings.py:342
+msgid "Le site répond en HTTP non chiffré"
+msgstr "The site answers in plain HTTP"
+
+#: apps/maketrust/findings.py:343
+msgid ""
+"Vos visiteurs peuvent recevoir le site en clair. Un attaquant sur le réseau "
+"peut lire et modifier le contenu en route."
+msgstr ""
+"Your visitors can receive the site in plain text. An attacker on the network "
+"can read and modify content in transit."
+
+#: apps/maketrust/findings.py:344
+msgid ""
+"Configurez votre serveur (ou Cloudflare, Traefik, etc.) pour rediriger "
+"toutes les requêtes HTTP vers HTTPS avec un code 301."
+msgstr ""
+"Configure your server (or Cloudflare, Traefik, etc.) to redirect all HTTP "
+"requests to HTTPS with a 301 status."
+
+#: apps/maketrust/findings.py:347
+msgid "La redirection ne pointe pas vers HTTPS"
+msgstr "The redirect does not point to HTTPS"
+
+#: apps/maketrust/findings.py:348
+msgid ""
+"Le serveur redirige les visiteurs ailleurs qu'en HTTPS. La connexion reste "
+"vulnérable."
+msgstr ""
+"The server redirects visitors somewhere other than HTTPS. The connection "
+"stays vulnerable."
+
+#: apps/maketrust/findings.py:349
+msgid ""
+"Corrigez la cible de la redirection pour qu'elle commence par https://. "
+"Vérifiez la configuration de votre reverse proxy."
+msgstr ""
+"Fix the redirect target so it starts with https://. Check your reverse proxy "
+"configuration."
+
+#: apps/maketrust/findings.py:352
+msgid "Redirection 301 vers HTTPS"
+msgstr "301 redirect to HTTPS"
+
+#: apps/maketrust/findings.py:353
+msgid ""
+"Les visiteurs qui tapent l'URL sans https arrivent sur la version sécurisée, "
+"et leurs navigateurs mémorisent la redirection."
+msgstr ""
+"Visitors who type the URL without https land on the secure version, and "
+"their browsers remember the redirect."
+
+#: apps/maketrust/findings.py:357
+msgid "Redirection 302 temporaire vers HTTPS"
+msgstr "Temporary 302 redirect to HTTPS"
+
+#: apps/maketrust/findings.py:358
+msgid ""
+"La redirection fonctionne mais le navigateur ne la met pas en cache. C'est "
+"moins efficace pour le SEO et le HSTS preload."
+msgstr ""
+"The redirect works but the browser does not cache it. Less efficient for SEO "
+"and HSTS preload."
+
+#: apps/maketrust/findings.py:359
+msgid "Changez le code de redirection en 301 (permanente) au lieu de 302/307."
+msgstr "Change the redirect code to 301 (permanent) instead of 302/307."
+
+#: apps/maketrust/findings.py:364
+msgid "Aucune fuite publique connue"
+msgstr "No public breach known"
+
+#: apps/maketrust/findings.py:365
+msgid ""
+"Aucune base de données piratée publiquement répertoriée ne mentionne votre "
+"domaine."
+msgstr "No publicly listed breached database mentions your domain."
+
+#: apps/maketrust/findings.py:369
+msgid "Fuite récente impliquant votre domaine"
+msgstr "Recent breach involving your domain"
+
+#: apps/maketrust/findings.py:370
+msgid ""
+"Votre domaine apparaît dans une fuite divulguée publiquement il y a moins "
+"d'un an. Vos employés et clients ont peut-être des credentials compromis "
+"circulant."
+msgstr ""
+"Your domain appears in a breach disclosed publicly less than a year ago. "
+"Your staff and customers may have compromised credentials circulating."
+
+#: apps/maketrust/findings.py:371
+msgid ""
+"Forcez une rotation des mots de passe. Activez le MFA partout où c'est "
+"possible. Surveillez les tentatives de connexion suspectes pendant les 6 "
+"prochains mois."
+msgstr ""
+"Force a password rotation. Enable MFA everywhere possible. Monitor "
+"suspicious login attempts for the next 6 months."
+
+#: apps/maketrust/findings.py:374
+msgid "Fuite des 3 dernières années impliquant votre domaine"
+msgstr "Breach in the last 3 years involving your domain"
+
+#: apps/maketrust/findings.py:375
+msgid ""
+"Votre domaine apparaît dans une fuite récente. Les credentials compromis y "
+"circulent peut-être encore."
+msgstr ""
+"Your domain appears in a recent breach. Compromised credentials may still be "
+"circulating."
+
+#: apps/maketrust/findings.py:376
+msgid ""
+"Si vous n'avez pas forcé de rotation des mots de passe depuis cette fuite, "
+"faites-le. Activez le MFA sur les comptes critiques."
+msgstr ""
+"If you have not forced a password rotation since this breach, do so. Enable "
+"MFA on critical accounts."
+
+#: apps/maketrust/findings.py:379
+msgid "Fuite ancienne impliquant votre domaine"
+msgstr "Old breach involving your domain"
+
+#: apps/maketrust/findings.py:380
+msgid ""
+"Votre domaine apparaît dans des bases divulguées publiquement il y a plus de "
+"3 ans. À surveiller mais pas urgent si vos mots de passe ont été tournés "
+"depuis."
+msgstr ""
+"Your domain appears in databases disclosed more than 3 years ago. Worth "
+"monitoring but not urgent if passwords have been rotated since."
+
+#: apps/maketrust/findings.py:381
+msgid ""
+"Vérifiez que vos employés n'utilisent plus les mots de passe qui ont fuité. "
+"Sensibilisez sur le credential stuffing."
+msgstr ""
+"Verify your staff no longer use the leaked passwords. Train on credential "
+"stuffing."
+
+#: apps/maketrust/findings.py:384
+msgid "Vérification HIBP indisponible"
+msgstr "HIBP check unavailable"
+
+#: apps/maketrust/findings.py:385
+msgid ""
+"Le service Have I Been Pwned n'a pas répondu, on n'a pas pu vérifier les "
+"fuites pour ce domaine. Réessayez dans quelques minutes."
+msgstr ""
+"The Have I Been Pwned service did not respond; we couldn't check breaches "
+"for this domain. Try again in a few minutes."
+
+#: apps/maketrust/findings.py:391
+msgid "Un module a échoué"
+msgstr "A module failed"
+
+#: apps/maketrust/findings.py:392
+msgid ""
+"Le scanner a rencontré une erreur sur ce contrôle. Le reste du rapport reste "
+"valide."
+msgstr ""
+"The scanner encountered an error on this check. The rest of the report stays "
+"valid."
+
+#: apps/maketrust/findings.py:398
+#: templates/pages/maketrust/scan_result.html:341
+msgid "Aucun site web à analyser"
+msgstr "No website to inspect"
+
+#: apps/maketrust/findings.py:399
+msgid ""
+"Le serveur ne répond pas sur le port 443. Les contrôles web (TLS, en-têtes, "
+"redirections, cookies) sont ignorés, ils n'apportent rien quand il n'y a pas "
+"de site."
+msgstr ""
+"The server is not responding on port 443. Web checks (TLS, headers, "
+"redirects, cookies) are skipped, they add no signal when there's no website."
+
+#: apps/maketrust/findings.py:405
+msgid "Site web actif détecté"
+msgstr "Active website detected"
+
+#: apps/maketrust/findings.py:406
+msgid "Le serveur a répondu et la page d'accueil ressemble à un vrai site."
+msgstr "The server responded and the homepage looks like a real site."
+
+#: apps/maketrust/findings.py:410
+msgid "Domaine parked"
+msgstr "Parked domain"
+
+#: apps/maketrust/findings.py:411
+msgid ""
+"Le domaine n'héberge pas un vrai site. Il pointe vers une page de parking "
+"publicitaire ou une page d'attente."
+msgstr ""
+"The domain doesn't host a real site. It points to an ad parking page or a "
+"holding page."
+
+#: apps/maketrust/findings.py:412
+msgid ""
+"Si ce domaine doit héberger un site, configurez votre serveur web ou retirez "
+"la délégation vers le parking."
+msgstr ""
+"If this domain is meant to host a site, configure your web server or remove "
+"the delegation to the parking provider."
+
+#: apps/maketrust/findings.py:415
+msgid "Domaine en vente"
+msgstr "Domain for sale"
+
+#: apps/maketrust/findings.py:416
+msgid "La page d'accueil affiche que ce domaine est mis en vente."
+msgstr "The homepage states that this domain is for sale."
+
+#: apps/maketrust/findings.py:420
+msgid "Page par défaut de l'hébergeur"
+msgstr "Default hosting page"
+
+#: apps/maketrust/findings.py:421
+msgid ""
+"Le serveur sert la page d'accueil par défaut (nginx, Apache, IIS, Plesk). Le "
+"site n'a pas encore été configuré."
+msgstr ""
+"The server is showing the default homepage (nginx, Apache, IIS, Plesk). The "
+"site has not been set up yet."
+
+#: apps/maketrust/findings.py:422
+msgid ""
+"Déployez votre site, ou retirez l'A/AAAA en attendant pour ne pas exposer la "
+"page par défaut."
+msgstr ""
+"Deploy your site, or remove the A/AAAA record in the meantime so the default "
+"page isn't exposed."
+
+#: apps/maketrust/findings.py:425
+msgid "Le serveur ne sert pas une page HTML"
+msgstr "Server is not serving an HTML page"
+
+#: apps/maketrust/findings.py:426
+msgid ""
+"La home renvoie autre chose qu'une page web (souvent une API ou une réponse "
+"JSON)."
+msgstr ""
+"The home returns something other than a web page (often an API or a JSON "
+"response)."
+
+#: apps/maketrust/findings.py:430
+msgid "Le domaine redirige vers une autre URL"
+msgstr "Domain redirects to another URL"
+
+#: apps/maketrust/findings.py:431
+msgid ""
+"La page d'accueil renvoie une redirection (souvent vers la version www. ou "
+"un sous-chemin)."
+msgstr ""
+"The homepage returns a redirect (often to the www. variant or a subpath)."
+
+#: apps/maketrust/findings.py:435
+msgid "Site injoignable en HTTPS"
+msgstr "Site unreachable over HTTPS"
+
+#: apps/maketrust/findings.py:436
+msgid ""
+"Le scanner n'a pas réussi à contacter votre serveur sur le port 443. La "
+"majorité des contrôles web ne pourront pas s'effectuer."
+msgstr ""
+"The scanner couldn't reach your server on port 443. Most of the web checks "
+"cannot run."
+
+#: apps/maketrust/findings.py:437
+msgid ""
+"Vérifiez que le serveur est en ligne et que le port 443 est ouvert. Sur "
+"Cloudflare, vérifiez que le proxy n'est pas en mode 'Under Attack'."
+msgstr ""
+"Check that the server is up and port 443 is open. On Cloudflare, make sure "
+"the proxy is not in 'Under Attack' mode."
+
+#: apps/maketrust/findings.py:442
+msgid "Cookies correctement protégés"
+msgstr "Cookies properly protected"
+
+#: apps/maketrust/findings.py:443
+msgid ""
+"Tous les cookies posés par la page d'accueil ont les flags Secure, HttpOnly "
+"et SameSite."
+msgstr ""
+"Every cookie set by the homepage has the Secure, HttpOnly and SameSite flags."
+
+#: apps/maketrust/findings.py:447
+msgid "Cookie sans le flag Secure"
+msgstr "Cookie missing the Secure flag"
+
+#: apps/maketrust/findings.py:448
+msgid ""
+"Ce cookie peut être transmis en clair sur une connexion HTTP. Un attaquant "
+"sur le réseau peut le voler."
+msgstr ""
+"This cookie can be sent over plain HTTP. A network-level attacker can steal "
+"it."
+
+#: apps/maketrust/findings.py:449
+msgid ""
+"Ajoutez l'attribut Secure à ce cookie. Exemple : Set-Cookie: session=…; "
+"Secure; HttpOnly; SameSite=Lax."
+msgstr ""
+"Add the Secure attribute to this cookie. Example: Set-Cookie: session=…; "
+"Secure; HttpOnly; SameSite=Lax."
+
+#: apps/maketrust/findings.py:452
+msgid "Cookie accessible en JavaScript"
+msgstr "Cookie readable from JavaScript"
+
+#: apps/maketrust/findings.py:453
+msgid ""
+"Ce cookie peut être lu par n'importe quel script de la page. En cas de XSS, "
+"il est volable."
+msgstr ""
+"Any script on the page can read this cookie. If an XSS happens, it can be "
+"stolen."
+
+#: apps/maketrust/findings.py:454
+msgid ""
+"Ajoutez l'attribut HttpOnly. Sauf cas particulier (consentement, langue), ce "
+"cookie n'a pas besoin d'être lu en JS."
+msgstr ""
+"Add the HttpOnly attribute. Unless this is a special case (consent banner, "
+"language preference), the cookie doesn't need to be read from JS."
+
+#: apps/maketrust/findings.py:457
+msgid "Cookie sans SameSite"
+msgstr "Cookie without SameSite"
+
+#: apps/maketrust/findings.py:458
+msgid ""
+"Sans SameSite, ce cookie est envoyé sur des requêtes initiées par un autre "
+"site, ce qui ouvre la porte au CSRF."
+msgstr ""
+"Without SameSite, this cookie is sent on cross-site requests, which opens "
+"the door to CSRF."
+
+#: apps/maketrust/findings.py:459
+msgid ""
+"Ajoutez SameSite=Lax (le bon défaut), ou Strict si la session ne traverse "
+"jamais une autre origine."
+msgstr ""
+"Add SameSite=Lax (the right default), or Strict if the session never crosses "
+"another origin."
+
+#: apps/maketrust/findings.py:464
+msgid "Variante www. redirige correctement"
+msgstr "www. variant redirects correctly"
+
+#: apps/maketrust/findings.py:465
+msgid "Vos visiteurs arrivent au bon endroit qu'ils tapent www ou non."
+msgstr "Your visitors land in the right place whether they type www or not."
+
+#: apps/maketrust/findings.py:469
+msgid "Variante www. non configurée"
+msgstr "www. variant not configured"
+
+#: apps/maketrust/findings.py:470
+msgid ""
+"Le sous-domaine www n'existe pas. Les visiteurs qui tapent www.votredomaine "
+"obtiendront une erreur."
+msgstr ""
+"The www subdomain does not exist. Visitors who type www.yourdomain will see "
+"an error."
+
+#: apps/maketrust/findings.py:471
+msgid ""
+"Ajoutez un CNAME ou un A pour www pointant sur votre apex, et configurez la "
+"redirection 301 vers la version sans www (ou inversement)."
+msgstr ""
+"Add a CNAME or A record for www pointing to your apex, and set up a 301 "
+"redirect to the no-www version (or vice versa)."
+
+#: apps/maketrust/findings.py:474
+msgid "Configuration en split brain entre apex et www"
+msgstr "Split-brain configuration between apex and www"
+
+#: apps/maketrust/findings.py:475
+msgid ""
+"L'apex et www servent du contenu différent sans redirection. Vos visiteurs "
+"voient deux sites différents selon l'URL tapée."
+msgstr ""
+"Apex and www serve different content with no redirect. Visitors see two "
+"different sites depending on the URL they type."
+
+#: apps/maketrust/findings.py:476
+msgid ""
+"Choisissez une version canonique (avec ou sans www) et redirigez l'autre en "
+"301."
+msgstr ""
+"Pick a canonical version (with or without www) and 301-redirect the other."
+
+#: apps/maketrust/findings.py:479
+msgid "Variante www. injoignable"
+msgstr "www. variant unreachable"
+
+#: apps/maketrust/findings.py:480
+msgid "Le www. résout en DNS mais ne répond pas en HTTPS."
+msgstr "www. resolves in DNS but does not respond over HTTPS."
+
+#: apps/maketrust/findings.py:481
+msgid ""
+"Vérifiez que votre serveur écoute aussi sur www, ou retirez l'enregistrement "
+"DNS si vous ne l'utilisez pas."
+msgstr ""
+"Make sure your server also listens on www, or drop the DNS record if you "
+"don't use it."
+
+#: apps/maketrust/findings.py:484
+msgid "Variante www. anormale"
+msgstr "www. variant abnormal"
+
+#: apps/maketrust/findings.py:485
+msgid "La variante www renvoie un statut HTTP inhabituel."
+msgstr "The www variant returns an unusual HTTP status."
+
+#: apps/maketrust/findings.py:486
+msgid ""
+"Vérifiez la configuration de votre serveur ou de votre reverse proxy pour le "
+"sous-domaine www."
+msgstr ""
+"Check your server or reverse-proxy configuration for the www subdomain."
+
+#: apps/maketrust/findings.py:491
+msgid "Domaine difficile à usurper"
+msgstr "Domain hard to spoof"
+
+#: apps/maketrust/findings.py:492
+msgid ""
+"SPF strict, DKIM en place, DMARC en p=reject avec alignement strict. "
+"Personne ne peut envoyer un email crédible en votre nom."
+msgstr ""
+"Strict SPF, DKIM in place, DMARC at p=reject with strict alignment. Nobody "
+"can send a credible email in your name."
+
+#: apps/maketrust/findings.py:496
+msgid "Protection email modérée"
+msgstr "Moderate email protection"
+
+#: apps/maketrust/findings.py:497
+msgid ""
+"La configuration anti-usurpation est en place mais incomplète. Un attaquant "
+"peut encore réussir à passer dans certains scénarios."
+msgstr ""
+"Anti-spoofing config is in place but incomplete. An attacker can still get "
+"through in some scenarios."
+
+#: apps/maketrust/findings.py:498
+msgid ""
+"Pour atteindre le niveau 'spoof-resistant' : SPF doit terminer par -all, "
+"DKIM doit être actif sur au moins un sélecteur, DMARC doit être en p=reject "
+"avec aspf=s et adkim=s."
+msgstr ""
+"To reach 'spoof-resistant': SPF must end with -all, DKIM must be active on "
+"at least one selector, DMARC must be at p=reject with aspf=s and adkim=s."
+
+#: apps/maketrust/findings.py:501
+msgid "Protection email faible"
+msgstr "Weak email protection"
+
+#: apps/maketrust/findings.py:502
+msgid ""
+"Vos protections SPF, DKIM et DMARC laissent encore passer certains scénarios "
+"d'usurpation. Voyez les findings individuels plus bas pour savoir exactement "
+"ce qui manque."
+msgstr ""
+"Your SPF, DKIM and DMARC posture still lets some spoofing scenarios through. "
+"See the individual findings below for the exact gaps."
+
+#: apps/maketrust/findings.py:503
+msgid ""
+"Étape 1 : assurez-vous d'avoir SPF (-all), DKIM (au moins un sélecteur), et "
+"DMARC. Étape 2 : surveillez vos rapports DMARC quelques semaines. Étape 3 : "
+"passez DMARC en p=quarantine puis p=reject."
+msgstr ""
+"Step 1: make sure SPF (-all), DKIM (at least one selector) and DMARC are in "
+"place. Step 2: monitor your DMARC reports for a few weeks. Step 3: move "
+"DMARC to p=quarantine, then p=reject."
+
+#: apps/maketrust/findings.py:506
+msgid "Domaine usurpable"
+msgstr "Spoofable domain"
+
+#: apps/maketrust/findings.py:507
+msgid ""
+"N'importe qui peut envoyer un email en se faisant passer pour @votredomaine. "
+"Vos clients risquent de recevoir des fausses factures crédibles à votre nom."
+msgstr ""
+"Anyone can send an email pretending to be @yourdomain. Your clients risk "
+"receiving credible fake invoices in your name."
+
+#: apps/maketrust/findings.py:508
+msgid ""
+"Action urgente : ajoutez SPF, DKIM et DMARC. Démarrez par SPF strict (-all), "
+"activez DKIM chez votre fournisseur email, puis DMARC en monitor (p=none) "
+"avant de durcir."
+msgstr ""
+"Urgent: add SPF, DKIM and DMARC. Start with strict SPF (-all), enable DKIM "
+"at your email provider, then DMARC in monitor (p=none) before tightening."
+
+#: apps/maketrust/findings.py:513
+msgid "Enregistrement de domaine valide"
+msgstr "Valid domain registration"
+
+#: apps/maketrust/findings.py:514
+msgid "Votre domaine est enregistré pour encore plusieurs semaines."
+msgstr "Your domain registration is valid for several more weeks."
+
+#: apps/maketrust/findings.py:518
+msgid "Domaine expiré"
+msgstr "Domain expired"
+
+#: apps/maketrust/findings.py:519
+msgid ""
+"L'enregistrement de votre domaine a expiré. Il peut être racheté par "
+"n'importe qui à tout moment."
+msgstr ""
+"Your domain registration has expired. Anyone can buy it back at any moment."
+
+#: apps/maketrust/findings.py:520
+msgid ""
+"Renouvelez immédiatement votre domaine auprès de votre registrar. Si le "
+"rachat est déjà parti, vous risquez de perdre l'accès."
+msgstr ""
+"Renew your domain at your registrar right now. If a buy-back has already "
+"started, you may lose access."
+
+#: apps/maketrust/findings.py:523
+msgid "Domaine expire dans moins de 30 jours"
+msgstr "Domain expires in under 30 days"
+
+#: apps/maketrust/findings.py:524
+msgid ""
+"Si rien n'est fait, votre site sera bientôt indisponible et le domaine "
+"pourra être repris."
+msgstr ""
+"If nothing is done, your site will soon become unreachable and the domain "
+"can be taken back by someone else."
+
+#: apps/maketrust/findings.py:525
+msgid ""
+"Renouvelez maintenant chez votre registrar. Activez le renouvellement "
+"automatique pour ne plus avoir le souci."
+msgstr ""
+"Renew now at your registrar. Enable auto-renewal so you don't run into this "
+"again."
+
+#: apps/maketrust/findings.py:528
+msgid "Domaine récemment enregistré"
+msgstr "Recently registered domain"
+
+#: apps/maketrust/findings.py:529
+msgid ""
+"Ce domaine a été créé il y a moins de 30 jours. Pour des sites établis, "
+"c'est inhabituel et peut être un signal de phishing."
+msgstr ""
+"This domain was created less than 30 days ago. For established sites this is "
+"unusual and can be a phishing signal."
+
+#: apps/maketrust/findings.py:533
+msgid "Informations de domaine partielles"
+msgstr "Partial domain information"
+
+#: apps/maketrust/findings.py:534
+msgid "Le serveur RDAP a répondu mais sans dates de création ou d'expiration."
+msgstr "The RDAP server responded but without creation or expiration dates."
+
+#: apps/maketrust/findings.py:538
+msgid "Données de registre indisponibles"
+msgstr "Registry data unavailable"
+
+#: apps/maketrust/findings.py:539
+msgid ""
+"Le TLD de ce domaine ne publie pas de serveur RDAP, ou le serveur n'a pas "
+"répondu. Pas de pénalité."
+msgstr ""
+"This TLD does not publish an RDAP server, or the server did not respond. No "
+"penalty."
+
+#: apps/maketrust/findings.py:547
+msgid "Sécurité email"
+msgstr "Email security"
+
+#: apps/maketrust/findings.py:548
+msgid "SPF, DKIM, DMARC"
+msgstr "SPF, DKIM, DMARC"
+
+#: apps/maketrust/findings.py:552
+msgid "Sécurité web"
+msgstr "Web security"
+
+#: apps/maketrust/findings.py:553
+msgid "Certificat HTTPS, redirections, en-têtes"
+msgstr "HTTPS certificate, redirects, headers"
+
+#: apps/maketrust/findings.py:557
+msgid "Hygiène DNS"
+msgstr "DNS hygiene"
+
+#: apps/maketrust/findings.py:558
+msgid "Adresses, DNSSEC, CAA"
+msgstr "Addresses, DNSSEC, CAA"
+
+#: apps/maketrust/findings.py:562
+msgid "Vie privée et fuites"
+msgstr "Privacy and breaches"
+
+#: apps/maketrust/findings.py:563
+msgid "Bases compromises, signaux publics"
+msgstr "Breach databases, public signals"
+
+#: apps/maketrust/findings.py:593
+msgid "Profil du site"
+msgstr "Site profile"
+
+#: apps/maketrust/findings.py:594
+msgid "Type de site, stack, WAF/CDN"
+msgstr "Site type, stack, WAF/CDN"
+
+#: apps/maketrust/findings.py:597
+msgid "Registre du domaine"
+msgstr "Domain registry"
+
+#: apps/maketrust/findings.py:598
+msgid "Registrar, dates de création et d'expiration"
+msgstr "Registrar, creation and expiration dates"
+
+#: apps/maketrust/findings.py:601
+msgid "DNS"
+msgstr "DNS"
+
+#: apps/maketrust/findings.py:602
+msgid "Adresses, MX, CAA"
+msgstr "Addresses, MX, CAA"
+
+#: apps/maketrust/findings.py:605
+msgid "DNSSEC"
+msgstr "DNSSEC"
+
+#: apps/maketrust/findings.py:606
+msgid "Signature de la zone"
+msgstr "Zone signing"
+
+#: apps/maketrust/findings.py:609
+msgid "SPF"
+msgstr "SPF"
+
+#: apps/maketrust/findings.py:610
+msgid "Anti-spoofing email"
+msgstr "Email anti-spoofing"
+
+#: apps/maketrust/findings.py:613
+msgid "DKIM"
+msgstr "DKIM"
+
+#: apps/maketrust/findings.py:614
+msgid "Signature des emails sortants"
+msgstr "Outbound email signing"
+
+#: apps/maketrust/findings.py:617
+msgid "DMARC"
+msgstr "DMARC"
+
+#: apps/maketrust/findings.py:618
+msgid "Politique anti-usurpation"
+msgstr "Anti-spoofing policy"
+
+#: apps/maketrust/findings.py:621
+msgid "Certificat HTTPS"
+msgstr "HTTPS certificate"
+
+#: apps/maketrust/findings.py:622
+msgid "Validité et chaîne de confiance"
+msgstr "Validity and trust chain"
+
+#: apps/maketrust/findings.py:625
+msgid "Redirection HTTP -> HTTPS"
+msgstr "HTTP -> HTTPS redirect"
+
+#: apps/maketrust/findings.py:626
+msgid "Port 80 et permanence"
+msgstr "Port 80 and permanence"
+
+#: apps/maketrust/findings.py:629
+msgid "En-têtes HTTP"
+msgstr "HTTP headers"
+
+#: apps/maketrust/findings.py:630
+msgid "HSTS, CSP, anti-clickjacking"
+msgstr "HSTS, CSP, anti-clickjacking"
+
+#: apps/maketrust/findings.py:633
+msgid "Fuites publiques"
+msgstr "Public breaches"
+
+#: apps/maketrust/findings.py:634
+msgid "Domaine présent dans des bases compromises"
+msgstr "Domain present in breach databases"
+
+#: apps/maketrust/forms.py:197
+msgid "Domaine ou adresse email à scanner"
+msgstr "Domain or email address to scan"
+
+#: apps/maketrust/forms.py:200
+msgid "votredomaine.be"
+msgstr "yourdomain.com"
+
+#: apps/maketrust/forms.py:212 apps/maketrust/forms.py:332
+#: templates/pages/maketrust/landing.html:101
+msgid "vous@entreprise.be"
+msgstr "you@company.com"
+
+#: apps/maketrust/forms.py:276
+#, python-format
+msgid "Domaine invalide : %(reason)s"
+msgstr "Invalid domain: %(reason)s"
+
+#: apps/maketrust/forms.py:281
+msgid "Ce domaine ne peut pas être scanné publiquement."
+msgstr "This domain cannot be scanned publicly."
+
+#: apps/maketrust/forms.py:290
+#, python-format
+msgid ""
+"Vous avez atteint la limite de %(n)d scans par jour. Contactez-nous à "
+"contact@makeset.be si vous avez un besoin légitime de plus de scans."
+msgstr ""
+"You've reached the daily limit of %(n)d scans. Contact us at "
+"contact@makeset.be if you have a legitimate need for more."
+
+#: apps/maketrust/forms.py:315 apps/maketrust/forms.py:354
+msgid ""
+"Les adresses email jetables ne sont pas acceptées. Utilisez une adresse de "
+"votre entreprise."
+msgstr ""
+"Disposable email addresses aren't accepted. Use an address from your company."
+
+#: apps/maketrust/forms.py:329 templates/pages/maketrust/landing.html:88
+#: templates/partials/maketrust/rescan_modal.html:61
+msgid "Votre email"
+msgstr "Your email"
+
+#: apps/maketrust/models.py:19
+msgid "En file d'attente"
+msgstr "Queued"
+
+#: apps/maketrust/models.py:20
+msgid "En cours"
+msgstr "Running"
+
+#: apps/maketrust/models.py:21 apps/maketrust/models.py:39
+msgid "Terminé"
+msgstr "Done"
+
+#: apps/maketrust/models.py:22
+msgid "Échec"
+msgstr "Failed"
+
+#: apps/maketrust/models.py:23
+msgid "Annulé"
+msgstr "Cancelled"
+
+#: apps/maketrust/models.py:26
+msgid "Domaine"
+msgstr "Domain"
+
+#: apps/maketrust/models.py:28
+msgid "Statut"
+msgstr "Status"
+
+#: apps/maketrust/models.py:32
+msgid "Mis en file"
+msgstr "Queued at"
+
+#: apps/maketrust/models.py:36
+#: templates/partials/maketrust/scan_progress.html:19
+msgid "Démarrage planifié"
+msgstr "Scheduled start"
+
+#: apps/maketrust/models.py:38
+msgid "Démarré"
+msgstr "Started"
+
+#: apps/maketrust/models.py:42
+msgid "Score global"
+msgstr "Overall score"
+
+#: apps/maketrust/models.py:44
+msgid "Grade"
+msgstr "Grade"
+
+#: apps/maketrust/models.py:45
+msgid "Résumé sévérités"
+msgstr "Severity summary"
+
+#: apps/maketrust/models.py:50
+msgid "Aperçu"
+msgstr "Preview"
+
+#: apps/maketrust/models.py:51
+msgid "Titre de la page"
+msgstr "Page title"
+
+#: apps/maketrust/models.py:56
+msgid "Locale"
+msgstr "Locale"
+
+#: apps/maketrust/models.py:57
+msgid "Rapport public"
+msgstr "Public report"
+
+#: apps/maketrust/models.py:59
+msgid "Message d'erreur"
+msgstr "Error message"
+
+#: apps/maketrust/models.py:66
+msgid "Scan interne"
+msgstr "Internal scan"
+
+#: apps/maketrust/models.py:67
+msgid "Coché automatiquement quand un admin connecté lance le scan."
+msgstr "Auto-checked when a logged-in admin runs the scan."
+
+#: apps/maketrust/models.py:75
+msgid "Sélecteurs DKIM additionnels"
+msgstr "Additional DKIM selectors"
+
+#: apps/maketrust/models.py:84
+msgid "Scan"
+msgstr "Scan"
+
+#: apps/maketrust/models.py:85
+msgid "Scans"
+msgstr "Scans"
+
+#: apps/maketrust/models.py:104
+msgid "OK"
+msgstr "OK"
+
+#: apps/maketrust/models.py:105
+msgid "Info"
+msgstr "Info"
+
+#: apps/maketrust/models.py:106
+msgid "Faible"
+msgstr "Low"
+
+#: apps/maketrust/models.py:107
+msgid "Moyenne"
+msgstr "Medium"
+
+#: apps/maketrust/models.py:108
+msgid "Élevée"
+msgstr "High"
+
+#: apps/maketrust/models.py:109
+msgid "Critique"
+msgstr "Critical"
+
+#: apps/maketrust/models.py:121
+msgid "Module"
+msgstr "Module"
+
+#: apps/maketrust/models.py:123
+msgid "Sévérité"
+msgstr "Severity"
+
+#: apps/maketrust/models.py:125
+msgid "Titre (clé i18n)"
+msgstr "Title (i18n key)"
+
+#: apps/maketrust/models.py:126
+msgid "Correctif (clé i18n)"
+msgstr "Fix (i18n key)"
+
+#: apps/maketrust/models.py:127
+msgid "Données brutes"
+msgstr "Raw data"
+
+#: apps/maketrust/models.py:128
+msgid "Preuve textuelle"
+msgstr "Textual evidence"
+
+#: apps/maketrust/models.py:129
+msgid "Durée (ms)"
+msgstr "Duration (ms)"
+
+#: apps/maketrust/models.py:133
+msgid "Vérification"
+msgstr "Check"
+
+#: apps/maketrust/models.py:134
+msgid "Vérifications"
+msgstr "Checks"
+
+#: apps/services/urls.py:7
+msgid "services/"
+msgstr "services/"
+
+#: apps/services/urls.py:8
+msgid "services/cybersecurite/"
+msgstr "services/cybersecurity/"
+
+#: apps/services/urls.py:9
+msgid "services/web/"
+msgstr "services/web/"
+
+#: apps/services/urls.py:10
+msgid "services/ia-automation/"
+msgstr "services/ai-automation/"
+
+#: apps/services/urls.py:11
+msgid "services/support/"
+msgstr "services/support/"
+
+#: apps/tools/urls.py:7
+msgid "outils/"
+msgstr "tools/"
+
+#: apps/website/urls.py:8
+msgid "a-propos/"
+msgstr "about/"
+
+#: core/settings/base.py:119
+msgid "Français"
+msgstr "French"
+
+#: core/settings/base.py:120
+msgid "English"
+msgstr "English"
+
+#: core/urls.py:26
+msgid "outils/maketrust/"
+msgstr "tools/maketrust/"
+
+#: templates/base.html:7
+msgid "Cybersécurité, développement web et automatisation IA pour PME"
+msgstr "Cybersecurity, web development and AI automation for SMEs"
+
+#: templates/base.html:8
+msgid ""
+"Audits cybersécurité, développement web sur mesure et automatisations IA "
+"pour PME exigeantes."
+msgstr ""
+"Cybersecurity audits, custom web development and AI automations for "
+"demanding SMEs."
+
+#: templates/base.html:18
+msgid "Cybersécurité, web et IA pour PME"
+msgstr "Cybersecurity, web and AI for SMEs"
+
+#: templates/base.html:19 templates/pages/home.html:6
+#: templates/pages/home.html:34
+msgid ""
+"Audits cybersécurité, sites & apps sur mesure, automatisations IA. Pour les "
+"PME qui ne peuvent pas se permettre de perdre."
+msgstr ""
+"Cybersecurity audits, custom sites & apps, AI automations. For SMEs that "
+"cannot afford to lose."
+
+#: templates/base.html:26 templates/base.html:32
+#: templates/partials/footer.html:7 templates/partials/nav.html:8
+msgid "Makeset - Cybersécurité, web et IA pour PME"
+msgstr "Makeset - Cybersecurity, web and AI for SMEs"
+
+#: templates/base.html:50 templates/partials/footer.html:10
+msgid ""
+"Cybersécurité, développement web et automatisation IA pour PME exigeantes."
+msgstr "Cybersecurity, web development and AI automation for demanding SMEs."
+
+#: templates/base.html:86
+msgid "Aller au contenu"
+msgstr "Skip to content"
+
+#: templates/cotton/article_card.html:15
+msgid "min"
+msgstr "min"
+
+#: templates/cotton/article_card.html:20
+msgid "Lire la suite"
+msgstr "Read more"
+
+#: templates/cotton/language_switcher.html:8
+msgid "Changer de langue"
+msgstr "Change language"
+
+#: templates/cotton/service_hero.html:13 templates/pages/blog/detail.html:84
+#: templates/pages/home.html:39
+msgid "Discuter de votre projet"
+msgstr "Discuss your project"
+
+#: templates/pages/about.html:4
+msgid "À propos - Une équipe technique pour PME"
+msgstr "About - A technical team for SMEs"
+
+#: templates/pages/about.html:5 templates/pages/about.html:15
+#: templates/pages/about.html:26 templates/partials/footer.html:29
+#: templates/partials/nav.html:15 templates/partials/nav.html:48
+msgid "À propos"
+msgstr "About"
+
+#: templates/pages/about.html:6
+msgid ""
+"Makeset : une équipe technique au service des PME. Cybersécurité, "
+"développement web sur mesure, automatisations IA. Sans intermédiaire, sans "
+"bullshit."
+msgstr ""
+"Makeset: a technical team serving SMEs. Cybersecurity, custom web "
+"development, AI automation. Without middlemen, without bullshit."
+
+#: templates/pages/about.html:14 templates/pages/blog/detail.html:22
+#: templates/pages/blog/list.html:14
+#: templates/pages/services/cybersecurite.html:14
+#: templates/pages/services/ia_automation.html:14
+#: templates/pages/services/index.html:14
+#: templates/pages/services/support.html:14
+#: templates/pages/services/web.html:14
+msgid "Accueil"
+msgstr "Home"
+
+#: templates/pages/about.html:28
+msgid "Une petite équipe qui"
+msgstr "A small team that"
+
+#: templates/pages/about.html:29
+msgid "prend son métier au sérieux."
+msgstr "takes its craft seriously."
+
+#: templates/pages/about.html:32
+msgid ""
+"Makeset, c'est une agence digitale basée à Bruxelles. On aide les PME belges "
+"à sécuriser leur infrastructure, livrer des produits web qui tiennent, et "
+"automatiser ce qui peut l'être."
+msgstr ""
+"Makeset is a digital agency based in Brussels. We help Belgian SMEs secure "
+"their infrastructure, ship web products that hold up, and automate what can "
+"be automated."
+
+#: templates/pages/about.html:41
+msgid "Notre histoire"
+msgstr "Our story"
+
+#: templates/pages/about.html:43
+msgid "Né du constat que les PME méritent mieux."
+msgstr "Born from the realization that SMEs deserve better."
+
+#: templates/pages/about.html:47
+msgid ""
+"Trop de fournisseurs vendent du brouillard : chartes interminables, audits "
+"photocopiés, projets web lancés sans réflexion. Pendant que la PME signe, "
+"eux passent au client suivant."
+msgstr ""
+"Too many providers sell smoke: endless charters, photocopied audits, web "
+"projects launched without thought. While the SME signs, they move on to the "
+"next client."
+
+#: templates/pages/about.html:48
+msgid ""
+"Makeset est née pour faire l'inverse : du travail honnête, expliqué "
+"clairement, livré dans le scope et les délais. Si on ne peut pas faire mieux "
+"que ce que vous avez déjà, on le dit."
+msgstr ""
+"Makeset was born to do the opposite: honest work, clearly explained, "
+"delivered on scope and on time. If we can't do better than what you already "
+"have, we say so."
+
+#: templates/pages/about.html:49
+msgid ""
+"On préfère un client content sur dix ans que dix clients déçus en six mois."
+msgstr ""
+"We'd rather have one happy client over ten years than ten disappointed ones "
+"in six months."
+
+#: templates/pages/about.html:57
+msgid "Nos engagements"
+msgstr "Our commitments"
+
+#: templates/pages/about.html:59
+msgid "Trois principes. Non négociables."
+msgstr "Three principles. Non-negotiable."
+
+#: templates/pages/about.html:63 templates/pages/home.html:51
+#: templates/pages/home.html:95
+msgid "Sans intermédiaire"
+msgstr "No middleman"
+
+#: templates/pages/about.html:64
+msgid ""
+"Vous parlez à la personne qui fait le travail. Pas de chef de projet écran "
+"de fumée, pas de sous-traitance offshore qu'on vous cache."
+msgstr ""
+"You talk to the person doing the work. No smoke-screen project manager, no "
+"hidden offshore subcontracting."
+
+#: templates/pages/about.html:66
+msgid "Du concret, pas du slide"
+msgstr "Concrete work, not slides"
+
+#: templates/pages/about.html:67
+msgid ""
+"Pas de présentation 80 pages. On audite, on prototype, on livre. Vous voyez "
+"l'avancement chaque semaine, pas tous les trois mois."
+msgstr ""
+"No 80-page presentation. We audit, prototype, ship. You see progress every "
+"week, not every three months."
+
+#: templates/pages/about.html:69
+msgid "Engagement long terme"
+msgstr "Long-term commitment"
+
+#: templates/pages/about.html:70
+msgid ""
+"On reste après le go-live. Le support n'est pas une option vendue à part — "
+"c'est la suite logique du travail bien fait."
+msgstr ""
+"We stay after go-live. Support isn't an add-on sold separately — it's the "
+"natural continuation of work well done."
+
+#: templates/pages/about.html:78
+msgid "Notre méthode"
+msgstr "Our method"
+
+#: templates/pages/about.html:80
+msgid "Trois étapes. Pas une de plus."
+msgstr "Three steps. Not one more."
+
+#: templates/pages/about.html:86
+msgid "Diagnostic"
+msgstr "Diagnostic"
+
+#: templates/pages/about.html:87
+msgid ""
+"30 minutes au téléphone pour comprendre votre contexte et vos enjeux. "
+"Gratuit, sans engagement, sans relance commerciale agressive."
+msgstr ""
+"30 minutes on the phone to understand your context and what's at stake. "
+"Free, no commitment, no aggressive sales follow-up."
+
+#: templates/pages/about.html:91
+msgid "Cadrage"
+msgstr "Scoping"
+
+#: templates/pages/about.html:92
+msgid ""
+"Un document court qui pose le problème, le scope, le délai et le prix. Vous "
+"validez ou pas. C'est binaire, c'est volontaire."
+msgstr ""
+"A short document stating the problem, the scope, the timeline and the price. "
+"You approve or you don't. It's binary, it's intentional."
+
+#: templates/pages/about.html:96
+msgid "Livraison"
+msgstr "Delivery"
+
+#: templates/pages/about.html:97
+msgid ""
+"On exécute. Point d'avancement chaque semaine. À la fin, vous avez le code, "
+"la doc, et de quoi être autonome si vous le souhaitez."
+msgstr ""
+"We execute. Weekly progress check-ins. At the end, you have the code, the "
+"docs, and everything you need to be autonomous if you wish."
+
+#: templates/pages/about.html:105
+msgid "Parlons de votre projet."
+msgstr "Let's talk about your project."
+
+#: templates/pages/about.html:106
+msgid "Discuter avec Arnaud"
+msgstr "Talk with Arnaud"
+
+#: templates/pages/about.html:108
+msgid ""
+"Un café, un appel, un mail. Le format vous regarde — la première discussion "
+"est offerte."
+msgstr ""
+"A coffee, a call, an email. Up to you — the first conversation is on us."
+
+#: templates/pages/blog/detail.html:23 templates/pages/blog/list.html:5
+#: templates/pages/blog/list.html:15 templates/pages/blog/list.html:25
+#: templates/pages/home.html:178 templates/partials/footer.html:28
+#: templates/partials/nav.html:14 templates/partials/nav.html:47
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/pages/blog/detail.html:54 templates/pages/home.html:184
+msgid "Tous les articles"
+msgstr "All articles"
+
+#: templates/pages/blog/detail.html:60
+msgid "min de lecture"
+msgstr "min read"
+
+#: templates/pages/blog/detail.html:94
+msgid "À lire aussi"
+msgstr "Read next"
+
+#: templates/pages/blog/list.html:4
+msgid "Blog - Cybersécurité, web et IA pour PME"
+msgstr "Blog - Cybersecurity, web and AI for SMEs"
+
+#: templates/pages/blog/list.html:6
+msgid ""
+"Articles, retours d'expérience et analyses techniques sur la cybersécurité, "
+"le développement web et l'automatisation IA."
+msgstr ""
+"Articles, field reports and technical analyses on cybersecurity, web "
+"development and AI automation."
+
+#: templates/pages/blog/list.html:27
+msgid "Notes du"
+msgstr "Field"
+
+#: templates/pages/blog/list.html:27
+msgid "terrain"
+msgstr "notes"
+
+#: templates/pages/blog/list.html:30
+msgid ""
+"Ce qu'on apprend sur les vrais projets : cybersécurité, dev web, IA. Pas de "
+"buzzwords, juste ce qui marche."
+msgstr ""
+"What we learn on real projects: cybersecurity, web dev, AI. No buzzwords, "
+"just what works."
+
+#: templates/pages/blog/list.html:45
+msgid "Pagination"
+msgstr "Pagination"
+
+#: templates/pages/blog/list.html:50
+msgid "Précédent"
+msgstr "Previous"
+
+#: templates/pages/blog/list.html:54
+#, python-format
+msgid "Page %(current)s sur %(total)s"
+msgstr "Page %(current)s of %(total)s"
+
+#: templates/pages/blog/list.html:59
+msgid "Suivant"
+msgstr "Next"
+
+#: templates/pages/blog/list.html:67
+msgid "Aucun article publié pour le moment. Revenez bientôt."
+msgstr "No article published yet. Check back soon."
+
+#: templates/pages/contact.html:4
+msgid "Contact - Cybersécurité, web et IA pour PME"
+msgstr "Contact - Cybersecurity, web and AI for SMEs"
+
+#: templates/pages/contact.html:5 templates/pages/contact.html:12
+#: templates/pages/legal/mentions.html:53 templates/partials/footer.html:30
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/pages/contact.html:6
+msgid ""
+"Échangez avec l'équipe Makeset sur votre projet de cybersécurité, "
+"développement web ou automatisation. Premier contact sans engagement."
+msgstr ""
+"Talk to the Makeset team about your cybersecurity, web development or "
+"automation project. First contact, no strings attached."
+
+#: templates/pages/contact.html:14
+msgid "Parlons de"
+msgstr "Let's talk about"
+
+#: templates/pages/contact.html:14
+msgid "votre projet"
+msgstr "your project"
+
+#: templates/pages/contact.html:17
+msgid ""
+"Décrivez ce que vous avez en tête. On revient vers vous dans les 24h ouvrées "
+"avec une réponse honnête."
+msgstr ""
+"Tell us what you have in mind. We get back to you within 24 working hours "
+"with an honest reply."
+
+#: templates/pages/contact.html:39
+msgid "Réponse en 24h ouvrées"
+msgstr "Reply within 24 working hours"
+
+#: templates/pages/contact.html:43
+msgid "Premier échange sans engagement"
+msgstr "First call, no strings attached"
+
+#: templates/pages/home.html:4 templates/pages/home.html:5
+msgid "Sécurisez votre business. Construisez votre futur."
+msgstr "Secure your business. Build your future."
+
+#: templates/pages/home.html:26
+msgid "Cybersécurité · App · IA"
+msgstr "Cybersecurity · App · AI"
+
+#: templates/pages/home.html:29
+msgid "Sécurisez votre business."
+msgstr "Secure your business."
+
+#: templates/pages/home.html:30
+msgid "Construisez votre futur."
+msgstr "Build your future."
+
+#: templates/pages/home.html:43
+msgid "Audit gratuit"
+msgstr "Free audit"
+
+#: templates/pages/home.html:49
+msgid "NIS2 compliant"
+msgstr "NIS2 compliant"
+
+#: templates/pages/home.html:50
+msgid "GDPR ready"
+msgstr "GDPR ready"
+
+#: templates/pages/home.html:60
+msgid "Nos expertises"
+msgstr "Our expertise"
+
+#: templates/pages/home.html:62
+msgid "Trois piliers. Un objectif : faire tourner votre business."
+msgstr "Three pillars. One goal: keep your business running."
+
+#: templates/pages/home.html:66
+msgid "Tous les services"
+msgstr "All services"
+
+#: templates/pages/home.html:73
+msgid ""
+"Audits, NIS2, GDPR, pentests. On trouve vos vraies faiblesses et on les "
+"corrige. Pas de FUD, juste du travail propre."
+msgstr ""
+"Audits, NIS2, GDPR, pentests. We find your real weaknesses and fix them. No "
+"FUD, just clean work."
+
+#: templates/pages/home.html:77
+msgid ""
+"Sites, e-commerce, apps SaaS sur mesure. Pas de templates génériques - "
+"chaque ligne sert votre business."
+msgstr ""
+"Custom websites, e-commerce, SaaS apps. No generic templates - every line "
+"serves your business."
+
+#: templates/pages/home.html:81
+msgid ""
+"Workflows automatisés, agents IA. Nos clients ont divisé par 3 le temps de "
+"leurs tâches répétitives."
+msgstr ""
+"Automated workflows, AI agents. Our clients cut repetitive task time by 3x."
+
+#: templates/pages/home.html:90
+msgid "Pourquoi Makeset"
+msgstr "Why Makeset"
+
+#: templates/pages/home.html:92
+msgid "Une équipe au service de votre ambition."
+msgstr "A team at the service of your ambition."
+
+#: templates/pages/home.html:96
+msgid ""
+"Vous parlez directement aux personnes qui codent. Pas de commercial, pas de "
+"chef de projet - juste l'équipe technique."
+msgstr ""
+"You talk directly to the people writing the code. No salespeople, no project "
+"managers - just the technical team."
+
+#: templates/pages/home.html:98
+msgid "Artisans du code"
+msgstr "Code craftsmen"
+
+#: templates/pages/home.html:99
+msgid ""
+"Pas de templates, pas de plugins inutiles. Chaque ligne est pensée pour la "
+"performance et la durabilité."
+msgstr ""
+"No templates, no useless plugins. Every line is designed for performance and "
+"durability."
+
+#: templates/pages/home.html:101
+msgid "Vision 360°"
+msgstr "360° vision"
+
+#: templates/pages/home.html:102
+msgid ""
+"Sécurité + dev + IA dans une même main. Un seul interlocuteur, une seule "
+"stratégie, une exécution cohérente."
+msgstr ""
+"Security + dev + AI under one roof. One contact, one strategy, one coherent "
+"execution."
+
+#: templates/pages/home.html:113
+msgid "Plus rapide grâce aux automatisations"
+msgstr "Faster thanks to automations"
+
+#: templates/pages/home.html:117
+msgid "Code maison, zéro template"
+msgstr "Built from scratch, zero templates"
+
+#: templates/pages/home.html:121
+msgid "Réponse en cas d'incident sécurité"
+msgstr "Response time on security incidents"
+
+#: templates/pages/home.html:125
+msgid "Année limite NIS2"
+msgstr "NIS2 deadline year"
+
+#: templates/pages/home.html:135
+msgid "Outil gratuit, disponible"
+msgstr "Free tool, available now"
+
+#: templates/pages/home.html:137
+msgid "MakeTrust : mesurez votre exposition en 60 secondes."
+msgstr "MakeTrust: measure your exposure in 60 seconds."
+
+#: templates/pages/home.html:140
+msgid ""
+"Entrez un domaine. On vérifie 11 points clés (DNS, DNSSEC, SPF, DKIM, DMARC, "
+"TLS, redirections, en-têtes, fuites publiques, registrar) et on vous renvoie "
+"un score sur 100 avec la liste des correctifs concrets à appliquer. Sans "
+"inscription pour le 1er scan."
+msgstr ""
+"Enter a domain. We check 11 key points (DNS, DNSSEC, SPF, DKIM, DMARC, TLS, "
+"redirects, headers, public breaches, registrar) and return a score out of "
+"100 with the list of concrete fixes to apply. No signup for the first scan."
+
+#: templates/pages/home.html:142
+msgid "Lancer un scan gratuit"
+msgstr "Run a free scan"
+
+#: templates/pages/home.html:149
+msgid "FAQ"
+msgstr "FAQ"
+
+#: templates/pages/home.html:151
+msgid "Vos questions, nos réponses directes."
+msgstr "Your questions, our direct answers."
+
+#: templates/pages/home.html:154
+msgid "Que contient un audit de sécurité ?"
+msgstr "What does a security audit include?"
+
+#: templates/pages/home.html:155
+msgid ""
+"On scanne votre infrastructure et vos applications pour les vulnérabilités, "
+"on revoit vos politiques d'accès, et vous repartez avec un rapport priorisé "
+"- pas un PDF de 200 pages que personne ne lit."
+msgstr ""
+"We scan your infrastructure and applications for vulnerabilities, review "
+"your access policies, and you walk away with a prioritized report - not a "
+"200-page PDF that nobody reads."
+
+#: templates/pages/home.html:157
+msgid "Aidez-vous avec NIS2, GDPR, ISO 27001 ?"
+msgstr "Do you help with NIS2, GDPR, ISO 27001?"
+
+#: templates/pages/home.html:158
+msgid ""
+"Oui. Gap analysis, documentation, accompagnement à la certification. On l'a "
+"fait pour d'autres, on connaît ce que les auditeurs cherchent."
+msgstr ""
+"Yes. Gap analysis, documentation, certification support. We have done it for "
+"others, we know what auditors look for."
+
+#: templates/pages/home.html:160
+msgid "Combien de temps pour un site web ?"
+msgstr "How long does a website take?"
+
+#: templates/pages/home.html:161
+msgid ""
+"Site vitrine : 2 à 4 semaines. App custom avec intégrations : 6 à 12 "
+"semaines selon la complexité. On vous donne un planning clair dès le départ."
+msgstr ""
+"Showcase site: 2 to 4 weeks. Custom app with integrations: 6 to 12 weeks "
+"depending on complexity. We give you a clear timeline upfront."
+
+#: templates/pages/home.html:163
+msgid "Quels types de tâches automatisez-vous ?"
+msgstr "What kind of tasks do you automate?"
+
+#: templates/pages/home.html:164
+msgid ""
+"Tout ce qui est répétitif : facturation, génération de rapports, classement "
+"de documents, onboarding clients, routage d'emails. Si votre équipe le fait "
+"pareil à chaque fois, c'est probablement automatisable."
+msgstr ""
+"Anything repetitive: invoicing, report generation, document classification, "
+"client onboarding, email routing. If your team does it the same way every "
+"time, it can probably be automated."
+
+#: templates/pages/home.html:166
+msgid "Travaillez-vous avec les petites entreprises ?"
+msgstr "Do you work with small businesses?"
+
+#: templates/pages/home.html:167
+msgid ""
+"C'est principalement notre cible. PME ambitieuses qui veulent un travail "
+"expert sans tarif d'agence enterprise."
+msgstr ""
+"That is mostly our target. Ambitious SMEs that want expert work without "
+"enterprise agency pricing."
+
+#: templates/pages/home.html:180
+msgid "Nos dernières analyses."
+msgstr "Our latest takes."
+
+#: templates/pages/home.html:199
+msgid "Prêt à passer à la vitesse supérieure ?"
+msgstr "Ready to step up?"
+
+#: templates/pages/home.html:200
+msgid "Lancer le projet"
+msgstr "Start the project"
+
+#: templates/pages/home.html:202
+msgid ""
+"Discutons de votre situation actuelle. Premier échange sans engagement, on "
+"regarde ensemble ce qui aurait le plus d'impact."
+msgstr ""
+"Let's talk about where you are today. First call with no strings attached, "
+"we look together at what would have the most impact."
+
+#: templates/pages/legal/cookies.html:4 templates/pages/legal/cookies.html:5
+#: templates/pages/legal/cookies.html:11
+msgid "Politique cookies"
+msgstr "Cookie policy"
+
+#: templates/pages/legal/cookies.html:6
+msgid ""
+"Détail des cookies utilisés sur le site Makeset, finalités, durées de "
+"conservation et modalités de retrait du consentement."
+msgstr ""
+"Detail of cookies used on the Makeset site, purposes, retention and how to "
+"withdraw consent."
+
+#: templates/pages/legal/cookies.html:10 templates/pages/legal/mentions.html:10
+#: templates/pages/legal/privacy.html:10 templates/pages/legal/terms.html:10
+#: templates/partials/footer.html:35
+msgid "Légal"
+msgstr "Legal"
+
+#: templates/pages/legal/cookies.html:12 templates/pages/legal/mentions.html:12
+#: templates/pages/legal/privacy.html:12 templates/pages/legal/terms.html:12
+msgid "Dernière mise à jour : 1er mai 2026."
+msgstr "Last updated: 1 May 2026."
+
+#: templates/pages/legal/cookies.html:17
+msgid "Qu'est-ce qu'un cookie ?"
+msgstr "What is a cookie?"
+
+#: templates/pages/legal/cookies.html:18
+msgid ""
+"Un cookie est un petit fichier texte déposé sur votre terminal par votre "
+"navigateur lors de la visite d'un site. Il sert à reconnaître votre "
+"navigateur, mémoriser vos préférences, ou mesurer l'usage du site."
+msgstr ""
+"A cookie is a small text file placed on your device by your browser when you "
+"visit a site. It is used to recognise your browser, remember preferences or "
+"measure site use."
+
+#: templates/pages/legal/cookies.html:22
+msgid "Notre approche"
+msgstr "Our approach"
+
+#: templates/pages/legal/cookies.html:23
+msgid ""
+"Aucun cookie de mesure d'audience ou de marketing n'est déposé tant que vous "
+"n'avez pas donné votre consentement. Le bandeau initial vous propose, à "
+"égalité visuelle, d'accepter, de refuser ou de personnaliser. Refuser ne "
+"limite pas votre accès au site et est aussi simple qu'accepter. Votre choix "
+"est conservé 12 mois, modifiable à tout moment via le lien"
+msgstr ""
+"No analytics or marketing cookie is set until you give consent. The initial "
+"banner offers, with equal visual weight, accept, refuse or customize. "
+"Refusing does not limit your access to the site and is as easy as accepting. "
+"Your choice is kept for 12 months, modifiable at any time via the"
+
+#: templates/pages/legal/cookies.html:23 templates/pages/legal/cookies.html:68
+#: templates/partials/cookie_consent.html:61 templates/partials/footer.html:62
+msgid "Préférences cookies"
+msgstr "Cookie preferences"
+
+#: templates/pages/legal/cookies.html:23
+msgid "présent en pied de page."
+msgstr "link in the footer."
+
+#: templates/pages/legal/cookies.html:27
+msgid "Cookies utilisés"
+msgstr "Cookies used"
+
+#: templates/pages/legal/cookies.html:32
+#: templates/partials/cookie_consent.html:76
+msgid "Strictement nécessaires"
+msgstr "Strictly necessary"
+
+#: templates/pages/legal/cookies.html:33
+#: templates/partials/cookie_consent.html:82
+msgid "Toujours actif"
+msgstr "Always on"
+
+#: templates/pages/legal/cookies.html:36
+msgid "Session de navigation Django. Durée : durée de la session."
+msgstr "Django browsing session. Duration: session lifetime."
+
+#: templates/pages/legal/cookies.html:37
+msgid "Protection CSRF des formulaires. Durée : 1 an."
+msgstr "CSRF protection on forms. Duration: 1 year."
+
+#: templates/pages/legal/cookies.html:38
+msgid "Langue choisie. Durée : 1 an."
+msgstr "Chosen language. Duration: 1 year."
+
+#: templates/pages/legal/cookies.html:39
+msgid "Mémorise votre choix de consentement cookies. Durée : 12 mois."
+msgstr "Stores your cookie-consent choice. Duration: 12 months."
+
+#: templates/pages/legal/cookies.html:45
+msgid "Mesure d'audience (optionnel)"
+msgstr "Audience measurement (optional)"
+
+#: templates/pages/legal/cookies.html:46
+msgid "Soumis à consentement"
+msgstr "Subject to consent"
+
+#: templates/pages/legal/cookies.html:48
+msgid ""
+"Fournisseur : Ahrefs Analytics (Singapour, conforme RGPD via mesures "
+"contractuelles équivalentes). Aucun profilage publicitaire, aucun croisement "
+"avec d'autres bases. Données agrégées et anonymisées."
+msgstr ""
+"Provider: Ahrefs Analytics (Singapore, GDPR-compliant via equivalent "
+"contractual measures). No advertising profiling, no cross-database matching. "
+"Aggregated, anonymised data."
+
+#: templates/pages/legal/cookies.html:50
+msgid "Statistiques de pages vues. Durée : jusqu'à 13 mois."
+msgstr "Page-view statistics. Duration: up to 13 months."
+
+#: templates/pages/legal/cookies.html:56
+#: templates/partials/cookie_consent.html:107
+msgid "Marketing"
+msgstr "Marketing"
+
+#: templates/pages/legal/cookies.html:57
+msgid "Aucun"
+msgstr "None"
+
+#: templates/pages/legal/cookies.html:59
+msgid ""
+"Aucun cookie marketing n'est utilisé sur ce site. Aucune régie publicitaire, "
+"aucun pixel de retargeting, aucun outil tiers de profilage."
+msgstr ""
+"No marketing cookie is used on this site. No ad network, no retargeting "
+"pixel, no third-party profiling tool."
+
+#: templates/pages/legal/cookies.html:65
+msgid "Gérer vos cookies"
+msgstr "Manage your cookies"
+
+#: templates/pages/legal/cookies.html:66
+msgid "Vous pouvez à tout moment :"
+msgstr "At any time you can:"
+
+#: templates/pages/legal/cookies.html:68
+msgid "Modifier vos choix via le bouton"
+msgstr "Change your choices via the"
+
+#: templates/pages/legal/cookies.html:68
+msgid "en pied de page"
+msgstr "button in the footer"
+
+#: templates/pages/legal/cookies.html:69
+msgid ""
+"Supprimer les cookies déjà déposés depuis les paramètres de votre navigateur "
+"(Chrome, Firefox, Safari, Edge)"
+msgstr ""
+"Delete cookies already set from your browser settings (Chrome, Firefox, "
+"Safari, Edge)"
+
+#: templates/pages/legal/cookies.html:70
+msgid "Activer le mode"
+msgstr "Enable"
+
+#: templates/pages/legal/cookies.html:70
+msgid "Do Not Track"
+msgstr "Do Not Track"
+
+#: templates/pages/legal/cookies.html:70
+msgid "de votre navigateur"
+msgstr "in your browser"
+
+#: templates/pages/legal/cookies.html:75
+msgid "Plus d'informations"
+msgstr "More information"
+
+#: templates/pages/legal/cookies.html:76
+msgid "Cette politique cookies est complétée par notre"
+msgstr "This cookie policy is complemented by our"
+
+#: templates/pages/legal/cookies.html:76 templates/pages/legal/mentions.html:28
+msgid "politique de confidentialité"
+msgstr "privacy policy"
+
+#: templates/pages/legal/cookies.html:76
+msgid "Pour toute question, écrivez à"
+msgstr "For any question, write to"
+
+#: templates/pages/legal/mentions.html:4 templates/pages/legal/mentions.html:5
+#: templates/pages/legal/mentions.html:11 templates/partials/footer.html:37
+#: templates/partials/footer.html:58
+msgid "Mentions légales"
+msgstr "Legal notice"
+
+#: templates/pages/legal/mentions.html:6
+msgid "Mentions légales et informations sur l'éditeur du site Makeset."
+msgstr "Legal notice and publisher information for the Makeset website."
+
+#: templates/pages/legal/mentions.html:17
+msgid "Hébergement"
+msgstr "Hosting"
+
+#: templates/pages/legal/mentions.html:18
+msgid ""
+"Le site est hébergé sur une infrastructure dédiée gérée par l'éditeur, dans "
+"un datacenter localisé en Union européenne. Pour toute question sur "
+"l'hébergement, écrivez à"
+msgstr ""
+"The site is hosted on a dedicated infrastructure managed by the publisher, "
+"in a datacenter located in the European Union. For any hosting question, "
+"write to"
+
+#: templates/pages/legal/mentions.html:22 templates/pages/legal/terms.html:42
+msgid "Propriété intellectuelle"
+msgstr "Intellectual property"
+
+#: templates/pages/legal/mentions.html:23
+msgid ""
+"L'ensemble des contenus présents sur ce site (textes, images, code source, "
+"illustrations, logo) est la propriété exclusive de Makeset, sauf mention "
+"contraire. Toute reproduction, représentation, modification ou exploitation, "
+"totale ou partielle, sans autorisation préalable écrite est interdite et "
+"susceptible de constituer une contrefaçon au sens des articles XI.165 et "
+"suivants du Code de droit économique belge."
+msgstr ""
+"All content on this site (texts, images, source code, illustrations, logo) "
+"is the exclusive property of Makeset, unless otherwise noted. Any "
+"reproduction, representation, modification or exploitation, in whole or in "
+"part, without prior written authorisation is forbidden and may constitute "
+"counterfeiting under articles XI.165 et seq. of the Belgian Code of Economic "
+"Law."
+
+#: templates/pages/legal/mentions.html:27
+msgid "Données personnelles"
+msgstr "Personal data"
+
+#: templates/pages/legal/mentions.html:28
+msgid "Le traitement des données personnelles est décrit en détail dans la"
+msgstr "Personal data processing is described in detail in the"
+
+#: templates/pages/legal/mentions.html:28
+msgid "L'usage des cookies est décrit dans la"
+msgstr "Cookie use is described in the"
+
+#: templates/pages/legal/mentions.html:28 templates/pages/legal/privacy.html:32
+msgid "politique cookies"
+msgstr "cookie policy"
+
+#: templates/pages/legal/mentions.html:32
+msgid "Responsabilité"
+msgstr "Liability"
+
+#: templates/pages/legal/mentions.html:33
+msgid ""
+"Makeset met tout en œuvre pour offrir aux utilisateurs des informations et "
+"outils disponibles et vérifiés, mais ne saurait être tenue responsable des "
+"erreurs, d'une absence de disponibilité des fonctionnalités ou de la "
+"présence éventuelle de virus sur son site. Les liens externes pointant vers "
+"d'autres sites ne sauraient engager la responsabilité de Makeset, qui ne "
+"contrôle pas leur contenu."
+msgstr ""
+"Makeset takes every effort to provide users with available and verified "
+"information and tools, but cannot be held liable for errors, unavailability "
+"of features or potential viruses on its site. External links to other sites "
+"do not engage Makeset's liability, as it does not control their content."
+
+#: templates/pages/legal/mentions.html:37 templates/pages/legal/terms.html:67
+msgid "Droit applicable et juridiction"
+msgstr "Applicable law and jurisdiction"
+
+#: templates/pages/legal/mentions.html:38
+msgid ""
+"Les présentes mentions légales sont soumises au droit belge. En cas de "
+"litige, et après échec de toute tentative de résolution amiable, les "
+"tribunaux francophones de l'arrondissement de Bruxelles seront seuls "
+"compétents."
+msgstr ""
+"These legal notices are governed by Belgian law. In case of dispute, and "
+"after a failed attempt at amicable resolution, the French-speaking courts of "
+"the Brussels district will have sole jurisdiction."
+
+#: templates/pages/legal/mentions.html:42
+msgid "Contact et coordonnées"
+msgstr "Contact and address"
+
+#: templates/pages/legal/mentions.html:45
+msgid "Éditeur"
+msgstr "Publisher"
+
+#: templates/pages/legal/mentions.html:47
+msgid "Avenue de la Couronne 378"
+msgstr "Avenue de la Couronne 378"
+
+#: templates/pages/legal/mentions.html:48
+msgid "1050 Ixelles, Belgique"
+msgstr "1050 Ixelles, Belgium"
+
+#: templates/pages/legal/mentions.html:49
+msgid "TVA / Numéro d'entreprise"
+msgstr "VAT / Company number"
+
+#: templates/pages/legal/mentions.html:50
+msgid "Directeur de la publication"
+msgstr "Publication director"
+
+#: templates/pages/legal/mentions.html:55
+msgid "Téléphone"
+msgstr "Phone"
+
+#: templates/pages/legal/privacy.html:4 templates/pages/legal/privacy.html:5
+#: templates/pages/legal/privacy.html:11
+msgid "Politique de confidentialité"
+msgstr "Privacy policy"
+
+#: templates/pages/legal/privacy.html:6
+msgid ""
+"Politique de confidentialité Makeset : données collectées, finalités, base "
+"légale, durée de conservation et exercice de vos droits RGPD."
+msgstr ""
+"Makeset privacy policy: data collected, purposes, legal basis, retention and "
+"how to exercise your GDPR rights."
+
+#: templates/pages/legal/privacy.html:17
+msgid "Responsable du traitement"
+msgstr "Data controller"
+
+#: templates/pages/legal/privacy.html:18
+msgid "Makeset, dont les coordonnées figurent dans les"
+msgstr "Makeset, whose contact details are in the"
+
+#: templates/pages/legal/privacy.html:18
+msgid "mentions légales"
+msgstr "legal notice"
+
+#: templates/pages/legal/privacy.html:18
+msgid ""
+"est responsable du traitement des données collectées via ce site, au sens du "
+"Règlement (UE) 2016/679 (RGPD) et de la loi belge du 30 juillet 2018 "
+"relative à la protection des personnes physiques à l'égard des traitements "
+"de données à caractère personnel."
+msgstr ""
+"is the controller of data collected via this site, within the meaning of "
+"Regulation (EU) 2016/679 (GDPR) and the Belgian law of 30 July 2018 on the "
+"protection of natural persons with regard to personal-data processing."
+
+#: templates/pages/legal/privacy.html:22
+msgid "Données collectées et finalités"
+msgstr "Data collected and purposes"
+
+#: templates/pages/legal/privacy.html:25
+msgid "Formulaire de contact"
+msgstr "Contact form"
+
+#: templates/pages/legal/privacy.html:26
+msgid ""
+"Lorsque vous remplissez le formulaire, nous collectons : votre nom, email, "
+"entreprise (facultatif), service concerné, message, ainsi que des "
+"métadonnées techniques (adresse IP, user-agent, page de provenance, langue) "
+"pour la traçabilité et la lutte contre le spam."
+msgstr ""
+"When you fill the form we collect: your name, email, company (optional), "
+"topic, message, plus technical metadata (IP address, user-agent, referer, "
+"language) for traceability and spam prevention."
+
+#: templates/pages/legal/privacy.html:27
+msgid "Finalité"
+msgstr "Purpose"
+
+#: templates/pages/legal/privacy.html:27
+msgid "répondre à votre demande et conserver une trace de l'échange."
+msgstr "answering your request and keeping a record of the exchange."
+
+#: templates/pages/legal/privacy.html:28 templates/pages/legal/privacy.html:33
+msgid "Base légale"
+msgstr "Legal basis"
+
+#: templates/pages/legal/privacy.html:28
+msgid ""
+"exécution de mesures précontractuelles à votre demande (article 6.1.b RGPD) "
+"et intérêt légitime à sécuriser nos formulaires (article 6.1.f)."
+msgstr ""
+"performance of pre-contractual measures at your request (article 6.1.b GDPR) "
+"and legitimate interest in securing our forms (article 6.1.f)."
+
+#: templates/pages/legal/privacy.html:31
+msgid "Cookies et mesure d'audience"
+msgstr "Cookies and audience measurement"
+
+#: templates/pages/legal/privacy.html:32
+msgid ""
+"Avec votre consentement, des cookies de mesure d'audience (Ahrefs Analytics) "
+"sont déposés. Ils ne profilent aucun visiteur et ne sont pas partagés avec "
+"des tiers à des fins publicitaires. Voir la"
+msgstr ""
+"With your consent, audience-measurement cookies (Ahrefs Analytics) are "
+"placed. They do not profile any visitor and are not shared with third "
+"parties for advertising. See the"
+
+#: templates/pages/legal/privacy.html:32
+msgid "pour le détail."
+msgstr "for details."
+
+#: templates/pages/legal/privacy.html:33
+msgid "consentement (article 6.1.a RGPD)."
+msgstr "consent (article 6.1.a GDPR)."
+
+#: templates/pages/legal/privacy.html:39
+msgid "Destinataires"
+msgstr "Recipients"
+
+#: templates/pages/legal/privacy.html:40
+msgid ""
+"Vos données sont traitées exclusivement par l'équipe Makeset. Aucune donnée "
+"n'est vendue ni transmise à des tiers à des fins commerciales. Les seuls "
+"sous-traitants sont nos prestataires techniques (hébergement EU, fournisseur "
+"SMTP, fournisseur de mesure d'audience), liés par un accord conforme à "
+"l'article 28 RGPD."
+msgstr ""
+"Your data is processed exclusively by the Makeset team. No data is sold or "
+"transferred to third parties for commercial purposes. Our only processors "
+"are our technical providers (EU hosting, SMTP provider, analytics provider), "
+"bound by an agreement compliant with article 28 GDPR."
+
+#: templates/pages/legal/privacy.html:44
+msgid "Transferts hors UE"
+msgstr "Transfers outside the EU"
+
+#: templates/pages/legal/privacy.html:45
+msgid ""
+"Aucun transfert de données vers un pays hors Union européenne n'est effectué "
+"pour les données du formulaire. Les outils de mesure d'audience sont "
+"hébergés dans l'UE."
+msgstr ""
+"No transfer of data outside the European Union is performed for form data. "
+"Audience-measurement tools are hosted in the EU."
+
+#: templates/pages/legal/privacy.html:49
+msgid "Durée de conservation"
+msgstr "Retention period"
+
+#: templates/pages/legal/privacy.html:51
+msgid ""
+"Messages de contact : 3 ans à compter du dernier échange, puis suppression "
+"ou archivage anonymisé."
+msgstr ""
+"Contact messages: 3 years from the last exchange, then deletion or "
+"anonymised archival."
+
+#: templates/pages/legal/privacy.html:52
+msgid "Logs techniques (IP, user-agent) : 12 mois maximum."
+msgstr "Technical logs (IP, user-agent): 12 months maximum."
+
+#: templates/pages/legal/privacy.html:53
+msgid "Cookies de consentement : 12 mois, puis re-consentement demandé."
+msgstr "Consent cookies: 12 months, then renewed consent requested."
+
+#: templates/pages/legal/privacy.html:58
+msgid "Vos droits"
+msgstr "Your rights"
+
+#: templates/pages/legal/privacy.html:59
+msgid ""
+"Conformément aux articles 15 à 22 du RGPD, vous disposez des droits "
+"suivants :"
+msgstr "Under articles 15 to 22 of GDPR you have the following rights:"
+
+#: templates/pages/legal/privacy.html:61
+msgid "Accès"
+msgstr "Access"
+
+#: templates/pages/legal/privacy.html:61
+msgid ""
+"obtenir confirmation que des données vous concernant sont traitées et en "
+"obtenir copie."
+msgstr ""
+"obtain confirmation that data about you is being processed and a copy of it."
+
+#: templates/pages/legal/privacy.html:62
+msgid "Rectification"
+msgstr "Rectification"
+
+#: templates/pages/legal/privacy.html:62
+msgid "faire corriger des données inexactes."
+msgstr "have inaccurate data corrected."
+
+#: templates/pages/legal/privacy.html:63
+msgid "Effacement"
+msgstr "Erasure"
+
+#: templates/pages/legal/privacy.html:63
+msgid "demander la suppression de vos données dans les cas prévus par la loi."
+msgstr "request deletion of your data in the cases provided by law."
+
+#: templates/pages/legal/privacy.html:64
+msgid "Limitation"
+msgstr "Restriction"
+
+#: templates/pages/legal/privacy.html:64
+msgid "demander que le traitement soit suspendu temporairement."
+msgstr "request that processing be temporarily suspended."
+
+#: templates/pages/legal/privacy.html:65
+msgid "Portabilité"
+msgstr "Portability"
+
+#: templates/pages/legal/privacy.html:65
+msgid "récupérer vos données dans un format structuré et lisible par machine."
+msgstr "retrieve your data in a structured, machine-readable format."
+
+#: templates/pages/legal/privacy.html:66
+msgid "Opposition"
+msgstr "Objection"
+
+#: templates/pages/legal/privacy.html:66
+msgid "vous opposer au traitement fondé sur l'intérêt légitime."
+msgstr "object to processing based on legitimate interest."
+
+#: templates/pages/legal/privacy.html:67
+msgid "Retrait du consentement"
+msgstr "Consent withdrawal"
+
+#: templates/pages/legal/privacy.html:67
+msgid ""
+"à tout moment, sans rétroactivité, via le bouton « Préférences cookies » en "
+"pied de page."
+msgstr ""
+"at any time, without retroactive effect, via the « Cookie preferences » "
+"button in the footer."
+
+#: templates/pages/legal/privacy.html:69
+msgid "Pour exercer ces droits, écrivez à"
+msgstr "To exercise these rights, write to"
+
+#: templates/pages/legal/privacy.html:69
+msgid ""
+"Nous répondons dans un délai d'un mois (extensible à 3 mois pour les "
+"demandes complexes)."
+msgstr ""
+"We reply within one month (extendable to 3 months for complex requests)."
+
+#: templates/pages/legal/privacy.html:73
+msgid "Réclamation"
+msgstr "Complaint"
+
+#: templates/pages/legal/privacy.html:74
+msgid ""
+"Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire "
+"une réclamation auprès de l'Autorité de protection des données belge (APD/"
+"GBA), 35 rue de la Presse, 1000 Bruxelles,"
+msgstr ""
+"If you believe your rights are not being respected, you may lodge a "
+"complaint with the Belgian Data Protection Authority (APD/GBA), 35 rue de la "
+"Presse, 1000 Brussels,"
+
+#: templates/pages/legal/privacy.html:74
+msgid ""
+"Vous pouvez aussi vous adresser à l'autorité de contrôle de votre pays de "
+"résidence."
+msgstr ""
+"You may also contact the supervisory authority of your country of residence."
+
+#: templates/pages/legal/privacy.html:78
+msgid "Sécurité"
+msgstr "Security"
+
+#: templates/pages/legal/privacy.html:79
+msgid ""
+"Nous appliquons des mesures techniques et organisationnelles proportionnées "
+"au risque : chiffrement HTTPS partout, headers de sécurité (CSP, HSTS), rate-"
+"limiting des formulaires, sauvegardes chiffrées, mises à jour régulières et "
+"accès restreint aux données. Tout incident de sécurité affectant vos données "
+"vous serait notifié dans les délais prévus par l'article 34 RGPD."
+msgstr ""
+"We apply technical and organisational measures proportionate to the risk: "
+"HTTPS everywhere, security headers (CSP, HSTS), form rate-limiting, "
+"encrypted backups, regular updates and restricted data access. Any security "
+"incident affecting your data will be notified within the timeframe set by "
+"article 34 GDPR."
+
+#: templates/pages/legal/privacy.html:83
+msgid "Modifications"
+msgstr "Changes"
+
+#: templates/pages/legal/privacy.html:84
+msgid ""
+"Cette politique peut évoluer. La date de dernière mise à jour est indiquée "
+"en haut. Pour toute évolution majeure, vous serez informé via le bandeau "
+"cookies ou un avis sur le site."
+msgstr ""
+"This policy may evolve. The last-update date is shown at the top. Major "
+"changes will be notified via the cookie banner or a site notice."
+
+#: templates/pages/legal/terms.html:4 templates/pages/legal/terms.html:5
+#: templates/pages/legal/terms.html:11
+msgid "Conditions générales"
+msgstr "Terms and conditions"
+
+#: templates/pages/legal/terms.html:6
+msgid ""
+"Conditions générales d'utilisation et de service de Makeset : prestations, "
+"devis, paiement, propriété intellectuelle, responsabilité, droit applicable."
+msgstr ""
+"Makeset terms of use and service: deliverables, quotes, payment, IP, "
+"liability, applicable law."
+
+#: templates/pages/legal/terms.html:17
+msgid "Objet"
+msgstr "Purpose"
+
+#: templates/pages/legal/terms.html:18
+msgid ""
+"Les présentes conditions générales (CG) régissent (i) l'utilisation du site "
+"makeset.be et (ii) les prestations fournies par Makeset à ses clients en "
+"cybersécurité, développement web, automatisation et support. Toute commande "
+"implique l'acceptation sans réserve des CG en vigueur à la date de la "
+"commande."
+msgstr ""
+"These terms govern (i) the use of makeset.be and (ii) the services provided "
+"by Makeset in cybersecurity, web development, automation and support. Any "
+"order implies unconditional acceptance of the terms in force at the date of "
+"the order."
+
+#: templates/pages/legal/terms.html:22
+msgid "Devis et commande"
+msgstr "Quote and order"
+
+#: templates/pages/legal/terms.html:23
+msgid ""
+"Chaque mission donne lieu à un devis écrit décrivant le périmètre, les "
+"livrables, le calendrier et le prix. Le devis est valable 30 jours sauf "
+"mention contraire. La commande est ferme à compter de la signature ou de la "
+"confirmation écrite par le client. Toute modification de périmètre fera "
+"l'objet d'un avenant."
+msgstr ""
+"Each engagement is preceded by a written quote describing scope, "
+"deliverables, schedule and price. Quotes are valid for 30 days unless "
+"otherwise stated. Orders are firm upon signature or written confirmation by "
+"the client. Any scope change is documented in an amendment."
+
+#: templates/pages/legal/terms.html:27
+msgid "Prix et paiement"
+msgstr "Price and payment"
+
+#: templates/pages/legal/terms.html:28
+#, python-format
+msgid ""
+"Les prix sont exprimés en euros HT. La TVA belge applicable est ajoutée "
+"selon le taux en vigueur. Sauf accord particulier, les prestations sont "
+"facturées comme suit : 30 %% à la commande, 70 %% à la livraison ; les "
+"contrats de support sont facturés mensuellement ou annuellement à terme à "
+"échoir. Le paiement intervient sous 30 jours à compter de la facture. Tout "
+"retard donne lieu à un intérêt de retard au taux légal et à une indemnité "
+"forfaitaire de 40 € pour frais de recouvrement, conformément à la loi du 2 "
+"août 2002."
+msgstr ""
+"Prices are in euros excluding VAT. Belgian VAT is added at the applicable "
+"rate. Unless agreed otherwise, services are invoiced as follows: 30%% on "
+"order, 70%% on delivery; support contracts are billed monthly or yearly in "
+"advance. Payment is due 30 days after invoice. Late payment triggers "
+"statutory interest and a €40 lump-sum recovery fee, in accordance with the "
+"law of 2 August 2002."
+
+#: templates/pages/legal/terms.html:32
+msgid "Délais et obligations du client"
+msgstr "Timelines and client obligations"
+
+#: templates/pages/legal/terms.html:33
+msgid ""
+"Les délais annoncés sont des estimations basées sur la collaboration normale "
+"du client. Le client s'engage à fournir en temps utile les informations, "
+"accès et validations nécessaires. Tout retard imputable au client peut "
+"entraîner un report équivalent du calendrier."
+msgstr ""
+"Announced timelines are estimates based on normal client cooperation. The "
+"client commits to providing timely information, access and validations. "
+"Delays attributable to the client may extend the timeline accordingly."
+
+#: templates/pages/legal/terms.html:37
+msgid "Livraison et acceptation"
+msgstr "Delivery and acceptance"
+
+#: templates/pages/legal/terms.html:38
+msgid ""
+"Les livrables sont déposés via le canal convenu (dépôt Git, e-mail, accès "
+"SaaS). Le client dispose de 10 jours ouvrés pour formuler des réserves. À "
+"défaut, les livrables sont réputés acceptés. Une réception conditionnelle "
+"peut être prévue pour les livrables complexes."
+msgstr ""
+"Deliverables are provided via the agreed channel (Git repo, e-mail, SaaS "
+"access). The client has 10 working days to raise reservations. Otherwise, "
+"deliverables are deemed accepted. Conditional acceptance may be set for "
+"complex deliverables."
+
+#: templates/pages/legal/terms.html:43
+msgid ""
+"À l'issue du paiement intégral, le client acquiert un droit d'utilisation "
+"non exclusif sur les livrables conçus spécifiquement pour lui. Makeset "
+"conserve la propriété de ses composants génériques, méthodologies, savoir-"
+"faire et bibliothèques préexistantes ; un droit d'usage perpétuel et "
+"irrévocable est concédé au client pour leur utilisation au sein des "
+"livrables. Makeset peut faire mention du client dans ses références sauf "
+"opposition écrite."
+msgstr ""
+"Upon full payment, the client gains a non-exclusive right to use the "
+"deliverables designed specifically for them. Makeset retains ownership of "
+"its generic components, methodologies, know-how and pre-existing libraries; "
+"a perpetual irrevocable right of use is granted to the client for them "
+"within the deliverables. Makeset may name the client in references unless "
+"objected to in writing."
+
+#: templates/pages/legal/terms.html:47 templates/partials/footer.html:38
+#: templates/partials/footer.html:59
+msgid "Confidentialité"
+msgstr "Privacy"
+
+#: templates/pages/legal/terms.html:48
+msgid ""
+"Chaque partie s'engage à préserver la confidentialité des informations "
+"échangées dans le cadre du contrat, pendant toute la durée des prestations "
+"et 3 ans après leur fin. Les obligations relatives aux données personnelles "
+"sont régies par un accord de sous-traitance distinct (article 28 RGPD)."
+msgstr ""
+"Each party undertakes to preserve the confidentiality of information "
+"exchanged under the contract, throughout the engagement and for 3 years "
+"after its end. Obligations relating to personal data are governed by a "
+"separate processing agreement (article 28 GDPR)."
+
+#: templates/pages/legal/terms.html:52
+msgid "Garantie et responsabilité"
+msgstr "Warranty and liability"
+
+#: templates/pages/legal/terms.html:53
+msgid ""
+"Makeset s'engage à exécuter ses prestations selon les règles de l'art et "
+"avec diligence. Sa responsabilité est limitée aux dommages directs prouvés "
+"et plafonnée au montant total payé par le client au titre de la prestation "
+"concernée. Sont exclus les dommages indirects (perte de chiffre d'affaires, "
+"perte d'image, perte de données après livraison). Aucune limitation n'est "
+"applicable en cas de faute lourde, dol ou atteinte à l'intégrité physique."
+msgstr ""
+"Makeset undertakes to perform its services with state-of-the-art diligence. "
+"Its liability is limited to proven direct damages and capped at the total "
+"amount paid by the client for the relevant engagement. Indirect damages are "
+"excluded (loss of revenue, loss of reputation, loss of data after delivery). "
+"No limitation applies in case of gross fault, fraud or harm to physical "
+"integrity."
+
+#: templates/pages/legal/terms.html:57
+msgid "Force majeure"
+msgstr "Force majeure"
+
+#: templates/pages/legal/terms.html:58
+msgid ""
+"Aucune des parties ne pourra être tenue responsable d'un manquement "
+"résultant d'un cas de force majeure au sens de l'article 5.226 du Code civil "
+"belge (catastrophes naturelles, conflits, pandémies, défaillances majeures "
+"d'infrastructures externes, etc.)."
+msgstr ""
+"Neither party will be liable for a breach caused by force majeure within the "
+"meaning of article 5.226 of the Belgian Civil Code (natural disasters, "
+"conflicts, pandemics, major failures of external infrastructures, etc.)."
+
+#: templates/pages/legal/terms.html:62
+msgid "Résiliation"
+msgstr "Termination"
+
+#: templates/pages/legal/terms.html:63
+msgid ""
+"Tout contrat peut être résilié de plein droit par l'une des parties en cas "
+"de manquement grave non remédié 30 jours après mise en demeure. Les contrats "
+"de support sont résiliables avec préavis de 60 jours par tout moyen écrit."
+msgstr ""
+"Any contract may be terminated by either party in case of serious breach not "
+"remedied 30 days after formal notice. Support contracts may be terminated "
+"with 60 days' written notice."
+
+#: templates/pages/legal/terms.html:68
+msgid ""
+"Les CG sont soumises au droit belge. Tout litige sera soumis à la compétence "
+"exclusive des tribunaux francophones de l'arrondissement de Bruxelles, sans "
+"préjudice des dispositions impératives applicables aux consommateurs."
+msgstr ""
+"These terms are governed by Belgian law. Any dispute will fall under the "
+"exclusive jurisdiction of the French-speaking courts of the Brussels "
+"district, without prejudice to mandatory consumer-protection rules."
+
+#: templates/pages/maketrust/landing.html:4
+msgid "MakeTrust - Score de sécurité de votre domaine en 60 secondes"
+msgstr "MakeTrust - Your domain's security score in 60 seconds"
+
+#: templates/pages/maketrust/landing.html:5
+msgid "MakeTrust - Score de sécurité de votre domaine"
+msgstr "MakeTrust - Your domain's security score"
+
+#: templates/pages/maketrust/landing.html:6
+msgid ""
+"Entrez un domaine. En 60 secondes, MakeTrust audite votre DNS, votre email, "
+"vos certificats et vos en-têtes HTTP, puis vous dit exactement quoi corriger."
+msgstr ""
+"Type a domain. In 60 seconds, MakeTrust audits your DNS, your email, your "
+"certificates, and your HTTP headers, then tells you exactly what to fix."
+
+#: templates/pages/maketrust/landing.html:7
+msgid ""
+"Scan gratuit de votre domaine en 60 secondes : DNS, DNSSEC, SPF, DKIM, "
+"DMARC, TLS, en-têtes HTTP, fuites publiques. Score sur 100 et correctifs "
+"concrets, sans inscription."
+msgstr ""
+"Free 60-second scan of your domain: DNS, DNSSEC, SPF, DKIM, DMARC, TLS, HTTP "
+"headers, public breaches. Score out of 100 and concrete fixes, no signup "
+"required."
+
+#: templates/pages/maketrust/landing.html:15
+msgid "Votre domaine est-il"
+msgstr "Is your domain"
+
+#: templates/pages/maketrust/landing.html:15
+msgid "vraiment sécurisé"
+msgstr "actually secure"
+
+#: templates/pages/maketrust/landing.html:18
+msgid ""
+"Entrez un domaine. En 60 secondes on audite votre DNS, votre email, vos "
+"certificats et vos en-têtes HTTP. On vous dit exactement quoi corriger, dans "
+"un langage clair."
+msgstr ""
+"Type a domain. In 60 seconds we audit your DNS, your email, your "
+"certificates, and your HTTP headers. We tell you exactly what to fix, in "
+"plain language."
+
+#: templates/pages/maketrust/landing.html:44
+#, python-format
+msgid "Vous relancez un scan sur <strong>%(domain)s</strong>."
+msgstr "You are running another scan on <strong>%(domain)s</strong>."
+
+#: templates/pages/maketrust/landing.html:46
+msgid "Vous relancez un scan."
+msgstr "You are running this scan again."
+
+#: templates/pages/maketrust/landing.html:55
+msgid "Quel domaine voulez-vous scanner ?"
+msgstr "Which domain do you want to scan?"
+
+#: templates/pages/maketrust/landing.html:59
+msgid ""
+"Domaine ou adresse email. Si vous entrez un email, on extrait le domaine "
+"automatiquement, utile pour les setups email-only."
+msgstr ""
+"Domain or email address. If you enter an email, we extract the domain "
+"automatically — useful for email-only setups."
+
+#: templates/pages/maketrust/landing.html:61
+msgid "Aide sur le champ"
+msgstr "Help on this field"
+
+#: templates/pages/maketrust/landing.html:91
+msgid ""
+"Un email pour limiter les rescans automatisés et, le cas échéant, vous "
+"recontacter au sujet de vos résultats."
+msgstr ""
+"An email to throttle automated rescans and, if needed, contact you about "
+"your results."
+
+#: templates/pages/maketrust/landing.html:91
+msgid ""
+"Vous avez déjà scanné dans les 24 dernières heures. Laissez votre email pour "
+"autoriser un nouveau scan."
+msgstr ""
+"You've already scanned in the last 24 hours. Leave your email to authorise "
+"another scan."
+
+#: templates/pages/maketrust/landing.html:93
+msgid "Pourquoi on demande votre email"
+msgstr "Why we ask for your email"
+
+#: templates/pages/maketrust/landing.html:116
+msgid "Lancer le scan"
+msgstr "Launch the scan"
+
+#: templates/pages/maketrust/landing.html:120
+msgid ""
+"En lançant un scan, vous garantissez être autorisé à analyser ce domaine et "
+"vous acceptez notre <a href=\"/confidentialite/\" class=\"underline "
+"hover:text-primary transition\">politique de confidentialité</a>. On "
+"conserve le domaine scanné et, le cas échéant, votre email."
+msgstr ""
+"By launching a scan, you guarantee you are authorised to analyse this domain "
+"and accept our <a href=\"/en/privacy/\" class=\"underline hover:text-primary "
+"transition\">privacy policy</a>. We keep the scanned domain and, if "
+"provided, your email."
+
+#: templates/pages/maketrust/landing.html:127
+#: templates/pages/tools/index.html:69
+msgid "60 secondes"
+msgstr "60 seconds"
+
+#: templates/pages/maketrust/landing.html:131
+#: templates/pages/tools/index.html:70
+msgid "Aucun test intrusif"
+msgstr "No intrusive tests"
+
+#: templates/pages/maketrust/landing.html:135
+msgid "Sans inscription"
+msgstr "No sign-up"
+
+#: templates/pages/maketrust/scan_progress.html:4
+#: templates/pages/maketrust/scan_progress.html:5
+#: templates/partials/maketrust/scan_progress.html:59
+msgid "Scan en cours"
+msgstr "Scan running"
+
+#: templates/pages/maketrust/scan_progress.html:6
+msgid "Scan en cours…"
+msgstr "Scan running…"
+
+#: templates/pages/maketrust/scan_progress.html:14
+msgid "Analyse en cours"
+msgstr "Analysing"
+
+#: templates/pages/maketrust/scan_progress.html:18
+msgid "On vérifie votre domaine, ça prend environ une minute."
+msgstr "We're checking your domain, it takes about a minute."
+
+#: templates/pages/maketrust/scan_result.html:4
+msgid "Résultat"
+msgstr "Result"
+
+#: templates/pages/maketrust/scan_result.html:5
+#, python-format
+msgid "%(domain)s : score %(grade)s sur MakeTrust (%(score)s/100)"
+msgstr "%(domain)s: %(grade)s score on MakeTrust (%(score)s/100)"
+
+#: templates/pages/maketrust/scan_result.html:6
+msgid ""
+"Audit gratuit de la sécurité d'un site web : DNS, email (SPF/DKIM/DMARC), "
+"TLS, en-têtes HTTP, cookies, RDAP. Testez le vôtre en 60 secondes."
+msgstr ""
+"Free website security audit: DNS, email (SPF/DKIM/DMARC), TLS, HTTP headers, "
+"cookies, RDAP. Test yours in 60 seconds."
+
+#: templates/pages/maketrust/scan_result.html:9
+#: templates/pages/maketrust/scan_result.html:10
+#, python-format
+msgid "Aperçu du site %(domain)s scanné par MakeTrust"
+msgstr "Preview of %(domain)s scanned by MakeTrust"
+
+#: templates/pages/maketrust/scan_result.html:11
+#, python-format
+msgid ""
+"Score MakeTrust : %(grade)s (%(score)s/100) pour %(domain)s. Audit DNS, "
+"email, TLS, en-têtes HTTP."
+msgstr ""
+"MakeTrust score: %(grade)s (%(score)s/100) for %(domain)s. DNS, email, TLS "
+"and HTTP-headers audit."
+
+#: templates/pages/maketrust/scan_result.html:46
+msgid "Email-only"
+msgstr "Email-only"
+
+#: templates/pages/maketrust/scan_result.html:47
+msgid "Parking"
+msgstr "Parked"
+
+#: templates/pages/maketrust/scan_result.html:48
+msgid "En vente"
+msgstr "For sale"
+
+#: templates/pages/maketrust/scan_result.html:49
+msgid "Page par défaut"
+msgstr "Default page"
+
+#: templates/pages/maketrust/scan_result.html:50
+msgid "Non-HTML"
+msgstr "Non-HTML"
+
+#: templates/pages/maketrust/scan_result.html:51
+msgid "Redirection"
+msgstr "Redirect"
+
+#: templates/pages/maketrust/scan_result.html:52
+msgid "Injoignable"
+msgstr "Unreachable"
+
+#: templates/pages/maketrust/scan_result.html:53
+msgid "Inhabituel"
+msgstr "Unusual"
+
+#: templates/pages/maketrust/scan_result.html:61
+#, python-format
+msgid ""
+"<strong>%(domain)s</strong> reçoit du mail mais n'héberge pas de site web."
+msgstr "<strong>%(domain)s</strong> accepts email but does not host a website."
+
+#: templates/pages/maketrust/scan_result.html:62
+msgid "Ce domaine est en parking, il n'héberge pas un site web actif."
+msgstr "This domain is parked — it does not host an active website."
+
+#: templates/pages/maketrust/scan_result.html:63
+msgid "Ce domaine est mis en vente, il n'héberge pas un site web actif."
+msgstr "This domain is for sale — it does not host an active website."
+
+#: templates/pages/maketrust/scan_result.html:64
+msgid ""
+"Le serveur affiche la page par défaut de l'hébergeur, le site n'a pas encore "
+"été configuré."
+msgstr ""
+"The server shows the hosting provider's default page; the site hasn't been "
+"configured yet."
+
+#: templates/pages/maketrust/scan_result.html:65
+msgid "Le serveur a répondu mais ne sert pas une page HTML."
+msgstr "The server responded but does not serve an HTML page."
+
+#: templates/pages/maketrust/scan_result.html:66
+#, python-format
+msgid ""
+"<strong>%(domain)s</strong> redirige vers une autre adresse, c'est souvent "
+"la version www. ou une page d'accueil sur un chemin."
+msgstr ""
+"<strong>%(domain)s</strong> redirects to another address, often the www. "
+"variant or a homepage on a sub-path."
+
+#: templates/pages/maketrust/scan_result.html:67
+msgid "Le site n'a pas pu être joint en HTTPS."
+msgstr "The site could not be reached over HTTPS."
+
+#: templates/pages/maketrust/scan_result.html:68
+msgid "Le serveur a répondu de façon inhabituelle."
+msgstr "The server responded in an unusual way."
+
+#: templates/pages/maketrust/scan_result.html:73
+msgid ""
+"Les checks web ne s'appliquent pas. Concentrez-vous sur la section Sécurité "
+"email plus bas."
+msgstr ""
+"Web checks don't apply here. Focus on the Email security section below."
+
+#: templates/pages/maketrust/scan_result.html:74
+msgid ""
+"Les checks DNS et email restent valides, mais les checks HTTP n'apportent "
+"pas grand-chose dans cet état."
+msgstr ""
+"DNS and email checks are still valid, but HTTP checks don't add much in this "
+"state."
+
+#: templates/pages/maketrust/scan_result.html:114
+msgid "Domaine analysé"
+msgstr "Scanned domain"
+
+#: templates/pages/maketrust/scan_result.html:120
+#, python-format
+msgid "Scanné le %(finished)s"
+msgstr "Scanned on %(finished)s"
+
+#: templates/pages/maketrust/scan_result.html:125
+#, python-format
+msgid "Mieux que %(pct)s %% des domaines scannés"
+msgstr "Better than %(pct)s%% of scanned domains"
+
+#: templates/pages/maketrust/scan_result.html:153
+msgid "IP publique testée"
+msgstr "Public IP tested"
+
+#: templates/pages/maketrust/scan_result.html:198
+#, python-format
+msgid "Aperçu du site %(d)s"
+msgstr "Preview of %(d)s"
+
+#: templates/pages/maketrust/scan_result.html:229
+msgid "critique"
+msgstr "critical"
+
+#: templates/pages/maketrust/scan_result.html:230
+msgid "élevée"
+msgstr "high"
+
+#: templates/pages/maketrust/scan_result.html:231
+msgid "moyenne"
+msgstr "medium"
+
+#: templates/pages/maketrust/scan_result.html:232
+msgid "faible"
+msgstr "low"
+
+#: templates/pages/maketrust/scan_result.html:248
+msgid "À traiter en premier"
+msgstr "Top priorities"
+
+#: templates/pages/maketrust/scan_result.html:250
+msgid "Trois actions qui changent votre score le plus vite."
+msgstr "Three actions that move your score the most."
+
+#: templates/pages/maketrust/scan_result.html:296
+msgid "Voir le correctif"
+msgstr "See the fix"
+
+#: templates/pages/maketrust/scan_result.html:312
+msgid "Détail complet"
+msgstr "Full breakdown"
+
+#: templates/pages/maketrust/scan_result.html:314
+msgid "Tout ce qu'on a vérifié, regroupé par thème."
+msgstr "Everything we checked, grouped by theme."
+
+#: templates/pages/maketrust/scan_result.html:338
+msgid "Ignoré"
+msgstr "Skipped"
+
+#: templates/pages/maketrust/scan_result.html:355
+#, python-format
+msgid "%(n)s point à corriger"
+msgid_plural "%(n)s points à corriger"
+msgstr[0] "How to fix"
+msgstr[1] "How to fix"
+
+#: templates/pages/maketrust/scan_result.html:357
+msgid "Tout est en ordre"
+msgstr "Everything looks good"
+
+#: templates/pages/maketrust/scan_result.html:376
+msgid "Aucun site web sur ce domaine"
+msgstr "No website on this domain"
+
+#: templates/pages/maketrust/scan_result.html:379
+msgid ""
+"Les checks web (TLS, en-têtes, redirections, cookies) ne s'appliquent pas "
+"ici. La section Sécurité email plus haut contient ce qui compte pour vous."
+msgstr ""
+"The web checks (TLS, headers, redirects, cookies) don't apply here. The "
+"Email security section above is where it matters for you."
+
+#: templates/pages/maketrust/scan_result.html:448
+msgid "Comment corriger"
+msgstr "How to fix"
+
+#: templates/pages/maketrust/scan_result.html:459
+msgid "Détails techniques"
+msgstr "Technical details"
+
+#: templates/pages/maketrust/scan_result.html:483
+msgid "Aucun résultat à afficher."
+msgstr "No result to display."
+
+#: templates/pages/maketrust/scan_result.html:493
+msgid "On vous aide à corriger tout ça ?"
+msgstr "Want a hand fixing all this?"
+
+#: templates/pages/maketrust/scan_result.html:494
+msgid "Parlons-en"
+msgstr "Let's talk"
+
+#: templates/pages/maketrust/scan_result.html:496
+msgid ""
+"Notre équipe peut vous aider à mettre en place SPF/DKIM/DMARC, durcir vos en-"
+"têtes, activer DNSSEC, et planifier des re-scans automatiques. Premier "
+"échange sans engagement."
+msgstr ""
+"Our team can help you set up SPF/DKIM/DMARC, harden your headers, enable "
+"DNSSEC, and schedule automatic re-scans. First chat with no strings attached."
+
+#: templates/pages/maketrust/scan_result.html:502
+msgid "Scanner un autre domaine"
+msgstr "Scan another domain"
+
+#: templates/pages/maketrust/scan_result.html:523
+msgid "Relancer un scan sur ce domaine avec les mêmes paramètres"
+msgstr "Rescan this domain with the same parameters"
+
+#: templates/pages/maketrust/scan_result.html:524
+#: templates/pages/maketrust/scan_result.html:526
+#: templates/partials/maketrust/rescan_modal.html:45
+msgid "Relancer le scan"
+msgstr "Rescan"
+
+#: templates/pages/services/cybersecurite.html:4
+msgid "Cybersécurité PME - Audits, NIS2, GDPR"
+msgstr "SME Cybersecurity - Audits, NIS2, GDPR"
+
+#: templates/pages/services/cybersecurite.html:5
+msgid "Cybersécurité pour PME"
+msgstr "Cybersecurity for SMEs"
+
+#: templates/pages/services/cybersecurite.html:6
+msgid ""
+"Audits de sécurité, NIS2, GDPR, ISO 27001, SOC 2, formation, gestion des "
+"vulnérabilités, réponse incident. On trouve vos vraies faiblesses et on les "
+"corrige."
+msgstr ""
+"Security audits, NIS2, GDPR, ISO 27001, SOC 2, training, vulnerability "
+"management, incident response. We find your real weaknesses and fix them."
+
+#: templates/pages/services/cybersecurite.html:15
+#: templates/pages/services/ia_automation.html:15
+#: templates/pages/services/index.html:15
+#: templates/pages/services/index.html:36
+#: templates/pages/services/support.html:15
+#: templates/pages/services/web.html:15 templates/partials/footer.html:15
+#: templates/partials/nav.html:12 templates/partials/nav.html:45
+msgid "Services"
+msgstr "Services"
+
+#: templates/pages/services/cybersecurite.html:49
+msgid "Trouvez vos failles avant les attaquants."
+msgstr "Find your weaknesses before the attackers do."
+
+#: templates/pages/services/cybersecurite.html:50
+msgid ""
+"La plupart des entreprises ne pensent à la sécurité que lorsque quelque "
+"chose tourne mal. On corrige ça avant que ça vous coûte. Audits, conformité, "
+"formation, réponse incident. Adaptés à votre risque réel, pas à une "
+"checklist générique."
+msgstr ""
+"Most companies only think about security after something goes wrong. We fix "
+"that before it costs you. Audits, compliance, training, incident response. "
+"Tailored to your actual risk, not a generic checklist."
+
+#: templates/pages/services/cybersecurite.html:56
+#: templates/pages/services/ia_automation.html:43
+msgid "Pourquoi maintenant"
+msgstr "Why now"
+
+#: templates/pages/services/cybersecurite.html:58
+msgid "Le coût d'une cyberattaque dépasse largement celui de la prévention."
+msgstr "The cost of a cyberattack vastly outweighs the cost of prevention."
+
+#: templates/pages/services/cybersecurite.html:63
+msgid ""
+"des entreprises mettent la clé sous la porte dans les 6 mois suivant une "
+"cyberattaque."
+msgstr "of companies go out of business within six months of a cyberattack."
+
+#: templates/pages/services/cybersecurite.html:66
+msgid ""
+"subissent un impact d'au moins un mois, avec une perte de revenus "
+"significative que l'attaque ait abouti ou non."
+msgstr ""
+"report an impact of at least one month, with significant revenue loss "
+"whether or not the attack succeeded."
+
+#: templates/pages/services/cybersecurite.html:69
+msgid ""
+"ont augmenté leurs dépenses en sécurité après avoir été attaquées. Mieux "
+"vaut avant."
+msgstr ""
+"increased their security spending after being attacked. Better to do it "
+"before."
+
+#: templates/pages/services/cybersecurite.html:77
+msgid "Ce qu'on fait"
+msgstr "What we do"
+
+#: templates/pages/services/cybersecurite.html:79
+msgid "Six prestations, une seule logique : protéger votre business."
+msgstr "Six services, one logic: protect your business."
+
+#: templates/pages/services/cybersecurite.html:84
+msgid "Audit de sécurité"
+msgstr "Security audit"
+
+#: templates/pages/services/cybersecurite.html:85
+msgid ""
+"Évaluation complète de votre infrastructure, vos politiques et vos "
+"opérations. Pentesting, contrôles d'accès, recommandations priorisées. Vous "
+"repartez avec une feuille de route concrète."
+msgstr ""
+"Full evaluation of your infrastructure, policies and operations. Pentesting, "
+"access controls, prioritised recommendations. You leave with a concrete "
+"roadmap."
+
+#: templates/pages/services/cybersecurite.html:88
+msgid "Revues régulières"
+msgstr "Regular reviews"
+
+#: templates/pages/services/cybersecurite.html:89
+msgid ""
+"Évaluation continue de vos mesures pour rester efficaces face aux nouvelles "
+"menaces. Revue périodique des accès, firewalls, antivirus et autres "
+"composants critiques."
+msgstr ""
+"Continuous assessment of your measures to stay effective against new "
+"threats. Regular review of access, firewalls, antivirus and other critical "
+"components."
+
+#: templates/pages/services/cybersecurite.html:92
+msgid "Formation et sensibilisation"
+msgstr "Training and awareness"
+
+#: templates/pages/services/cybersecurite.html:93
+msgid ""
+"Donnez à vos équipes les réflexes pour identifier et bloquer les attaques. "
+"Programme de sensibilisation, simulations de phishing, bonnes pratiques de "
+"protection des données."
+msgstr ""
+"Give your teams the reflexes to spot and stop attacks. Awareness program, "
+"phishing simulations, data-protection best practices."
+
+#: templates/pages/services/cybersecurite.html:96
+msgid "Conformité et certifications"
+msgstr "Compliance and certifications"
+
+#: templates/pages/services/cybersecurite.html:97
+msgid ""
+"NIS2, GDPR, ISO 27001, SOC 2. De l'analyse d'écart à la documentation des "
+"politiques, en passant par l'accompagnement à l'audit. On sait ce que les "
+"auditeurs cherchent parce qu'on l'a déjà fait."
+msgstr ""
+"NIS2, GDPR, ISO 27001, SOC 2. From gap analysis to policy documentation and "
+"audit support. We know what auditors look for because we've been through it."
+
+#: templates/pages/services/cybersecurite.html:100
+msgid "Politiques de sécurité"
+msgstr "Security policies"
+
+#: templates/pages/services/cybersecurite.html:101
+msgid ""
+"Création ou refonte de vos politiques internes : gestion des mots de passe, "
+"chiffrement, accès distant, BYOD. Adaptées à votre organisation, pas un "
+"copier-coller générique."
+msgstr ""
+"Creating or rebuilding your internal policies: password management, "
+"encryption, remote access, BYOD. Tailored to your organisation, not a "
+"generic copy-paste."
+
+#: templates/pages/services/cybersecurite.html:104
+msgid "Réponse aux incidents"
+msgstr "Incident response"
+
+#: templates/pages/services/cybersecurite.html:105
+msgid ""
+"Plan de réponse complet : préparation, détection, confinement, éradication, "
+"récupération. Pour limiter la casse quand quelque chose passe. Réponse en 4h "
+"pour les clients sous contrat support."
+msgstr ""
+"Full response plan: preparation, detection, containment, eradication, "
+"recovery. To limit damage when something gets through. 4-hour response for "
+"clients on a support contract."
+
+#: templates/pages/services/cybersecurite.html:113
+msgid "Prêt à savoir où vous en êtes vraiment ?"
+msgstr "Ready to know where you really stand?"
+
+#: templates/pages/services/cybersecurite.html:114
+msgid "Demander un audit"
+msgstr "Request an audit"
+
+#: templates/pages/services/cybersecurite.html:116
+msgid ""
+"Premier échange sans engagement. On regarde ensemble votre exposition "
+"réelle, et on vous dit honnêtement ce qui mérite d'être traité en priorité."
+msgstr ""
+"First call with no strings attached. We look together at your real exposure "
+"and tell you honestly what should be tackled first."
+
+#: templates/pages/services/ia_automation.html:4
+msgid "IA & Automatisation pour PME - Workflows, agents"
+msgstr "AI & Automation for SMEs - Workflows, agents"
+
+#: templates/pages/services/ia_automation.html:6
+msgid ""
+"Workflows automatisés, agents IA, traitement de documents, intégrations IA "
+"dans vos outils existants. On automatise ce qui ralentit votre équipe."
+msgstr ""
+"Automated workflows, AI agents, document processing, AI integrations in your "
+"existing tools. We automate what slows your team down."
+
+#: templates/pages/services/ia_automation.html:36
+msgid "Automatisez ce qui ralentit votre équipe."
+msgstr "Automate what slows your team down."
+
+#: templates/pages/services/ia_automation.html:37
+msgid ""
+"La plupart des entreprises perdent des heures sur des tâches qu'une "
+"automatisation bien conçue traiterait en secondes. On construit des "
+"workflows IA qui font vraiment gagner du temps - pas qui font joli en démo. "
+"Du traitement de documents à l'onboarding client, on automatise ce qui "
+"freine."
+msgstr ""
+"Most companies waste hours on tasks a well-built automation would handle in "
+"seconds. We design AI workflows that actually save time, not ones that look "
+"good in a demo. From document processing to client onboarding, we automate "
+"what gets in the way."
+
+#: templates/pages/services/ia_automation.html:45
+msgid "Le temps est la seule ressource qu'on ne peut pas racheter."
+msgstr "Time is the one resource you cannot buy back."
+
+#: templates/pages/services/ia_automation.html:50
+msgid ""
+"plus rapide à l'exécution. Les clients qui automatisent leurs workflows "
+"répétitifs voient leurs temps de traitement chuter."
+msgstr ""
+"faster execution. Clients who automate repetitive workflows see processing "
+"time drop sharply."
+
+#: templates/pages/services/ia_automation.html:53
+msgid ""
+"du temps de travail dans la plupart des entreprises est consacré à des "
+"tâches automatisables. Près de la moitié de la semaine."
+msgstr ""
+"of work time in most companies goes to automatable tasks. Nearly half the "
+"week."
+
+#: templates/pages/services/ia_automation.html:56
+msgid ""
+"des dirigeants disent que l'IA leur donnera un avantage compétitif d'ici "
+"deux ans. La fenêtre est maintenant."
+msgstr ""
+"of leaders say AI will give them a competitive edge within two years. The "
+"window is now."
+
+#: templates/pages/services/ia_automation.html:64
+msgid "Ce qu'on automatise"
+msgstr "What we automate"
+
+#: templates/pages/services/ia_automation.html:66
+msgid "Pas de buzzwords, juste des process qui tournent tous seuls."
+msgstr "No buzzwords, just processes that run themselves."
+
+#: templates/pages/services/ia_automation.html:71
+msgid "Workflows automatisés"
+msgstr "Automated workflows"
+
+#: templates/pages/services/ia_automation.html:72
+msgid ""
+"Cartographie de vos process actuels, identification des goulets "
+"d'étranglement, construction de pipelines qui tournent sans surveillance. "
+"Facturation, génération de rapports, onboarding clients."
+msgstr ""
+"Mapping of your current processes, bottleneck identification, building "
+"pipelines that run without supervision. Invoicing, report generation, client "
+"onboarding."
+
+#: templates/pages/services/ia_automation.html:75
+msgid "Traitement de documents IA"
+msgstr "AI document processing"
+
+#: templates/pages/services/ia_automation.html:76
+msgid ""
+"Extraction de données depuis PDFs, emails, contrats. Lecture, "
+"classification, routage automatique. Fini le copier-coller manuel pour vos "
+"équipes."
+msgstr ""
+"Data extraction from PDFs, emails, contracts. Reading, classification, "
+"automatic routing. No more manual copy-paste for your teams."
+
+#: templates/pages/services/ia_automation.html:79
+msgid "Agents et chatbots sur mesure"
+msgstr "Custom agents and chatbots"
+
+#: templates/pages/services/ia_automation.html:80
+msgid ""
+"Pas le chatbot générique qui agace tout le monde. On construit des "
+"assistants entraînés sur vos données réelles, vos produits, votre FAQ. Ils "
+"répondent vraiment et escaladent quand il faut."
+msgstr ""
+"Not the generic chatbot that annoys everyone. We build assistants trained on "
+"your actual data, your products, your FAQ. They really answer and escalate "
+"when they should."
+
+#: templates/pages/services/ia_automation.html:83
+msgid "Pipelines de données"
+msgstr "Data pipelines"
+
+#: templates/pages/services/ia_automation.html:84
+msgid ""
+"Connexion entre vos outils : CRM vers facturation, formulaires vers base de "
+"données, analytics vers dashboards. Vos données vivent en un seul endroit, "
+"plus dans 12 onglets."
+msgstr ""
+"Connect your tools: CRM to invoicing, forms to database, analytics to "
+"dashboards. Your data lives in one place, not across 12 tabs."
+
+#: templates/pages/services/ia_automation.html:87
+msgid "Conseil en optimisation"
+msgstr "Optimisation consulting"
+
+#: templates/pages/services/ia_automation.html:88
+msgid ""
+"Avant d'automatiser quoi que ce soit, on audite votre workflow pour "
+"identifier ce qui mérite vraiment d'être automatisé. Tout n'a pas besoin "
+"d'IA : parfois un script simple suffit."
+msgstr ""
+"Before automating anything, we audit your workflow to find what is actually "
+"worth automating. Not everything needs AI: sometimes a simple script does "
+"the job."
+
+#: templates/pages/services/ia_automation.html:91
+msgid "Intégration IA dans votre stack"
+msgstr "AI integration into your stack"
+
+#: templates/pages/services/ia_automation.html:92
+msgid ""
+"Vous utilisez Slack, Notion, Google Workspace, un CRM custom ? On branche "
+"des capacités IA directement dans votre stack actuelle. Pas besoin de tout "
+"migrer."
+msgstr ""
+"Already using Slack, Notion, Google Workspace, a custom CRM? We plug AI "
+"capabilities directly into your existing stack. No need to migrate "
+"everything."
+
+#: templates/pages/services/ia_automation.html:100
+msgid "Identifions ensemble ce qui peut être automatisé."
+msgstr "Let's identify together what can be automated."
+
+#: templates/pages/services/ia_automation.html:101
+msgid "Discuter automatisation"
+msgstr "Talk automation"
+
+#: templates/pages/services/ia_automation.html:103
+msgid ""
+"Parlons de ce qui consomme le temps de votre équipe. On vous dit honnêtement "
+"ce qui vaut le coup d'automatiser et ce qui n'en vaut pas la peine."
+msgstr ""
+"Let's talk about what eats your team's time. We tell you honestly what is "
+"worth automating and what is not."
+
+#: templates/pages/services/index.html:4
+msgid "Services - Cybersécurité, web, IA, support"
+msgstr "Services - Cybersecurity, web, AI, support"
+
+#: templates/pages/services/index.html:5
+msgid "Nos services"
+msgstr "Our services"
+
+#: templates/pages/services/index.html:6
+msgid ""
+"Cybersécurité, développement web, IA et automatisation, support et "
+"maintenance. Quatre métiers sous un même toit, pour des PME qui veulent du "
+"sérieux sans tarif d'agence enterprise."
+msgstr ""
+"Cybersecurity, web development, AI and automation, support and maintenance. "
+"Four crafts under one roof, for SMEs who want quality without enterprise "
+"agency pricing."
+
+#: templates/pages/services/index.html:23
+msgid "Services Makeset"
+msgstr "Makeset Services"
+
+#: templates/pages/services/index.html:28
+#: templates/pages/services/index.html:56
+#: templates/pages/services/support.html:5
+#: templates/pages/services/support.html:16
+msgid "Support et maintenance"
+msgstr "Support and maintenance"
+
+#: templates/pages/services/index.html:37
+msgid "Quatre métiers,"
+msgstr "Four crafts,"
+
+#: templates/pages/services/index.html:38
+msgid "une seule équipe."
+msgstr "one team."
+
+#: templates/pages/services/index.html:39
+msgid ""
+"Sécurité, développement, automatisation et support. Vous traitez avec une "
+"seule équipe technique, pas avec quatre prestataires qui se renvoient la "
+"balle."
+msgstr ""
+"Security, development, automation and support. You deal with one technical "
+"team, not four vendors blaming each other."
+
+#: templates/pages/services/index.html:45
+msgid ""
+"Audits, NIS2, GDPR, ISO 27001, SOC 2, formation et réponse incident. On "
+"trouve vos vraies faiblesses et on les corrige."
+msgstr ""
+"Audits, NIS2, GDPR, ISO 27001, SOC 2, training and incident response. We "
+"find your real weaknesses and fix them."
+
+#: templates/pages/services/index.html:49
+msgid ""
+"Sites vitrine, e-commerce, applications SaaS sur mesure. Performance, SEO, "
+"sécurité dès le premier commit."
+msgstr ""
+"Custom websites, e-commerce, SaaS apps. Performance, SEO, security from the "
+"first commit."
+
+#: templates/pages/services/index.html:53
+msgid ""
+"Workflows automatisés, agents sur mesure, traitement de documents, "
+"intégrations IA dans vos outils existants."
+msgstr ""
+"Automated workflows, custom agents, document processing, AI integrations "
+"into your existing tools."
+
+#: templates/pages/services/index.html:57
+msgid ""
+"Mises à jour de sécurité, monitoring, sauvegardes, corrections de bugs, "
+"optimisation performance."
+msgstr ""
+"Security updates, monitoring, backups, bug fixes, performance optimization."
+
+#: templates/pages/services/index.html:64
+msgid "Pas sûr de ce dont vous avez besoin ?"
+msgstr "Not sure what you need?"
+
+#: templates/pages/services/index.html:65
+msgid "Échanger 30 minutes"
+msgstr "Talk for 30 minutes"
+
+#: templates/pages/services/index.html:67
+msgid ""
+"Parlez-nous de votre situation. On vous dit honnêtement quel mix de services "
+"aurait le plus d'impact pour vous, sans vous vendre l'inutile."
+msgstr ""
+"Tell us about your situation. We will honestly tell you which mix of "
+"services would have the most impact, without selling you anything you don't "
+"need."
+
+#: templates/pages/services/support.html:4
+msgid "Support et maintenance web pour PME"
+msgstr "Web support and maintenance for SMEs"
+
+#: templates/pages/services/support.html:6
+msgid ""
+"Maintenance, monitoring, mises à jour de sécurité, sauvegardes, "
+"optimisation. Pour ne jamais vous demander à 3h du matin pourquoi votre site "
+"est tombé."
+msgstr ""
+"Maintenance, monitoring, security updates, backups, optimisation. So you "
+"never wonder at 3am why your site went down."
+
+#: templates/pages/services/support.html:36
+msgid "Votre site tourne. On gère le reste."
+msgstr "Your site runs. We handle the rest."
+
+#: templates/pages/services/support.html:37
+msgid ""
+"Un site qui plante un samedi soir, c'est du chiffre d'affaires perdu et des "
+"clients frustrés. On gère les mises à jour, le monitoring et les correctifs "
+"pour que vous ne vous réveilliez jamais à 3h du matin en vous demandant "
+"pourquoi votre page de paiement est tombée."
+msgstr ""
+"A site that crashes on a Saturday night means lost revenue and frustrated "
+"customers. We handle updates, monitoring and fixes so you never wake up at "
+"3am wondering why your checkout page is down."
+
+#: templates/pages/services/support.html:43
+msgid "Pourquoi la maintenance"
+msgstr "Why maintenance"
+
+#: templates/pages/services/support.html:45
+msgid "Un site qu'on néglige est un site qu'on perd."
+msgstr "A neglected site is a site you lose."
+
+#: templates/pages/services/support.html:50
+msgid ""
+"des cyberattaques exploitent des logiciels obsolètes. Les mises à jour ne "
+"sont pas optionnelles : c'est la première ligne de défense."
+msgstr ""
+"of cyberattacks exploit outdated software. Updates are not optional: they "
+"are your first line of defence."
+
+#: templates/pages/services/support.html:53
+msgid ""
+"des utilisateurs abandonnent un site qui met plus de 3 secondes à charger. "
+"La performance n'est jamais acquise."
+msgstr ""
+"of users abandon a site that takes more than 3 seconds to load. Performance "
+"is never permanent."
+
+#: templates/pages/services/support.html:56
+msgid ""
+"d'uptime moyen sur les sites que nous gérons. Parce que chaque minute hors "
+"ligne vous coûte."
+msgstr ""
+"average uptime on the sites we manage. Because every minute offline costs "
+"you."
+
+#: templates/pages/services/support.html:64
+msgid "Ce qu'on couvre"
+msgstr "What we cover"
+
+#: templates/pages/services/support.html:66
+msgid "Six leviers pour garder votre site vivant."
+msgstr "Six levers to keep your site alive."
+
+#: templates/pages/services/support.html:71
+msgid "Mises à jour de sécurité"
+msgstr "Security updates"
+
+#: templates/pages/services/support.html:72
+msgid ""
+"Surveillance des vulnérabilités et application des patches avant qu'ils ne "
+"deviennent un problème. CMS, plugins, server-level. On reste devant pour que "
+"les attaquants restent derrière."
+msgstr ""
+"Vulnerability monitoring and patching before they become a problem. CMS, "
+"plugins, server-level. We stay ahead so attackers stay behind."
+
+#: templates/pages/services/support.html:75
+msgid "Monitoring temps réel"
+msgstr "Real-time monitoring"
+
+#: templates/pages/services/support.html:76
+msgid ""
+"Surveillance continue de la vitesse, du temps de réponse et des erreurs. "
+"Quand quelque chose ralentit ou casse, on est au courant avant vos clients."
+msgstr ""
+"Continuous monitoring of speed, response time and errors. When something "
+"slows down or breaks, we know about it before your customers do."
+
+#: templates/pages/services/support.html:79
+msgid "Sauvegardes automatiques"
+msgstr "Automatic backups"
+
+#: templates/pages/services/support.html:80
+msgid ""
+"Backups quotidiens stockés en sécurité hors site. Si le pire arrive "
+"(mauvaise update, hack, erreur humaine) on restaure votre site exactement "
+"comme il était."
+msgstr ""
+"Daily backups stored securely off-site. If the worst happens (bad update, "
+"hack, human error), we restore your site exactly as it was."
+
+#: templates/pages/services/support.html:83
+msgid "Mises à jour de contenu"
+msgstr "Content updates"
+
+#: templates/pages/services/support.html:84
+msgid ""
+"Besoin de modifier un prix, échanger une image, ajouter une section ? On "
+"gère les changements pour que vous puissiez vous concentrer sur votre "
+"business plutôt que de batailler avec un CMS."
+msgstr ""
+"Need to update a price, swap an image, add a section? We handle the changes "
+"so you can focus on your business instead of fighting a CMS."
+
+#: templates/pages/services/support.html:87
+msgid "Correction de bugs"
+msgstr "Bug fixing"
+
+#: templates/pages/services/support.html:88
+msgid ""
+"Quelque chose est cassé ? Formulaires qui n'envoient pas ? Bug d'affichage "
+"mobile ? On diagnostique et corrige rapidement. La majorité des correctifs "
+"en moins de 24 h."
+msgstr ""
+"Something broken? Forms not sending? Layout bug on mobile? We diagnose and "
+"fix quickly. Most fixes within 24 hours."
+
+#: templates/pages/services/support.html:91
+msgid "Optimisation performance"
+msgstr "Performance optimisation"
+
+#: templates/pages/services/support.html:92
+msgid ""
+"Sites lents = clients perdus + ranking SEO en chute. On optimise images, "
+"code, cache, configuration serveur. Performance qui se mesure, pas qui se "
+"promet."
+msgstr ""
+"Slow sites = lost customers + falling SEO. We optimise images, code, cache, "
+"server config. Performance that is measured, not promised."
+
+#: templates/pages/services/support.html:100
+msgid "Confiez-nous les clés."
+msgstr "Hand us the keys."
+
+#: templates/pages/services/support.html:101
+msgid "Parler support"
+msgstr "Talk support"
+
+#: templates/pages/services/support.html:103
+msgid ""
+"On regarde ensemble votre site actuel et on vous propose un plan de support "
+"adapté à votre criticité. Pas de pack standardisé."
+msgstr ""
+"We review your current site together and propose a support plan tailored to "
+"your criticality. No off-the-shelf package."
+
+#: templates/pages/services/web.html:4
+msgid "Développement web & apps sur mesure pour PME"
+msgstr "Custom web & app development for SMEs"
+
+#: templates/pages/services/web.html:5
+msgid "Développement Web & Apps"
+msgstr "Web & Apps Development"
+
+#: templates/pages/services/web.html:6
+msgid ""
+"Sites vitrine, e-commerce et applications web sur mesure. Code propre, "
+"performance, SEO et sécurité intégrés dès le premier commit."
+msgstr ""
+"Custom websites, e-commerce and web applications. Clean code, performance, "
+"SEO and security built in from day one."
+
+#: templates/pages/services/web.html:47
+msgid "Des sites et apps qui servent votre business."
+msgstr "Websites and apps that serve your business."
+
+#: templates/pages/services/web.html:48
+msgid ""
+"Votre site est souvent ce qu'on voit en premier. S'il est lent, vieillot ou "
+"cassé sur mobile, vous perdez des clients sans même le savoir. On construit "
+"des solutions sur mesure : performance, SEO et sécurité intégrés dès le "
+"premier commit. Pas de templates génériques."
+msgstr ""
+"Your website is often the first thing people see. If it is slow, outdated or "
+"broken on mobile, you are losing clients without knowing it. We build custom "
+"solutions with performance, SEO and security baked in from day one. No "
+"generic templates."
+
+#: templates/pages/services/web.html:54
+msgid "Pourquoi ça compte"
+msgstr "Why it matters"
+
+#: templates/pages/services/web.html:56
+msgid "Un site rapide convertit plus, ranke mieux, et inspire confiance."
+msgstr "A fast website converts more, ranks higher and inspires trust."
+
+#: templates/pages/services/web.html:61
+msgid ""
+"de temps de chargement supplémentaire fait chuter les conversions de 7 "
+"pourcent. La vitesse est un actif business."
+msgstr ""
+"of extra load time cuts conversions by 7 percent. Speed is a business asset."
+
+#: templates/pages/services/web.html:64
+msgid ""
+"des visiteurs abandonnent un site qui prend plus de 3 secondes à charger. La "
+"performance n'est pas une option."
+msgstr ""
+"of visitors abandon a site that takes more than 3 seconds to load. "
+"Performance is not optional."
+
+#: templates/pages/services/web.html:67
+msgid ""
+"des utilisateurs ne dépassent jamais la première page de résultats Google. "
+"Sans SEO solide, vous restez invisible."
+msgstr ""
+"of users never go past the first Google results page. Without solid SEO, you "
+"stay invisible."
+
+#: templates/pages/services/web.html:75
+msgid "Ce qu'on construit"
+msgstr "What we build"
+
+#: templates/pages/services/web.html:77
+msgid "Du site vitrine à la plateforme SaaS, sur mesure."
+msgstr "From showcase websites to SaaS platforms, made to fit."
+
+#: templates/pages/services/web.html:82
+msgid "Sites vitrine"
+msgstr "Showcase websites"
+
+#: templates/pages/services/web.html:83
+msgid ""
+"Présentation, prise de contact, conversion. Sites rapides, optimisés SEO, "
+"accessibles, qui rendent justice à votre marque sans templates génériques."
+msgstr ""
+"Presentation, contact, conversion. Fast, SEO-optimised, accessible sites "
+"that do justice to your brand without generic templates."
+
+#: templates/pages/services/web.html:86
+msgid "E-commerce"
+msgstr "E-commerce"
+
+#: templates/pages/services/web.html:87
+msgid ""
+"Boutiques en ligne sur mesure ou intégrées à Shopify, WooCommerce, Stripe. "
+"Tunnel d'achat optimisé, gestion stock, paiements sécurisés, multilingue."
+msgstr ""
+"Custom online stores or integrations with Shopify, WooCommerce, Stripe. "
+"Optimised checkout, stock management, secure payments, multilingual."
+
+#: templates/pages/services/web.html:90
+msgid "Apps SaaS et plateformes"
+msgstr "SaaS apps and platforms"
+
+#: templates/pages/services/web.html:91
+msgid ""
+"Applications web complètes : authentification, dashboards, abonnements, "
+"multi-tenant. Architecture pensée pour scaler sans tout réécrire dans 18 "
+"mois."
+msgstr ""
+"Full web applications: auth, dashboards, subscriptions, multi-tenant. "
+"Architecture designed to scale without a full rewrite in 18 months."
+
+#: templates/pages/services/web.html:94
+msgid "Intégrations API"
+msgstr "API integrations"
+
+#: templates/pages/services/web.html:95
+msgid ""
+"Connexion à vos outils existants (CRM, ERP, paiement, analytics). Webhooks, "
+"OAuth, synchronisations bi-directionnelles. Vos données circulent sans "
+"copier-coller."
+msgstr ""
+"Connection to your existing tools (CRM, ERP, payments, analytics). Webhooks, "
+"OAuth, two-way syncs. Your data flows without copy-paste."
+
+#: templates/pages/services/web.html:98
+msgid "Performance et SEO"
+msgstr "Performance and SEO"
+
+#: templates/pages/services/web.html:99
+msgid ""
+"Optimisation vitesse, Core Web Vitals, accessibilité, schema.org, hreflang, "
+"sitemap. Pas une optimisation après-coup : intégrée dès la conception."
+msgstr ""
+"Speed optimisation, Core Web Vitals, accessibility, schema.org, hreflang, "
+"sitemap. Not an afterthought: designed in from the start."
+
+#: templates/pages/services/web.html:102
+msgid "Sécurité dès le départ"
+msgstr "Security from day one"
+
+#: templates/pages/services/web.html:103
+msgid ""
+"OWASP, headers de sécurité, CSP, rate-limiting, HTTPS partout, secrets "
+"jamais en clair. Pas un patch ajouté à la fin, intégré dans l'architecture."
+msgstr ""
+"OWASP, security headers, CSP, rate-limiting, HTTPS everywhere, secrets never "
+"in plain text. Not a patch added at the end, baked into the architecture."
+
+#: templates/pages/services/web.html:111
+msgid "Vous avez un projet web en tête ?"
+msgstr "Got a web project in mind?"
+
+#: templates/pages/services/web.html:112
+msgid "Démarrer le projet"
+msgstr "Start the project"
+
+#: templates/pages/services/web.html:114
+msgid ""
+"Décrivez ce que vous voulez construire. On vous dit honnêtement le "
+"périmètre, le délai et le budget. Pas de devis fantaisiste."
+msgstr ""
+"Tell us what you want to build. We will honestly describe the scope, "
+"timeline and budget. No fanciful quotes."
+
+#: templates/pages/tools/index.html:4
+msgid "Outils gratuits - Audit cybersécurité PME"
+msgstr "Free tools - SME cybersecurity audit"
+
+#: templates/pages/tools/index.html:5 templates/pages/tools/index.html:12
+#: templates/partials/footer.html:27
+msgid "Outils gratuits"
+msgstr "Free tools"
+
+#: templates/pages/tools/index.html:6
+msgid ""
+"Outils gratuits Makeset pour mesurer la sécurité de votre domaine et de vos "
+"emails. Sans inscription pour le premier scan, en français clair."
+msgstr ""
+"Free Makeset tools to measure the security of your domain and your email. No "
+"sign-up for the first scan, in plain language."
+
+#: templates/pages/tools/index.html:14
+msgid "Mesurez votre"
+msgstr "Measure your"
+
+#: templates/pages/tools/index.html:14
+msgid "exposition"
+msgstr "exposure"
+
+#: templates/pages/tools/index.html:14
+msgid "en quelques clics"
+msgstr "in a few clicks"
+
+#: templates/pages/tools/index.html:17
+msgid ""
+"Des outils pensés pour les PME : on vous dit ce qui ne va pas, en langage "
+"clair, avec les correctifs exacts à appliquer."
+msgstr ""
+"Tools built for SMEs: we tell you what's wrong, in plain language, with the "
+"exact fixes to apply."
+
+#: templates/pages/tools/index.html:36
+msgid "Disponible"
+msgstr "Available"
+
+#: templates/pages/tools/index.html:42
+msgid "Score de sécurité de votre site et de votre email en 60 secondes."
+msgstr "Your website and email security score in 60 seconds."
+
+#: templates/pages/tools/index.html:45
+msgid ""
+"Entrez un domaine. On vérifie 9 points clés : DNS, DNSSEC, SPF, DKIM, DMARC, "
+"certificat HTTPS, redirection, en-têtes de sécurité et fuites publiques. On "
+"vous renvoie un score sur 100 et la liste des correctifs concrets à "
+"appliquer."
+msgstr ""
+"Enter a domain. We check 9 key areas: DNS, DNSSEC, SPF, DKIM, DMARC, HTTPS "
+"certificate, redirect, security headers, and public breaches. You get a "
+"score out of 100 and the list of concrete fixes to apply."
+
+#: templates/pages/tools/index.html:55
+msgid "Fuites"
+msgstr "Breaches"
+
+#: templates/pages/tools/index.html:61
+msgid "Lancer un scan"
+msgstr "Launch a scan"
+
+#: templates/pages/tools/index.html:71
+msgid "Sans inscription au premier scan"
+msgstr "No sign-up for the first scan"
+
+#: templates/pages/tools/index.html:80
+msgid "Bientôt"
+msgstr "Coming soon"
+
+#: templates/pages/tools/index.html:82
+msgid "Les prochains outils dans la roadmap"
+msgstr "Next tools on the roadmap"
+
+#: templates/pages/tools/index.html:91
+msgid "NIS2 Readiness"
+msgstr "NIS2 Readiness"
+
+#: templates/pages/tools/index.html:93
+msgid ""
+"Quiz court pour savoir si votre PME est concernée par la loi du 26 avril "
+"2024 transposant NIS2 en Belgique, et par où commencer."
+msgstr ""
+"Short quiz to know whether your SME is covered by the law of 26 April 2024 "
+"transposing NIS2 in Belgium, and where to start."
+
+#: templates/pages/tools/index.html:101
+msgid "Audit cookies RGPD"
+msgstr "GDPR cookie audit"
+
+#: templates/pages/tools/index.html:103
+msgid ""
+"Détection automatique des trackers déposés par votre site avant "
+"consentement, avec verdict de conformité."
+msgstr ""
+"Automatic detection of trackers your site drops before consent, with a "
+"compliance verdict."
+
+#: templates/pages/tools/index.html:111
+msgid "Lookup BCE / TVA"
+msgstr "BCE / VAT lookup"
+
+#: templates/pages/tools/index.html:113
+msgid ""
+"Vérification d'une entreprise belge via la Banque-Carrefour des Entreprises "
+"et validation TVA via VIES."
+msgstr ""
+"Belgian company lookup via the Banque-Carrefour des Entreprises (BCE) and "
+"VAT validation via VIES."
+
+#: templates/pages/tools/index.html:119
+msgid "Vous avez une idée d'outil ?"
+msgstr "Have an idea for a tool?"
+
+#: templates/pages/tools/index.html:120
+msgid "Dites-le-nous"
+msgstr "Tell us"
+
+#: templates/partials/contact_form.html:17
+msgid "Surnom"
+msgstr "Nickname"
+
+#: templates/partials/contact_form.html:57
+msgid "Sujet"
+msgstr "Topic"
+
+#: templates/partials/contact_form.html:92
+msgid ""
+"En soumettant ce formulaire, vous acceptez d'être recontacté concernant "
+"votre demande."
+msgstr "By submitting this form, you agree to be contacted about your request."
+
+#: templates/partials/contact_form.html:96
+msgid "Envoyer"
+msgstr "Send"
+
+#: templates/partials/contact_form.html:98
+msgid "Envoi en cours..."
+msgstr "Sending..."
+
+#: templates/partials/contact_success.html:6
+msgid "Message reçu, merci."
+msgstr "Got it. Thanks."
+
+#: templates/partials/contact_success.html:8
+#, python-format
+msgid "On revient vers vous, %(name)s, dans les 24h ouvrées."
+msgstr "We will get back to you, %(name)s, within 24 working hours."
+
+#: templates/partials/contact_success.html:11
+msgid "Si urgent, écrivez directement à"
+msgstr "If it is urgent, write directly to"
+
+#: templates/partials/contact_success.html:16
+msgid "Retour à l'accueil"
+msgstr "Back home"
+
+#: templates/partials/cookie_consent.html:25
+msgid "Vos cookies, votre choix."
+msgstr "Your cookies, your call."
+
+#: templates/partials/cookie_consent.html:27
+msgid ""
+"Nous utilisons des cookies strictement nécessaires au fonctionnement du "
+"site. Avec votre accord, nous mesurons aussi l'audience pour améliorer le "
+"contenu. Vous pouvez accepter, refuser ou choisir le détail. Aucune décision "
+"ne limite votre accès au site."
+msgstr ""
+"We use strictly necessary cookies to operate the site. With your consent, we "
+"also measure audience to improve the content. You can accept, refuse or pick "
+"the detail. No choice restricts your access to the site."
+
+#: templates/partials/cookie_consent.html:30
+msgid "En savoir plus"
+msgstr "Learn more"
+
+#: templates/partials/cookie_consent.html:36
+#: templates/partials/cookie_consent.html:123
+msgid "Tout refuser"
+msgstr "Refuse all"
+
+#: templates/partials/cookie_consent.html:40
+msgid "Personnaliser"
+msgstr "Customize"
+
+#: templates/partials/cookie_consent.html:44
+msgid "Tout accepter"
+msgstr "Accept all"
+
+#: templates/partials/cookie_consent.html:62
+#: templates/partials/maketrust/rescan_modal.html:35
+msgid "Fermer"
+msgstr "Close"
+
+#: templates/partials/cookie_consent.html:68
+msgid ""
+"Choisissez les catégories que vous autorisez. Votre choix est conservé 12 "
+"mois maximum et révocable à tout moment depuis le pied de page."
+msgstr ""
+"Choose the categories you allow. Your choice is kept for up to 12 months and "
+"is revocable at any time from the footer."
+
+#: templates/partials/cookie_consent.html:78
+msgid ""
+"Indispensables au fonctionnement du site (session, CSRF, langue, "
+"consentement). Pas de mesure d'audience."
+msgstr ""
+"Required for the site to operate (session, CSRF, language, consent). No "
+"audience tracking."
+
+#: templates/partials/cookie_consent.html:91
+msgid "Mesure d'audience"
+msgstr "Audience measurement"
+
+#: templates/partials/cookie_consent.html:93
+msgid ""
+"Statistiques anonymisées pour comprendre quels contenus sont utiles. Aucun "
+"profilage publicitaire."
+msgstr ""
+"Anonymised statistics to understand which content is useful. No advertising "
+"profiling."
+
+#: templates/partials/cookie_consent.html:109
+msgid ""
+"Aucun cookie marketing n'est actuellement utilisé sur ce site. Cette option "
+"reste désactivée."
+msgstr ""
+"No marketing cookie is currently used on this site. This option stays "
+"disabled."
+
+#: templates/partials/cookie_consent.html:127
+msgid "Enregistrer mes choix"
+msgstr "Save my choices"
+
+#: templates/partials/footer.html:25
+msgid "Ressources"
+msgstr "Resources"
+
+#: templates/partials/footer.html:39 templates/partials/footer.html:60
+msgid "CGV"
+msgstr "Terms"
+
+#: templates/partials/footer.html:61
+msgid "Cookies"
+msgstr "Cookies"
+
+#: templates/partials/maketrust/rescan_modal.html:50
+#, python-format
+msgid ""
+"Nouveau scan sur <strong>%(domain)s</strong>. Pour autoriser le rescan, "
+"laissez votre email."
+msgstr ""
+"New scan on <strong>%(domain)s</strong>. Leave your email to authorise the "
+"rescan."
+
+#: templates/partials/maketrust/rescan_modal.html:78
+msgid "Lancement…"
+msgstr "Launching…"
+
+#: templates/partials/maketrust/rescan_modal.html:83
+msgid "Annuler"
+msgstr "Cancel"
+
+#: templates/partials/maketrust/rescan_modal.html:88
+msgid "Relancer"
+msgstr "Rescan"
+
+#: templates/partials/maketrust/scan_aborted.html:5
+msgid "Scan annulé."
+msgstr "Scan cancelled."
+
+#: templates/partials/maketrust/scan_aborted.html:8
+msgid ""
+"Votre quota du jour est intact, vous pouvez relancer un scan immédiatement."
+msgstr "Your daily quota is intact — you can launch another scan immediately."
+
+#: templates/partials/maketrust/scan_aborted.html:12
+msgid "Lancer un nouveau scan"
+msgstr "Launch a new scan"
+
+#: templates/partials/maketrust/scan_failed.html:5
+msgid "Le scan n'a pas pu aboutir."
+msgstr "The scan could not complete."
+
+#: templates/partials/maketrust/scan_failed.html:12
+msgid "Réessayer avec un autre domaine"
+msgstr "Try again with another domain"
+
+#: templates/partials/maketrust/scan_progress.html:21
+#, python-format
+msgid ""
+"Anti-spam : votre scan démarre dans <span data-mks-countdown=\"%(s)s\" "
+"class=\"font-bold tabular-nums text-primary\">%(s)ss</span>. Laissez la page "
+"ouverte."
+msgstr ""
+"Anti-spam: your scan starts in <span data-mks-countdown=\"%(s)s\" "
+"class=\"font-bold tabular-nums text-primary\">%(s)ss</span>. Leave the page "
+"open."
+
+#: templates/partials/maketrust/scan_progress.html:54
+msgid "En attente du démarrage"
+msgstr "Waiting to start"
+
+#: templates/partials/maketrust/scan_progress.html:56
+#, python-format
+msgid "En file d'attente, position %(pos)s"
+msgstr "Queued, position %(pos)s"
+
+#: templates/partials/maketrust/scan_progress.html:104
+msgid ""
+"Cette page se met à jour automatiquement, vous pouvez la laisser ouverte."
+msgstr "This page refreshes automatically, you can leave it open."
+
+#: templates/partials/maketrust/scan_progress.html:119
+msgid "Annuler le scan"
+msgstr "Cancel scan"
+
+#: templates/partials/nav.html:13 templates/partials/nav.html:46
+msgid "Outils"
+msgstr "Tools"
+
+#: templates/partials/nav.html:22 templates/partials/nav.html:50
+msgid "Discuter"
+msgstr "Talk"
+
+#: templates/partials/nav.html:26
+msgid "Fermer le menu"
+msgstr "Close menu"
+
+#: templates/partials/nav.html:26
+msgid "Ouvrir le menu"
+msgstr "Open menu"

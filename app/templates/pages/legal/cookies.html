@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Politique cookies" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Politique cookies" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Détail des cookies utilisés sur le site Makeset, finalités, durées de conservation et modalités de retrait du consentement." %}{% endblock %}
+
+{% block content %}
+<section class="pt-40 pb-24 px-6 max-w-3xl mx-auto">
+  <c-eyebrow class="mb-4">{% trans "Légal" %}</c-eyebrow>
+  <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4 text-balance">{% trans "Politique cookies" %}</h1>
+  <p class="text-on-surface-variant mb-12">{% trans "Dernière mise à jour : 1er mai 2026." %}</p>
+
+  <div class="space-y-10 text-on-surface-variant leading-relaxed">
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Qu'est-ce qu'un cookie ?" %}</h2>
+      <p>{% trans "Un cookie est un petit fichier texte déposé sur votre terminal par votre navigateur lors de la visite d'un site. Il sert à reconnaître votre navigateur, mémoriser vos préférences, ou mesurer l'usage du site." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Notre approche" %}</h2>
+      <p>{% trans "Aucun cookie de mesure d'audience ou de marketing n'est déposé tant que vous n'avez pas donné votre consentement. Le bandeau initial vous propose, à égalité visuelle, d'accepter, de refuser ou de personnaliser. Refuser ne limite pas votre accès au site et est aussi simple qu'accepter. Votre choix est conservé 12 mois, modifiable à tout moment via le lien" %} <button type="button" onclick="MksConsent.showPrefs()" class="text-primary hover:underline">« {% trans "Préférences cookies" %} »</button> {% trans "présent en pied de page." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Cookies utilisés" %}</h2>
+
+      <div class="space-y-4">
+        <div class="rounded-md border border-outline-variant/30 p-5">
+          <div class="flex items-center justify-between mb-2 gap-3">
+            <h3 class="font-bold text-on-surface">{% trans "Strictement nécessaires" %}</h3>
+            <span class="px-3 py-1 rounded-full bg-primary-container/40 text-on-primary-container text-xs font-bold uppercase tracking-widest">{% trans "Toujours actif" %}</span>
+          </div>
+          <ul class="text-sm space-y-2 mt-3">
+            <li><code class="font-mono text-xs px-1.5 py-0.5 rounded bg-surface-container-low">sessionid</code> · {% trans "Session de navigation Django. Durée : durée de la session." %}</li>
+            <li><code class="font-mono text-xs px-1.5 py-0.5 rounded bg-surface-container-low">csrftoken</code> · {% trans "Protection CSRF des formulaires. Durée : 1 an." %}</li>
+            <li><code class="font-mono text-xs px-1.5 py-0.5 rounded bg-surface-container-low">django_language</code> · {% trans "Langue choisie. Durée : 1 an." %}</li>
+            <li><code class="font-mono text-xs px-1.5 py-0.5 rounded bg-surface-container-low">mks_consent</code> · {% trans "Mémorise votre choix de consentement cookies. Durée : 12 mois." %}</li>
+          </ul>
+        </div>
+
+        <div class="rounded-md border border-outline-variant/30 p-5">
+          <div class="flex items-center justify-between mb-2 gap-3">
+            <h3 class="font-bold text-on-surface">{% trans "Mesure d'audience (optionnel)" %}</h3>
+            <span class="px-3 py-1 rounded-full bg-surface-container text-xs font-bold uppercase tracking-widest">{% trans "Soumis à consentement" %}</span>
+          </div>
+          <p class="text-sm mb-3">{% trans "Fournisseur : Ahrefs Analytics (Singapour, conforme RGPD via mesures contractuelles équivalentes). Aucun profilage publicitaire, aucun croisement avec d'autres bases. Données agrégées et anonymisées." %}</p>
+          <ul class="text-sm space-y-2">
+            <li><code class="font-mono text-xs px-1.5 py-0.5 rounded bg-surface-container-low">_ahrefs</code> · {% trans "Statistiques de pages vues. Durée : jusqu'à 13 mois." %}</li>
+          </ul>
+        </div>
+
+        <div class="rounded-md border border-outline-variant/30 p-5">
+          <div class="flex items-center justify-between mb-2 gap-3">
+            <h3 class="font-bold text-on-surface">{% trans "Marketing" %}</h3>
+            <span class="px-3 py-1 rounded-full bg-surface-container text-xs font-bold uppercase tracking-widest">{% trans "Aucun" %}</span>
+          </div>
+          <p class="text-sm">{% trans "Aucun cookie marketing n'est utilisé sur ce site. Aucune régie publicitaire, aucun pixel de retargeting, aucun outil tiers de profilage." %}</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Gérer vos cookies" %}</h2>
+      <p class="mb-4">{% trans "Vous pouvez à tout moment :" %}</p>
+      <ul class="list-disc list-outside pl-5 space-y-2">
+        <li>{% trans "Modifier vos choix via le bouton" %} <button type="button" onclick="MksConsent.showPrefs()" class="text-primary hover:underline">« {% trans "Préférences cookies" %} »</button> {% trans "en pied de page" %}</li>
+        <li>{% trans "Supprimer les cookies déjà déposés depuis les paramètres de votre navigateur (Chrome, Firefox, Safari, Edge)" %}</li>
+        <li>{% trans "Activer le mode" %} <em>{% trans "Do Not Track" %}</em> {% trans "de votre navigateur" %}</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">{% trans "Plus d'informations" %}</h2>
+      <p>{% trans "Cette politique cookies est complétée par notre" %} <a href="{% url 'legal_privacy' %}" class="text-primary hover:underline">{% trans "politique de confidentialité" %}</a>. {% trans "Pour toute question, écrivez à" %} <a href="mailto:contact@makeset.be" class="text-primary hover:underline">contact@makeset.be</a>.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

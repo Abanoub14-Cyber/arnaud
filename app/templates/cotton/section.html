@@ -1,0 +1,7 @@
+<c-vars bg="surface" class="" id="" />
+<section {% if id %}id="{{ id }}"{% endif %}
+         class="relative overflow-hidden py-24 md:py-32 px-6 bg-{{ bg }} {{ class }}">
+  <div class="max-w-6xl mx-auto">
+    {{ slot }}
+  </div>
+</section>

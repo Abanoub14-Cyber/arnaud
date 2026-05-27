@@ -1,0 +1,21 @@
+<c-vars icon title href variant="light" />
+
+<a href="{{ href }}"
+   class="block p-10 rounded-xl ambient-shadow border border-white/40 transition-all duration-500
+          hover:-translate-y-3 group
+          {% if variant == 'primary' %}bg-primary-gradient text-on-primary{% else %}glass{% endif %}">
+
+  <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110
+              {% if variant == 'primary' %}bg-white/20{% else %}bg-primary/10{% endif %}">
+    <span class="material-symbols-outlined text-4xl {% if variant == 'primary' %}text-white{% else %}text-primary{% endif %}"
+          style="font-variation-settings: 'FILL' 1;">{{ icon }}</span>
+  </div>
+
+  <h3 class="text-2xl font-bold mb-4">{{ title }}</h3>
+  <p class="leading-relaxed mb-8 {% if variant == 'primary' %}text-white/80{% else %}text-on-surface-variant{% endif %}">
+    {{ slot }}
+  </p>
+
+  <div class="h-1 w-12 rounded-full transition-all duration-500 group-hover:w-full
+              {% if variant == 'primary' %}bg-white{% else %}bg-primary{% endif %}"></div>
+</a>

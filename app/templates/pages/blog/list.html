@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Blog - Cybersécurité, web et IA pour PME" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Blog" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Articles, retours d'expérience et analyses techniques sur la cybersécurité, le développement web et l'automatisation IA." %}{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{% trans 'Accueil' %}", "item": "https://{{ request.get_host }}{% url 'home' %}"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Blog' %}", "item": "https://{{ request.get_host }}{{ request.path }}"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="relative pt-40 pb-12 md:pt-48 px-6 overflow-hidden">
+  <div class="absolute inset-0 radiant-glow -z-10"></div>
+  <div class="max-w-5xl mx-auto text-center">
+    <c-eyebrow class="mb-6">{% trans "Blog" %}</c-eyebrow>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 leading-[1.05] text-balance">
+      {% trans "Notes du" %} <span class="text-primary-gradient">{% trans "terrain" %}</span>.
+    </h1>
+    <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-medium text-balance">
+      {% trans "Ce qu'on apprend sur les vrais projets : cybersécurité, dev web, IA. Pas de buzzwords, juste ce qui marche." %}
+    </p>
+  </div>
+</section>
+
+<section class="px-6 pb-24">
+  <div class="max-w-6xl mx-auto">
+    {% if articles %}
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for article in articles %}
+          <c-article-card :article="article" />
+        {% endfor %}
+      </div>
+
+      {% if is_paginated %}
+        <nav class="mt-16 flex items-center justify-center gap-3" aria-label="{% trans 'Pagination' %}">
+          {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}"
+               class="px-5 py-2 rounded-full bg-surface-lowest hover:bg-surface-container-low ambient-shadow border border-outline-variant/30 inline-flex items-center gap-2">
+              <span class="material-symbols-outlined">arrow_back</span>
+              {% trans "Précédent" %}
+            </a>
+          {% endif %}
+          <span class="text-on-surface-variant text-sm">
+            {% blocktrans with current=page_obj.number total=paginator.num_pages %}Page {{ current }} sur {{ total }}{% endblocktrans %}
+          </span>
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"
+               class="px-5 py-2 rounded-full bg-surface-lowest hover:bg-surface-container-low ambient-shadow border border-outline-variant/30 inline-flex items-center gap-2">
+              {% trans "Suivant" %}
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          {% endif %}
+        </nav>
+      {% endif %}
+    {% else %}
+      <div class="text-center py-16 text-on-surface-variant">
+        <p>{% trans "Aucun article publié pour le moment. Revenez bientôt." %}</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

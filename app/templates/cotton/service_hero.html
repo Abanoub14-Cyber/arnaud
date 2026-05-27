@@ -1,0 +1,17 @@
+<c-vars eyebrow title accent="" />
+<section class="relative pt-40 pb-20 md:pt-48 md:pb-28 px-6 overflow-hidden">
+  <div class="absolute inset-0 radiant-glow -z-10"></div>
+  <div class="max-w-5xl mx-auto text-center">
+    <c-eyebrow class="mb-6">{{ eyebrow }}</c-eyebrow>
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.05] text-balance">
+      {{ title }}{% if accent %} <span class="text-primary-gradient">{{ accent }}</span>{% endif %}
+    </h1>
+    <div class="text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto mb-10 font-medium text-balance">
+      {{ slot }}
+    </div>
+    <c-button variant="primary" size="lg" href="/contact/">
+      {% load i18n %}{% trans "Discuter de votre projet" %}
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </c-button>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+{% if size == "lg" %}
+  {% with size_classes="px-10 py-5 text-lg" %}
+    {% if href %}
+      <a href="{{ href }}" class="{{ variant_classes }} {{ size_classes }} rounded-full font-bold transition-all hover:scale-[1.02] active:scale-95 inline-flex items-center justify-center gap-2 {{ class }}">{{ slot }}</a>
+    {% else %}
+      <button type="{{ type }}" class="{{ variant_classes }} {{ size_classes }} rounded-full font-bold transition-all hover:scale-[1.02] active:scale-95 inline-flex items-center justify-center gap-2 {{ class }}">{{ slot }}</button>
+    {% endif %}
+  {% endwith %}
+{% else %}
+  {% with size_classes="px-6 py-3 text-base" %}
+    {% if href %}
+      <a href="{{ href }}" class="{{ variant_classes }} {{ size_classes }} rounded-full font-bold transition-all hover:scale-[1.02] active:scale-95 inline-flex items-center justify-center gap-2 {{ class }}">{{ slot }}</a>
+    {% else %}
+      <button type="{{ type }}" class="{{ variant_classes }} {{ size_classes }} rounded-full font-bold transition-all hover:scale-[1.02] active:scale-95 inline-flex items-center justify-center gap-2 {{ class }}">{{ slot }}</button>
+    {% endif %}
+  {% endwith %}
+{% endif %}

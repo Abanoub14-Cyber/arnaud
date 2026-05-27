@@ -1,0 +1,17 @@
+<c-vars title cta_label cta_href />
+<div class="rounded-xl bg-inverse-surface overflow-hidden relative ambient-shadow isolate transform-gpu">
+  <div class="absolute inset-0 opacity-20 pointer-events-none">
+    <div class="absolute -top-20 -right-20 w-96 h-96 bg-primary rounded-full blur-3xl opacity-40"></div>
+    <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-tertiary rounded-full blur-3xl opacity-30"></div>
+  </div>
+  <div class="relative z-10 p-12 md:p-20 flex flex-col md:flex-row justify-between items-center gap-12">
+    <div class="max-w-xl text-center md:text-left">
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-4 leading-tight text-balance">{{ title }}</h2>
+      <p class="text-inverse-on-surface text-lg">{{ slot }}</p>
+    </div>
+    <a href="{{ cta_href }}"
+       class="bg-primary-gradient text-on-primary px-10 py-5 rounded-full font-black text-lg ring-primary-gradient transition-all hover:scale-105 active:scale-95 whitespace-nowrap">
+      {{ cta_label }}
+    </a>
+  </div>
+</div>

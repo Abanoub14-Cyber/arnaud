@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Contact - Cybersécurité, web et IA pour PME" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Contact" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Échangez avec l'équipe Makeset sur votre projet de cybersécurité, développement web ou automatisation. Premier contact sans engagement." %}{% endblock %}
+
+{% block content %}
+<section class="relative pt-40 pb-12 md:pt-48 md:pb-12 px-6 overflow-hidden">
+  <div class="absolute inset-0 radiant-glow -z-10"></div>
+  <div class="max-w-3xl mx-auto text-center">
+    <c-eyebrow class="mb-6">{% trans "Contact" %}</c-eyebrow>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 leading-[1.05] text-balance">
+      {% trans "Parlons de" %} <span class="text-primary-gradient">{% trans "votre projet" %}</span>.
+    </h1>
+    <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-medium text-balance">
+      {% trans "Décrivez ce que vous avez en tête. On revient vers vous dans les 24h ouvrées avec une réponse honnête." %}
+    </p>
+  </div>
+</section>
+
+<section class="px-6 pb-24">
+  <div class="max-w-3xl mx-auto">
+    {% if submitted %}
+      {% include "partials/contact_success.html" with message=submitted_message %}
+    {% else %}
+      <div class="rounded-xl glass ambient-shadow p-8 md:p-12">
+        {% include "partials/contact_form.html" %}
+      </div>
+    {% endif %}
+
+    <div class="mt-10 grid md:grid-cols-3 gap-4 text-sm">
+      <div class="flex items-center gap-3 px-5 py-4 rounded-md bg-surface-lowest ambient-shadow">
+        <span class="material-symbols-outlined text-primary">mail</span>
+        <a href="mailto:contact@makeset.be" class="hover:text-primary truncate">contact@makeset.be</a>
+      </div>
+      <div class="flex items-center gap-3 px-5 py-4 rounded-md bg-surface-lowest ambient-shadow">
+        <span class="material-symbols-outlined text-primary">schedule</span>
+        <span>{% trans "Réponse en 24h ouvrées" %}</span>
+      </div>
+      <div class="flex items-center gap-3 px-5 py-4 rounded-md bg-surface-lowest ambient-shadow">
+        <span class="material-symbols-outlined text-primary">handshake</span>
+        <span>{% trans "Premier échange sans engagement" %}</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

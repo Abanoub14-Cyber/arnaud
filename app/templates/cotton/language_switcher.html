@@ -1,0 +1,26 @@
+{% load i18n i18n_extras %}
+{% get_current_language as CURRENT %}
+{% get_available_languages as LANGUAGES %}
+<div x-data="{ open: false }" @click.outside="open = false" class="relative">
+  <button @click="open = !open"
+          class="flex items-center gap-1 px-3 py-2 rounded-full hover:bg-surface-container-high text-sm font-bold transition"
+          :aria-expanded="open"
+          aria-label="{% trans 'Changer de langue' %}">
+    <span class="material-symbols-outlined text-base">language</span>
+    <span class="uppercase">{{ CURRENT }}</span>
+  </button>
+  <div x-show="open" x-transition x-cloak
+       class="absolute right-0 mt-2 py-2 rounded-md bg-surface-lowest ambient-shadow border border-outline-variant/20 min-w-[160px] z-50">
+    {% for lang_code, lang_name in LANGUAGES %}
+      <form action="{% url 'set_language' %}" method="post" class="block">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{% translate_url request.path lang_code %}">
+        <input type="hidden" name="language" value="{{ lang_code }}">
+        <button type="submit"
+                class="w-full text-left px-4 py-2 hover:bg-surface-container-low transition {% if lang_code == CURRENT %}font-bold text-primary{% endif %}">
+          {{ lang_name }}
+        </button>
+      </form>
+    {% endfor %}
+  </div>
+</div>

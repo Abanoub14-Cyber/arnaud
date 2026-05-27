@@ -1,0 +1,18 @@
+{% load i18n %}
+<div id="contact-form" class="rounded-xl glass ambient-shadow p-10 md:p-14 text-center">
+  <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-primary-gradient flex items-center justify-center">
+    <span class="material-symbols-outlined text-on-primary text-4xl">check</span>
+  </div>
+  <h2 class="text-2xl md:text-3xl font-extrabold mb-4">{% trans "Message reçu, merci." %}</h2>
+  <p class="text-on-surface-variant max-w-xl mx-auto mb-2">
+    {% blocktrans with name=message.name %}On revient vers vous, {{ name }}, dans les 24h ouvrées.{% endblocktrans %}
+  </p>
+  <p class="text-on-surface-variant max-w-xl mx-auto mb-8 text-sm">
+    {% trans "Si urgent, écrivez directement à" %}
+    <a class="text-primary hover:underline" href="mailto:arnaud@makeset.be">arnaud@makeset.be</a>.
+  </p>
+  <a href="{% url 'home' %}" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+    <span class="material-symbols-outlined">arrow_back</span>
+    {% trans "Retour à l'accueil" %}
+  </a>
+</div>

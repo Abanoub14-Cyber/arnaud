@@ -1,0 +1,528 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Résultat" %} - {{ scan.domain }} - {{ scan.grade }} | MakeTrust{% endblock %}
+{% block og_title %}{% blocktrans with domain=scan.domain grade=scan.grade score=scan.overall_score %}{{ domain }} : score {{ grade }} sur MakeTrust ({{ score }}/100){% endblocktrans %}{% endblock %}
+{% block og_description %}{% blocktrans %}Audit gratuit de la sécurité d'un site web : DNS, email (SPF/DKIM/DMARC), TLS, en-têtes HTTP, cookies, RDAP. Testez le vôtre en 60 secondes.{% endblocktrans %}{% endblock %}
+{% block og_image %}{% if scan.preview_image_url %}{{ scan.preview_image_url }}{% else %}https://{{ request.get_host }}{% static 'images/og-default.png' %}{% endif %}{% endblock %}
+{% block og_image_secure %}{% if scan.preview_image_url %}{{ scan.preview_image_url }}{% else %}https://{{ request.get_host }}{% static 'images/og-default.png' %}{% endif %}{% endblock %}
+{% block og_image_alt %}{% blocktrans with domain=scan.domain %}Aperçu du site {{ domain }} scanné par MakeTrust{% endblocktrans %}{% endblock %}
+{% block twitter_image_alt %}{% blocktrans with domain=scan.domain %}Aperçu du site {{ domain }} scanné par MakeTrust{% endblocktrans %}{% endblock %}
+{% block meta_description %}{% blocktrans with grade=scan.grade score=scan.overall_score domain=scan.domain %}Score MakeTrust : {{ grade }} ({{ score }}/100) pour {{ domain }}. Audit DNS, email, TLS, en-têtes HTTP.{% endblocktrans %}{% endblock %}
+
+{% block extra_head %}{# Result pages stay out of the SERPs (each scan is one-off and personal). #}<meta name="robots" content="noindex"><meta name="referrer" content="origin">{% endblock %}
+
+{% block content %}
+
+{# ============================================ Site type banner + Hero (shared radiant-glow parent) ============================================ #}
+{% comment %}
+The banner and the hero share one .radiant-glow parent so the soft gradient
+flows continuously from the top of the page down through the hero card —
+otherwise we get a visible horizontal seam where the banner section ends
+and the hero section begins (each previously owned its own glow).
+{% endcomment %}
+<div class="relative">
+  <div class="absolute inset-0 radiant-glow -z-10 pointer-events-none"></div>
+
+  {% if profile.type and profile.type != "real_site" %}
+  {% comment %}
+  Profile of the scanned domain, rendered with the same editorial language
+  as the category headers below (oversize numeric ordinal, eyebrow label,
+  italic display statement, plain-language subtitle). It reads as "chapter
+  00" of the report. No card, no ring, no accent bar — just typography
+  sitting on the page.
+  {% endcomment %}
+  <section class="px-6 pt-32 md:pt-40 pb-2 md:pb-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-base
+                       {% if email_only_domain %}text-primary{% else %}text-tertiary-dim{% endif %}">
+            {% if email_only_domain %}mail{% else %}info{% endif %}
+          </span>
+          <span class="text-[0.65rem] font-black uppercase tracking-[0.2em]
+                       {% if email_only_domain %}text-primary{% else %}text-tertiary-dim{% endif %}">
+            {% if email_only_domain %}{% trans "Email-only" %}
+            {% elif profile.type == "parked" %}{% trans "Parking" %}
+            {% elif profile.type == "for_sale" %}{% trans "En vente" %}
+            {% elif profile.type == "registrar_default" %}{% trans "Page par défaut" %}
+            {% elif profile.type == "non_html" %}{% trans "Non-HTML" %}
+            {% elif profile.type == "redirects" %}{% trans "Redirection" %}
+            {% elif profile.type == "unreachable" %}{% trans "Injoignable" %}
+            {% else %}{% trans "Inhabituel" %}
+            {% endif %}
+          </span>
+          <span class="h-px w-10
+                       {% if email_only_domain %}bg-primary{% else %}bg-tertiary{% endif %}"></span>
+        </div>
+
+        <h2 class="text-xl md:text-3xl font-black tracking-tight italic leading-tight text-balance">
+          {% if email_only_domain %}{% blocktrans with domain=scan.domain %}<strong>{{ domain }}</strong> reçoit du mail mais n'héberge pas de site web.{% endblocktrans %}
+          {% elif profile.type == "parked" %}{% trans "Ce domaine est en parking, il n'héberge pas un site web actif." %}
+          {% elif profile.type == "for_sale" %}{% trans "Ce domaine est mis en vente, il n'héberge pas un site web actif." %}
+          {% elif profile.type == "registrar_default" %}{% trans "Le serveur affiche la page par défaut de l'hébergeur, le site n'a pas encore été configuré." %}
+          {% elif profile.type == "non_html" %}{% trans "Le serveur a répondu mais ne sert pas une page HTML." %}
+          {% elif profile.type == "redirects" %}{% blocktrans with domain=scan.domain %}<strong>{{ domain }}</strong> redirige vers une autre adresse, c'est souvent la version www. ou une page d'accueil sur un chemin.{% endblocktrans %}
+          {% elif profile.type == "unreachable" %}{% trans "Le site n'a pas pu être joint en HTTPS." %}
+          {% else %}{% trans "Le serveur a répondu de façon inhabituelle." %}
+          {% endif %}
+        </h2>
+
+        <p class="text-sm md:text-base text-on-surface-variant mt-3 leading-relaxed max-w-2xl">
+          {% if email_only_domain %}{% trans "Les checks web ne s'appliquent pas. Concentrez-vous sur la section Sécurité email plus bas." %}
+          {% else %}{% trans "Les checks DNS et email restent valides, mais les checks HTTP n'apportent pas grand-chose dans cet état." %}
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+<section class="relative {% if profile.type and profile.type != "real_site" %}pt-12{% else %}pt-32 md:pt-40{% endif %} pb-12 px-6 overflow-hidden">
+  <div class="max-w-5xl mx-auto">
+    <div class="rounded-xl bg-inverse-surface overflow-hidden relative ambient-shadow isolate transform-gpu">
+      <div class="absolute inset-0 opacity-30 pointer-events-none">
+        <div class="absolute -top-32 -right-32 w-[28rem] h-[28rem] bg-primary rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-tertiary rounded-full blur-3xl opacity-40"></div>
+      </div>
+
+      <div class="relative z-10 p-8 md:p-12 grid sm:grid-cols-[auto_1fr] gap-8 sm:gap-10 items-start">
+        {# Grade letter — first column #}
+        <div class="text-center sm:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/90 text-xs font-bold tracking-widest uppercase mb-4">
+            MakeTrust
+          </div>
+          <div class="leading-none font-black tracking-tighter pe-2
+                      [-webkit-box-decoration-break:clone] [box-decoration-break:clone]
+                      text-[7rem] md:text-[10rem]
+                      {% if scan.grade == 'A+' or scan.grade == 'A' or scan.grade == 'B' %}text-primary-gradient
+                      {% else %}bg-clip-text text-transparent bg-gradient-to-br from-white to-white/60
+                      {% endif %}">
+            {{ scan.grade|default:"-" }}
+          </div>
+          <div class="text-white/80 text-sm font-bold tracking-widest uppercase mt-1">
+            {{ scan.overall_score|default:"0" }}<span class="text-white/40">/100</span>
+          </div>
+        </div>
+
+        {# Right column: meta + preview on same row, score bar + severity full-width below #}
+        <div class="space-y-5 min-w-0">
+          <div class="grid {% if scan.preview_image_url or scan.preview_title %}sm:grid-cols-[1fr_auto]{% endif %} gap-6 items-center">
+            <div class="min-w-0">
+              <div class="text-white/60 text-xs font-bold tracking-widest uppercase mb-2">
+                {% trans "Domaine analysé" %}
+              </div>
+              <h1 class="text-2xl md:text-3xl font-extrabold tracking-tighter text-white break-all leading-tight">
+                {{ scan.domain }}
+              </h1>
+              <p class="text-white/60 text-sm mt-2">
+                {% blocktrans with finished=scan.finished_at|date:"d M Y, H:i" %}Scanné le {{ finished }}{% endblocktrans %}
+              </p>
+              {% if percentile is not None %}
+                <p class="text-white/80 text-sm mt-2 inline-flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-base text-primary">trending_up</span>
+                  {% blocktrans with pct=percentile %}Mieux que {{ pct }} % des domaines scannés{% endblocktrans %}
+                </p>
+              {% endif %}
+
+              {% if profile.stack or profile.waf or profile.ip %}
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                {% if profile.stack and profile.stack != "custom" %}
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/10 text-white/90 text-xs font-bold">
+                    <span class="material-symbols-outlined text-sm">code_blocks</span>
+                    {{ profile.stack|capfirst }}
+                  </span>
+                {% endif %}
+                {% if profile.waf %}
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/25 text-white text-xs font-bold">
+                    <span class="material-symbols-outlined text-sm">shield</span>
+                    {% if profile.waf == "cloudflare" %}Cloudflare
+                    {% elif profile.waf == "akamai" %}Akamai
+                    {% elif profile.waf == "aws_cloudfront" %}AWS CloudFront
+                    {% elif profile.waf == "fastly" %}Fastly
+                    {% elif profile.waf == "sucuri" %}Sucuri
+                    {% elif profile.waf == "imperva" %}Imperva
+                    {% elif profile.waf == "bunnycdn" %}BunnyCDN
+                    {% elif profile.waf == "ovh" %}OVH IP-LB
+                    {% else %}{{ profile.waf }}
+                    {% endif %}
+                  </span>
+                {% endif %}
+                {% if profile.ip %}
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 text-white/70 text-xs font-mono" title="{% trans 'IP publique testée' %}">
+                    <span class="material-symbols-outlined text-sm">dns</span>
+                    {{ profile.ip }}
+                  </span>
+                {% endif %}
+              </div>
+              {% endif %}
+            </div>
+
+            {% if scan.preview_image_url or scan.preview_title %}
+            <div class="w-full mx-auto sm:w-56 md:w-64 shrink-0" style="max-width: 280px">
+              <div class="rounded-md overflow-hidden ambient-shadow ring-1 ring-white/10 bg-white/5 isolate transform-gpu">
+                {# Browser chrome — traffic lights + domain in the URL bar #}
+                <div class="flex items-center gap-1.5 px-3 py-2 bg-black/30 border-b border-white/10">
+                  <span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-tertiary/70"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-primary/70"></span>
+                  <span class="text-white/50 text-xs ml-2 truncate">{{ scan.domain }}</span>
+                </div>
+
+                {% comment %}
+                Preview body — text fallback always renders, the og:image
+                (when present) loads on top. Missing or broken og:image:
+                the fallback shines through, no JS hack.
+                {% endcomment %}
+                <div class="relative aspect-[1200/630] bg-inverse-surface overflow-hidden">
+                  {# Ambient blobs — same visual language as the score hero #}
+                  <div class="absolute inset-0 opacity-40 pointer-events-none">
+                    <div class="absolute -top-10 -right-10 w-44 h-44 bg-primary rounded-full blur-3xl opacity-60"></div>
+                    <div class="absolute -bottom-10 -left-10 w-36 h-36 bg-tertiary rounded-full blur-3xl opacity-50"></div>
+                  </div>
+                  {# Fallback content: domain-initial tile + page title + domain in mono #}
+                  <div class="absolute inset-0 flex flex-col justify-between p-4 md:p-5">
+                    <div class="size-9 md:size-10 rounded-md bg-primary-gradient text-on-primary inline-flex items-center justify-center text-base md:text-lg font-black tracking-tight shrink-0 self-start ambient-shadow">
+                      {{ scan.domain|slice:":1"|upper }}
+                    </div>
+                    {% if scan.preview_title %}
+                      <p class="text-white font-bold text-xs md:text-sm leading-tight line-clamp-3">
+                        {{ scan.preview_title }}
+                      </p>
+                    {% endif %}
+                  </div>
+                  {% if scan.preview_image_url %}
+                    <img src="{{ scan.preview_image_url }}"
+                         alt="{% blocktrans with d=scan.domain %}Aperçu du site {{ d }}{% endblocktrans %}"
+                         loading="lazy" decoding="async"
+                         class="absolute inset-0 w-full h-full object-cover"
+                         referrerpolicy="no-referrer"
+                         onerror="this.remove();">
+                  {% endif %}
+                </div>
+
+                {# Bottom caption — only rendered when we have something to show #}
+                {% if scan.preview_title and scan.preview_image_url %}
+                  <div class="px-3 py-2 bg-black/40 text-white/80 text-xs truncate border-t border-white/5">
+                    {{ scan.preview_title }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
+          <div>
+            <div class="h-2 rounded-full bg-white/10 overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-700
+                          {% if scan.grade == 'A+' or scan.grade == 'A' %}bg-primary-gradient
+                          {% elif scan.grade == 'B' or scan.grade == 'C' %}bg-tertiary
+                          {% else %}bg-error
+                          {% endif %}"
+                   style="width: {{ scan.overall_score|default:0 }}%"></div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 text-xs">
+            {% if scan.summary.critical %}<span class="px-3 py-1.5 rounded-full bg-error text-on-error font-bold">{{ scan.summary.critical }} {% trans "critique" %}{{ scan.summary.critical|pluralize }}</span>{% endif %}
+            {% if scan.summary.high %}<span class="px-3 py-1.5 rounded-full bg-error/80 text-on-error font-bold">{{ scan.summary.high }} {% trans "élevée" %}{{ scan.summary.high|pluralize }}</span>{% endif %}
+            {% if scan.summary.medium %}<span class="px-3 py-1.5 rounded-full bg-tertiary text-on-tertiary font-bold">{{ scan.summary.medium }} {% trans "moyenne" %}{{ scan.summary.medium|pluralize }}</span>{% endif %}
+            {% if scan.summary.low %}<span class="px-3 py-1.5 rounded-full bg-white/15 text-white/90 font-bold">{{ scan.summary.low }} {% trans "faible" %}{{ scan.summary.low|pluralize }}</span>{% endif %}
+            {% if scan.summary.pass %}<span class="px-3 py-1.5 rounded-full bg-primary text-on-primary font-bold">{{ scan.summary.pass }} OK</span>{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>{# /relative wrapper: banner + hero share one radiant-glow #}
+
+{# ============================================ Top priorités ============================================ #}
+{% if priorities %}
+<section class="px-6 pb-12 pt-12">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex items-end justify-between gap-6 mb-8">
+      <div>
+        <c-eyebrow class="mb-3">{% trans "À traiter en premier" %}</c-eyebrow>
+        <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight text-balance">
+          {% trans "Trois actions qui changent votre score le plus vite." %}
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid gap-4">
+      {% for c in priorities %}
+        {% with d=c.display %}
+        <a href="#finding-{{ c.id }}"
+           class="group/card block rounded-xl glass ambient-shadow p-6 md:p-7
+                  transition-transform duration-200 hover:scale-[1.015] motion-reduce:hover:scale-100">
+          <div class="flex flex-col md:flex-row gap-5 md:items-center">
+            <div class="shrink-0 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl flex items-center justify-center animate-soft-pulse
+                          {% if c.severity == 'critical' %}bg-error text-on-error
+                          {% elif c.severity == 'high' %}bg-error/70 text-on-error
+                          {% else %}bg-tertiary text-on-tertiary
+                          {% endif %}"
+                   style="font-variation-settings: 'FILL' 1;">
+                <span class="material-symbols-outlined text-2xl">priority_high</span>
+              </div>
+              <div class="md:hidden">
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wide
+                             {% if c.severity == 'critical' %}bg-error text-on-error
+                             {% elif c.severity == 'high' %}bg-error/70 text-on-error
+                             {% else %}bg-tertiary text-on-tertiary
+                             {% endif %}">{{ c.get_severity_display }}</span>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-baseline gap-3 mb-1.5 flex-wrap">
+                <h3 class="font-bold text-base md:text-lg leading-snug">{{ d.title }}</h3>
+                <span class="hidden md:inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide
+                             {% if c.severity == 'critical' %}bg-error text-on-error
+                             {% elif c.severity == 'high' %}bg-error/70 text-on-error
+                             {% else %}bg-tertiary text-on-tertiary
+                             {% endif %}">{{ c.get_severity_display }}</span>
+              </div>
+              {% if d.summary_plain %}
+                <p class="text-sm text-on-surface-variant leading-relaxed">{{ d.summary_plain }}</p>
+              {% endif %}
+            </div>
+            <span class="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full
+                         bg-primary/10 group-hover/card:bg-primary group-hover/card:text-on-primary
+                         text-primary font-bold text-sm whitespace-nowrap
+                         transition-colors duration-200">
+              {% trans "Voir le correctif" %}
+              <span class="material-symbols-outlined text-base animate-nudge-x group-hover/card:animate-none">arrow_forward</span>
+            </span>
+          </div>
+        </a>
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ============================================ Détail par catégorie (editorial layout) ============================================ #}
+<section class="px-6 pb-16 pt-8">
+  <div class="max-w-5xl mx-auto">
+    <div class="mb-12">
+      <c-eyebrow class="mb-3">{% trans "Détail complet" %}</c-eyebrow>
+      <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight text-balance">
+        {% trans "Tout ce qu'on a vérifié, regroupé par thème." %}
+      </h2>
+    </div>
+
+    <div class="space-y-12 md:space-y-16">
+      {% for cat in categories %}
+      <details class="group/cat">
+        {# Category header = the <summary>, the clicked area to fold the section. #}
+        <summary class="grid grid-cols-[auto_1fr_auto_auto] gap-x-4 md:gap-x-6 gap-y-2 items-baseline mb-8 pb-6 border-b border-outline-variant/40 cursor-pointer list-none select-none">
+          <div class="text-3xl md:text-5xl font-black tracking-tighter text-primary-gradient italic tabular-nums leading-none">
+            {{ forloop.counter|stringformat:"02d" }}
+          </div>
+          <div class="min-w-0">
+            <h3 class="text-2xl md:text-3xl font-black tracking-tight italic leading-tight">
+              {{ cat.label.title }}
+            </h3>
+            <p class="text-xs md:text-sm text-on-surface-variant tracking-wide mt-1.5">
+              {{ cat.label.subtitle }}
+            </p>
+          </div>
+          {% if cat.skipped %}
+          <div class="text-right shrink-0">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface-container-low text-on-surface-variant text-xs font-bold uppercase tracking-widest">
+              <span class="material-symbols-outlined text-base">remove_circle_outline</span>
+              {% trans "Ignoré" %}
+            </div>
+            <div class="text-xs text-on-surface-variant mt-2">
+              {% trans "Aucun site web à analyser" %}
+            </div>
+          </div>
+          {% elif cat.score is not None %}
+          <div class="text-right shrink-0">
+            <div class="text-3xl md:text-5xl font-black tracking-tighter tabular-nums leading-none
+                        {% if cat.score >= 85 %}text-primary
+                        {% elif cat.score >= 60 %}text-tertiary
+                        {% else %}text-error
+                        {% endif %}">
+              {{ cat.score }}<span class="text-base text-on-surface-variant/60">/100</span>
+            </div>
+            <div class="text-xs text-on-surface-variant uppercase tracking-widest font-bold mt-2">
+              {% if cat.count_issues %}
+                {% blocktrans count n=cat.count_issues %}{{ n }} point à corriger{% plural %}{{ n }} points à corriger{% endblocktrans %}
+              {% else %}
+                {% trans "Tout est en ordre" %}
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+          {# Chevron — clearly affordance "click to fold". Rotates on open. #}
+          <div class="self-start mt-2 text-on-surface-variant/60 transition-transform group-open/cat:rotate-180 ml-1">
+            <span class="material-symbols-outlined text-2xl">expand_more</span>
+          </div>
+        </summary>
+
+        {% if cat.skipped %}
+          {# Empty-state for fully-skipped categories: one card, not a stuttering list of identical findings. #}
+          <div class="rounded-xl bg-surface-container-low/60 border border-outline-variant/30 p-6 md:p-8 flex items-center gap-5">
+            <div class="shrink-0 size-16 md:size-20 rounded-md bg-primary-gradient text-on-primary flex items-center justify-center ambient-shadow">
+              <span class="material-symbols-outlined" style="font-size: 40px; font-variation-settings: 'wght' 500;">web_asset_off</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-lg md:text-xl font-extrabold italic tracking-tight text-primary-gradient pe-2 [-webkit-box-decoration-break:clone] [box-decoration-break:clone] mb-1.5">
+                {% trans "Aucun site web sur ce domaine" %}
+              </h4>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                {% trans "Les checks web (TLS, en-têtes, redirections, cookies) ne s'appliquent pas ici. La section Sécurité email plus haut contient ce qui compte pour vous." %}
+              </p>
+            </div>
+          </div>
+        {% else %}
+        {# Findings: whitespace-separated editorial entries, hairline divider only as a soft cue #}
+        <div class="divide-y divide-outline-variant/15">
+          {% for c in cat.checks %}
+            {% with d=c.display %}
+            <details id="finding-{{ c.id }}" class="group py-12 md:py-14 first:pt-3 last:pb-3">
+              <summary class="grid grid-cols-[auto_1fr_auto] gap-x-5 md:gap-x-6 gap-y-1.5 cursor-pointer list-none">
+                {# Left: ordinal counter — sub-typographic mark #}
+                <div class="text-xs font-mono tabular-nums tracking-wider self-start mt-1
+                            {% if c.severity == 'critical' or c.severity == 'high' %}text-error
+                            {% elif c.severity == 'medium' %}text-tertiary
+                            {% elif c.severity == 'pass' %}text-primary
+                            {% else %}text-on-surface-variant/60
+                            {% endif %}">
+                  {{ forloop.counter|stringformat:"02d" }}
+                </div>
+                {# Middle: severity tag + title + summary stacked #}
+                <div class="min-w-0">
+                  <div class="inline-flex items-center gap-2 mb-3">
+                    <span class="text-[0.65rem] font-black uppercase tracking-[0.18em]
+                                 {% if c.severity == 'critical' %}text-error
+                                 {% elif c.severity == 'high' %}text-error/80
+                                 {% elif c.severity == 'medium' %}text-tertiary
+                                 {% elif c.severity == 'low' %}text-on-surface-variant
+                                 {% elif c.severity == 'info' %}text-on-surface-variant/70
+                                 {% else %}text-primary
+                                 {% endif %}">
+                      {{ c.get_severity_display }}
+                    </span>
+                    <span class="h-px w-8
+                                 {% if c.severity == 'critical' %}bg-error
+                                 {% elif c.severity == 'high' %}bg-error/80
+                                 {% elif c.severity == 'medium' %}bg-tertiary
+                                 {% elif c.severity == 'pass' %}bg-primary
+                                 {% else %}bg-on-surface-variant/40
+                                 {% endif %}"></span>
+                  </div>
+                  <h4 class="text-lg md:text-xl font-extrabold tracking-tight leading-snug">{{ d.title }}</h4>
+                  {% if d.summary_plain %}
+                    <p class="text-sm md:text-base text-on-surface-variant mt-3 leading-relaxed max-w-2xl">{{ d.summary_plain }}</p>
+                  {% endif %}
+                </div>
+                {# Right: chevron with subtle hover label #}
+                <div class="self-start mt-2 text-on-surface-variant/60 transition-transform group-open:rotate-180">
+                  <span class="material-symbols-outlined text-xl">expand_more</span>
+                </div>
+              </summary>
+
+              {% if d.fix_text or c.evidence %}
+              <div class="grid grid-cols-[auto_1fr] gap-x-5 md:gap-x-6 mt-7 md:mt-8">
+                <div></div>
+                <div class="space-y-5 md:space-y-6 max-w-3xl">
+                  {% if d.fix_text %}
+                    {% comment %}
+                    Fix callout — proper card, not an inline accent line.
+                    Subtle surface + ring, small primary tile for the icon,
+                    eyebrow label, body text. Reads as a distinct affordance.
+                    {% endcomment %}
+                    <div class="rounded-md bg-surface-container-low/60 ring-1 ring-outline-variant/40 p-6 md:p-7">
+                      <div class="inline-flex items-center gap-3 mb-4">
+                        <div class="size-8 rounded-md bg-primary-gradient text-on-primary inline-flex items-center justify-center ambient-shadow">
+                          <span class="material-symbols-outlined text-base">build</span>
+                        </div>
+                        <span class="text-[0.65rem] font-black uppercase tracking-[0.2em] text-primary">
+                          {% trans "Comment corriger" %}
+                        </span>
+                      </div>
+                      <p class="text-sm md:text-base leading-relaxed text-on-surface">{{ d.fix_text }}</p>
+                    </div>
+                  {% endif %}
+
+                  {% if c.evidence %}
+                    <details class="group/tech">
+                      <summary class="cursor-pointer list-none text-[0.65rem] font-black uppercase tracking-[0.18em] text-on-surface-variant/70 hover:text-on-surface inline-flex items-center gap-2 transition select-none py-1">
+                        <span class="material-symbols-outlined text-base group-open/tech:rotate-90 transition-transform">chevron_right</span>
+                        {% trans "Détails techniques" %}
+                      </summary>
+                      {# Terminal-style block for raw scanner output #}
+                      <div class="mt-4 rounded-md bg-inverse-surface overflow-hidden ring-1 ring-inverse-surface ambient-shadow">
+                        <div class="flex items-center gap-1.5 px-4 py-2.5 bg-black/30 border-b border-white/10">
+                          <span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+                          <span class="w-2.5 h-2.5 rounded-full bg-tertiary/70"></span>
+                          <span class="w-2.5 h-2.5 rounded-full bg-primary/70"></span>
+                          <span class="ml-2 text-[0.6rem] font-mono uppercase tracking-widest text-white/40">scanner output</span>
+                        </div>
+                        <pre class="whitespace-pre-wrap break-words text-xs font-mono text-white/85 px-5 py-4 leading-relaxed">{{ c.evidence }}</pre>
+                      </div>
+                    </details>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+            </details>
+            {% endwith %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </details>
+      {% empty %}
+        <p class="text-center text-on-surface-variant">{% trans "Aucun résultat à afficher." %}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ============================================ CTA banner ============================================ #}
+<section class="px-6 pb-24">
+  <div class="max-w-5xl mx-auto">
+    <c-cta-banner
+      title="{% trans 'On vous aide à corriger tout ça ?' %}"
+      cta_label="{% trans 'Parlons-en' %}"
+      cta_href="{% url 'contact' %}?service=cyber&utm_source=maketrust">
+      {% trans "Notre équipe peut vous aider à mettre en place SPF/DKIM/DMARC, durcir vos en-têtes, activer DNSSEC, et planifier des re-scans automatiques. Premier échange sans engagement." %}
+    </c-cta-banner>
+
+    <div class="mt-10 text-center">
+      <a href="{% url 'maketrust:landing' %}" class="text-on-surface-variant hover:text-primary font-bold inline-flex items-center gap-2 transition">
+        <span class="material-symbols-outlined">arrow_back</span>
+        {% trans "Scanner un autre domaine" %}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% comment %}
+Rescan FAB — sticky bottom-right action so the visitor always has a one-tap
+path to "I tweaked my DNS, let's see the new score". HTMX-driven: clicking
+fetches the rescan modal partial and swaps it into #modal-container instead
+of navigating away from the report.
+{% endcomment %}
+<button type="button"
+        hx-get="{% url 'maketrust:scan_rescan' scan_id=scan.id %}"
+        hx-target="#modal-container"
+        hx-swap="innerHTML"
+        class="group/rescan fixed bottom-6 right-6 z-40
+               inline-flex items-center gap-2 pl-4 pr-5 py-3 rounded-full
+               bg-primary-gradient text-on-primary font-bold text-sm md:text-base
+               ambient-shadow ring-primary-gradient
+               transition-transform duration-200 hover:scale-105 motion-reduce:hover:scale-100"
+        title="{% trans 'Relancer un scan sur ce domaine avec les mêmes paramètres' %}"
+        aria-label="{% trans 'Relancer le scan' %}">
+  <span class="material-symbols-outlined transition-transform duration-500 group-hover/rescan:rotate-180">autorenew</span>
+  <span>{% trans "Relancer le scan" %}</span>
+</button>
+
+{# Empty container that receives the rescan modal HTML via HTMX. #}
+<div id="modal-container"></div>
+{% endblock %}

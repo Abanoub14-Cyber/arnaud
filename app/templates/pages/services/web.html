@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Développement web & apps sur mesure pour PME" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Développement Web & Apps" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Sites vitrine, e-commerce et applications web sur mesure. Code propre, performance, SEO et sécurité intégrés dès le premier commit." %}{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{% trans 'Accueil' %}", "item": "https://{{ request.get_host }}{% url 'home' %}"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Services' %}", "item": "https://{{ request.get_host }}{% url 'services_index' %}"},
+    {"@type": "ListItem", "position": 3, "name": "{% trans 'Web & Apps' %}", "item": "https://{{ request.get_host }}{{ request.path }}"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Web Development",
+  "serviceType": "Web Development",
+  "url": "https://{{ request.get_host }}{{ request.path }}",
+  "provider": {"@type": "Organization", "name": "Makeset", "url": "https://makeset.be"},
+  "description": "Custom websites, e-commerce platforms, web applications. Performance, SEO and security baked in.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom websites"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "E-commerce"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web applications"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SaaS platforms"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "API integrations"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Performance optimization"}}
+    ]
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<c-service-hero
+  eyebrow="{% trans 'Web & Apps' %}"
+  title="{% trans 'Des sites et apps qui servent votre business.' %}">
+  {% trans "Votre site est souvent ce qu'on voit en premier. S'il est lent, vieillot ou cassé sur mobile, vous perdez des clients sans même le savoir. On construit des solutions sur mesure : performance, SEO et sécurité intégrés dès le premier commit. Pas de templates génériques." %}
+</c-service-hero>
+
+{# ============================================ Stats ============================================ #}
+<c-section bg="surface-container-low">
+  <div class="text-center mb-14">
+    <c-eyebrow class="mb-4">{% trans "Pourquoi ça compte" %}</c-eyebrow>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-balance max-w-3xl mx-auto">
+      {% trans "Un site rapide convertit plus, ranke mieux, et inspire confiance." %}
+    </h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <c-stat-card icon="speed" number="0,5s">
+      {% trans "de temps de chargement supplémentaire fait chuter les conversions de 7 pourcent. La vitesse est un actif business." %}
+    </c-stat-card>
+    <c-stat-card icon="trending_down" number="53%">
+      {% trans "des visiteurs abandonnent un site qui prend plus de 3 secondes à charger. La performance n'est pas une option." %}
+    </c-stat-card>
+    <c-stat-card icon="search" number="75%">
+      {% trans "des utilisateurs ne dépassent jamais la première page de résultats Google. Sans SEO solide, vous restez invisible." %}
+    </c-stat-card>
+  </div>
+</c-section>
+
+{# ============================================ Services détaillés ============================================ #}
+<c-section>
+  <div class="text-center mb-14">
+    <c-eyebrow class="mb-4">{% trans "Ce qu'on construit" %}</c-eyebrow>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-balance max-w-3xl mx-auto">
+      {% trans "Du site vitrine à la plateforme SaaS, sur mesure." %}
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <c-service-feature icon="web" title="{% trans 'Sites vitrine' %}">
+      {% trans "Présentation, prise de contact, conversion. Sites rapides, optimisés SEO, accessibles, qui rendent justice à votre marque sans templates génériques." %}
+    </c-service-feature>
+
+    <c-service-feature icon="shopping_cart" title="{% trans 'E-commerce' %}">
+      {% trans "Boutiques en ligne sur mesure ou intégrées à Shopify, WooCommerce, Stripe. Tunnel d'achat optimisé, gestion stock, paiements sécurisés, multilingue." %}
+    </c-service-feature>
+
+    <c-service-feature icon="dashboard" title="{% trans 'Apps SaaS et plateformes' %}">
+      {% trans "Applications web complètes : authentification, dashboards, abonnements, multi-tenant. Architecture pensée pour scaler sans tout réécrire dans 18 mois." %}
+    </c-service-feature>
+
+    <c-service-feature icon="hub" title="{% trans 'Intégrations API' %}">
+      {% trans "Connexion à vos outils existants (CRM, ERP, paiement, analytics). Webhooks, OAuth, synchronisations bi-directionnelles. Vos données circulent sans copier-coller." %}
+    </c-service-feature>
+
+    <c-service-feature icon="bolt" title="{% trans 'Performance et SEO' %}">
+      {% trans "Optimisation vitesse, Core Web Vitals, accessibilité, schema.org, hreflang, sitemap. Pas une optimisation après-coup : intégrée dès la conception." %}
+    </c-service-feature>
+
+    <c-service-feature icon="security" title="{% trans 'Sécurité dès le départ' %}">
+      {% trans "OWASP, headers de sécurité, CSP, rate-limiting, HTTPS partout, secrets jamais en clair. Pas un patch ajouté à la fin, intégré dans l'architecture." %}
+    </c-service-feature>
+  </div>
+</c-section>
+
+{# ============================================ Final CTA ============================================ #}
+<c-section>
+  <c-cta-banner
+    title="{% trans 'Vous avez un projet web en tête ?' %}"
+    cta_label="{% trans 'Démarrer le projet' %}"
+    cta_href="/contact/?service=web">
+    {% trans "Décrivez ce que vous voulez construire. On vous dit honnêtement le périmètre, le délai et le budget. Pas de devis fantaisiste." %}
+  </c-cta-banner>
+</c-section>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Scan en cours" %} - {{ scan.domain }} | MakeTrust{% endblock %}
+{% block og_title %}{% trans "Scan en cours" %} | MakeTrust{% endblock %}
+{% block meta_description %}{% trans "Scan en cours…" %}{% endblock %}
+
+{% block extra_head %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block content %}
+<section class="relative pt-40 pb-12 md:pt-48 md:pb-12 px-6 overflow-hidden">
+  <div class="absolute inset-0 radiant-glow -z-10"></div>
+  <div class="max-w-2xl mx-auto text-center">
+    <c-eyebrow class="mb-6">{% trans "Analyse en cours" %}</c-eyebrow>
+    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-3 text-balance">
+      {{ scan.domain }}
+    </h1>
+    <p class="text-on-surface-variant">{% trans "On vérifie votre domaine, ça prend environ une minute." %}</p>
+  </div>
+</section>
+
+<section class="px-6 pb-24">
+  <div class="max-w-2xl mx-auto">
+    {% include "partials/maketrust/scan_progress.html" %}
+  </div>
+</section>
+{% endblock %}

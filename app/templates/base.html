@@ -1,0 +1,101 @@
+{% load static i18n tailwind_cli %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" class="scroll-smooth overflow-x-clip">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title %}Makeset - {% trans "Cybersécurité, développement web et automatisation IA pour PME" %}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% trans "Audits cybersécurité, développement web sur mesure et automatisations IA pour PME exigeantes." %}{% endblock %}">
+
+  <link rel="canonical" href="{% block canonical %}https://{{ request.get_host }}{{ request.path }}{% endblock %}">
+
+  {# Hreflang #}
+  {% block hreflang %}{% include "partials/hreflang.html" %}{% endblock %}
+
+  {# Open Graph — every page should override og_title to fix "Makeset"-only previews. #}
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:site_name" content="Makeset">
+  <meta property="og:title" content="{% block og_title %}Makeset - {% trans "Cybersécurité, web et IA pour PME" %}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{% trans "Audits cybersécurité, sites & apps sur mesure, automatisations IA. Pour les PME qui ne peuvent pas se permettre de perdre." %}{% endblock %}">
+  <meta property="og:url" content="https://{{ request.get_host }}{{ request.path }}">
+  <meta property="og:image" content="{% block og_image %}https://{{ request.get_host }}{% static 'images/og-default.png' %}{% endblock %}">
+  <meta property="og:image:secure_url" content="{% block og_image_secure %}https://{{ request.get_host }}{% static 'images/og-default.png' %}{% endblock %}">
+  <meta property="og:image:type" content="{% block og_image_type %}image/png{% endblock %}">
+  <meta property="og:image:width" content="{% block og_image_width %}1200{% endblock %}">
+  <meta property="og:image:height" content="{% block og_image_height %}630{% endblock %}">
+  <meta property="og:image:alt" content="{% block og_image_alt %}{% trans 'Makeset - Cybersécurité, web et IA pour PME' %}{% endblock %}">
+  <meta property="og:locale" content="{% if LANGUAGE_CODE == 'fr' %}fr_BE{% else %}en_BE{% endif %}">
+  <meta property="og:locale:alternate" content="{% if LANGUAGE_CODE == 'fr' %}en_BE{% else %}fr_BE{% endif %}">
+
+  {# Twitter (title/description/image inherit from og:* per spec). #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="{% block twitter_image_alt %}{% trans 'Makeset - Cybersécurité, web et IA pour PME' %}{% endblock %}">
+
+  {# Mobile browser UI tinting. #}
+  <meta name="theme-color" content="#006ced">
+
+  {# Fonts: Plus Jakarta Sans + Material Symbols Outlined both self-hosted. No third-party hop. #}
+  <link rel="preload" as="font" type="font/woff2" href="{% static 'fonts/plus-jakarta-sans-latin.woff2' %}" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="{% static 'fonts/material-symbols-outlined-subset.woff2' %}" crossorigin>
+
+  {# Tailwind compiled #}
+  {% tailwind_css %}
+
+  {# JSON-LD LocalBusiness #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Makeset",
+    "description": "{% trans 'Cybersécurité, développement web et automatisation IA pour PME exigeantes.' %}",
+    "url": "https://makeset.be",
+    "logo": "https://makeset.be{% static 'images/logodegra.png' %}",
+    "telephone": "+32495332892",
+    "email": "contact@makeset.be",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenue de la Couronne 378",
+      "addressLocality": "Ixelles",
+      "addressRegion": "Bruxelles",
+      "postalCode": "1050",
+      "addressCountry": "BE"
+    },
+    "vatID": "BE 0898.341.645",
+    "priceRange": "€€",
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "sameAs": ["https://www.instagram.com/makeset.be", "https://www.facebook.com/makeset.be"]
+  }
+  </script>
+
+  {# Favicon + PWA manifest (Add to Home Screen on Android). #}
+  <link rel="icon" type="image/png" href="{% static 'images/favlogo.png' %}">
+  <link rel="apple-touch-icon" href="{% static 'images/favlogo.png' %}">
+  <link rel="manifest" href="{% static 'site.webmanifest' %}">
+
+  {# HTMX + Alpine self-hosted (no third-party network hop). #}
+  <script src="{% static 'js/htmx.min.js' %}" defer></script>
+  <script src="{% static 'js/alpinejs.min.js' %}" defer></script>
+  <script src="{% static 'js/cookie-consent.js' %}" defer></script>
+
+  <style>[x-cloak] { display: none !important; }</style>
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="min-h-screen overflow-x-clip">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-on-primary focus:rounded-full">
+    {% trans "Aller au contenu" %}
+  </a>
+
+  {% include "partials/nav.html" %}
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "partials/footer.html" %}
+
+  {% include "partials/cookie_consent.html" %}
+
+  {% block extra_body %}{% endblock %}
+</body>
+</html>

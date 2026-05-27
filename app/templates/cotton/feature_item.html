@@ -1,0 +1,10 @@
+<c-vars icon title />
+<div class="flex gap-6">
+  <div class="shrink-0 w-12 h-12 rounded-full bg-surface-lowest flex items-center justify-center ambient-shadow">
+    <span class="material-symbols-outlined text-primary">{{ icon }}</span>
+  </div>
+  <div>
+    <h3 class="text-xl font-bold mb-2">{{ title }}</h3>
+    <p class="text-on-surface-variant leading-relaxed">{{ slot }}</p>
+  </div>
+</div>

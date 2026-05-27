@@ -1,0 +1,122 @@
+{% load i18n %}
+<div id="scan-progress"
+     class="rounded-xl glass ambient-shadow p-6 md:p-8"
+     hx-get="{% url 'maketrust:scan_status_partial' scan_id=scan.id %}"
+     hx-trigger="every 1.5s"
+     hx-swap="outerHTML">
+
+  {% if scan.status == 'queued' and seconds_until_start > 0 %}
+    {% comment %}
+    Cooldown notice — the scan is queued but intentionally delayed (anti-spam).
+    A small JS countdown ticks every second; the HTMX poll above re-renders
+    the whole block from the server every 1.5s so the value stays accurate
+    even if the browser tab was throttled.
+    {% endcomment %}
+    <div class="rounded-md bg-primary/10 border border-primary/30 px-4 py-3 mb-5 flex items-center gap-3">
+      <span class="material-symbols-outlined text-primary shrink-0 animate-soft-pulse">schedule</span>
+      <div class="text-sm flex-1">
+        <p class="font-bold">{% trans "Démarrage planifié" %}</p>
+        <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">
+          {% blocktrans with s=seconds_until_start %}Anti-spam : votre scan démarre dans <span data-mks-countdown="{{ s }}" class="font-bold tabular-nums text-primary">{{ s }}s</span>. Laissez la page ouverte.{% endblocktrans %}
+        </p>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var el = document.querySelector('[data-mks-countdown]');
+        if (!el) return;
+        var remaining = parseInt(el.dataset.mksCountdown, 10);
+        if (!(remaining > 0)) return;
+        var tick = function () {
+          remaining -= 1;
+          if (remaining < 0) remaining = 0;
+          el.textContent = remaining + 's';
+        };
+        var interval = setInterval(tick, 1000);
+        // HTMX swaps the element out at the next poll — stop ticking when that happens.
+        el.addEventListener('htmx:beforeCleanup', function () { clearInterval(interval); }, { once: true });
+      })();
+    </script>
+  {% endif %}
+
+  {# Header: status sentence + progress count #}
+  <div class="flex items-center justify-between gap-4 mb-5">
+    <div class="flex items-center gap-3 min-w-0">
+      {% if scan.status == 'queued' %}
+        <span class="material-symbols-outlined text-primary shrink-0 animate-pulse">hourglass_top</span>
+      {% else %}
+        <span class="material-symbols-outlined text-primary shrink-0 animate-spin">autorenew</span>
+      {% endif %}
+      <div class="font-bold truncate">
+        {% if scan.status == 'queued' %}
+          {% if seconds_until_start > 0 %}
+            {% trans "En attente du démarrage" %}
+          {% else %}
+            {% blocktrans with pos=position %}En file d'attente, position {{ pos }}{% endblocktrans %}
+          {% endif %}
+        {% else %}
+          {% trans "Scan en cours" %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="text-sm text-on-surface-variant shrink-0 font-mono">
+      {{ done_count }}<span class="opacity-60">/{{ total_count }}</span>
+    </div>
+  </div>
+
+  {# Progress bar #}
+  <div class="h-1.5 rounded-full bg-surface-container-low overflow-hidden mb-6">
+    <div class="h-full bg-primary-gradient transition-all duration-500"
+         style="width: {% widthratio done_count total_count 100 %}%"></div>
+  </div>
+
+  {# Per-module checklist #}
+  <ul class="space-y-2">
+    {% for m in modules %}
+    <li class="flex items-center gap-3 px-4 py-3 rounded-md
+               {% if m.state == 'done' %}bg-primary-container/30
+               {% elif m.state == 'running' %}bg-surface-container-low
+               {% else %}opacity-50
+               {% endif %}">
+      <span class="shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full
+        {% if m.state == 'done' %}bg-primary text-on-primary
+        {% elif m.state == 'running' %}bg-surface-container-high
+        {% else %}bg-surface-container-low
+        {% endif %}">
+        {% if m.state == 'done' %}
+          <span class="material-symbols-outlined text-base">check</span>
+        {% elif m.state == 'running' %}
+          <span class="material-symbols-outlined text-base animate-spin">autorenew</span>
+        {% else %}
+          <span class="material-symbols-outlined text-base text-on-surface-variant/50">schedule</span>
+        {% endif %}
+      </span>
+      <div class="flex-1 min-w-0">
+        <div class="font-bold text-sm">{{ m.title }}</div>
+        <div class="text-xs text-on-surface-variant truncate">{{ m.subtitle }}</div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p class="text-center text-xs text-on-surface-variant/70 mt-6">
+    {% trans "Cette page se met à jour automatiquement, vous pouvez la laisser ouverte." %}
+  </p>
+
+  {% if can_abort %}
+  <div class="text-center mt-6 md:mt-8">
+    <button type="button"
+            hx-post="{% url 'maketrust:scan_abort' scan_id=scan.id %}"
+            hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+            hx-target="#scan-progress"
+            hx-swap="outerHTML"
+            class="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold
+                   text-on-surface-variant ring-1 ring-outline-variant/40
+                   hover:text-error hover:ring-error/40 hover:bg-error/5
+                   transition-colors duration-150">
+      <span class="material-symbols-outlined text-base">close</span>
+      {% trans "Annuler le scan" %}
+    </button>
+  </div>
+  {% endif %}
+</div>

@@ -1,0 +1,93 @@
+{% load i18n %}
+{% comment %}
+Rescan modal — server-rendered partial swapped into #modal-container by the
+result page FAB. Uses Alpine for the open/close state so the modal can fade
+in cleanly and close on backdrop click, escape key, or the explicit X.
+On submit, HTMX hits the same URL POST; the view returns an HX-Redirect to
+the new scan's progress page when successful, or re-renders this same modal
+with field errors when not.
+{% endcomment %}
+<div x-data="{open: false}"
+     x-init="$nextTick(() => open = true)"
+     @keydown.escape.window="open = false"
+     @htmx:before-swap.window="open = false"
+     class="fixed inset-0 z-50 flex items-center justify-center p-4">
+
+  {# Backdrop #}
+  <div x-show="open"
+       x-transition.opacity.duration.200ms
+       @click="open = false"
+       class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  {# Modal card #}
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-200"
+       x-transition:enter-start="opacity-0 scale-95"
+       x-transition:enter-end="opacity-100 scale-100"
+       x-transition:leave="transition ease-in duration-150"
+       x-transition:leave-start="opacity-100 scale-100"
+       x-transition:leave-end="opacity-0 scale-95"
+       @transitionend="if (!open) document.getElementById('modal-container').innerHTML = ''"
+       class="relative bg-surface-lowest rounded-xl ambient-shadow p-6 md:p-8 max-w-md w-full">
+
+    <button type="button"
+            @click="open = false"
+            aria-label="{% trans 'Fermer' %}"
+            class="absolute top-3 right-3 text-on-surface-variant hover:text-on-surface transition-colors size-8 rounded-full inline-flex items-center justify-center hover:bg-surface-container">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <div class="flex items-center gap-3 mb-4">
+      <div class="size-10 rounded-2xl bg-primary-gradient text-on-primary flex items-center justify-center ambient-shadow">
+        <span class="material-symbols-outlined animate-soft-pulse">autorenew</span>
+      </div>
+      <h2 class="text-xl md:text-2xl font-extrabold tracking-tight">
+        {% trans "Relancer le scan" %}
+      </h2>
+    </div>
+
+    <p class="text-sm text-on-surface-variant mb-5 leading-relaxed">
+      {% blocktrans with domain=scan.domain %}Nouveau scan sur <strong>{{ domain }}</strong>. Pour autoriser le rescan, laissez votre email.{% endblocktrans %}
+    </p>
+
+    <form hx-post="{% url 'maketrust:scan_rescan' scan_id=scan.id %}"
+          hx-target="#modal-container"
+          hx-swap="innerHTML"
+          hx-indicator="#rescan-spinner">
+      {% csrf_token %}
+
+      <div class="mb-4">
+        <label for="{{ form.email.id_for_label }}" class="sr-only">
+          {% trans "Votre email" %}
+        </label>
+        {{ form.email }}
+        {% if form.email.errors %}
+          <p class="text-error text-sm mt-2">{{ form.email.errors|join:" " }}</p>
+        {% endif %}
+      </div>
+
+      {% if form.non_field_errors %}
+        <div class="rounded-md bg-error/10 border border-error/30 px-3 py-2 mb-4">
+          <p class="text-error text-sm">{{ form.non_field_errors|join:" " }}</p>
+        </div>
+      {% endif %}
+
+      <div class="flex gap-3 justify-end items-center">
+        <span id="rescan-spinner" class="htmx-indicator text-on-surface-variant text-xs inline-flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-base animate-spin">autorenew</span>
+          {% trans "Lancement…" %}
+        </span>
+        <button type="button"
+                @click="open = false"
+                class="px-4 py-2 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors font-bold text-sm">
+          {% trans "Annuler" %}
+        </button>
+        <button type="submit"
+                class="group/submit inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-gradient text-on-primary font-bold text-sm ring-primary-gradient hover:scale-[1.02] transition-transform motion-reduce:hover:scale-100">
+          <span class="material-symbols-outlined text-base transition-transform duration-500 group-hover/submit:rotate-180">autorenew</span>
+          {% trans "Relancer" %}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

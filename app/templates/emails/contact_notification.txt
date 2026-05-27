@@ -1,0 +1,15 @@
+Nouveau message de contact - {{ site }}
+
+De     : {{ m.name }} <{{ m.email }}>
+Société: {{ m.company|default:"—" }}
+Sujet  : {{ m.get_service_display }}
+Locale : {{ m.locale|default:"—" }}
+Date   : {{ m.created_at|date:"Y-m-d H:i" }}
+IP     : {{ m.ip|default:"—" }}
+Referer: {{ m.referer|default:"—" }}
+
+Message :
+{{ m.message }}
+
+—
+Admin: https://{{ site }}/admin/contact/contactmessage/{{ m.pk }}/change/

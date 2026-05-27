@@ -1,0 +1,7 @@
+{% load i18n i18n_extras %}
+{% get_available_languages as LANGUAGES %}
+{# Self + alternates in every language; x-default points to FR (the canonical default). #}
+{% for lang_code, lang_name in LANGUAGES %}
+  <link rel="alternate" hreflang="{{ lang_code }}" href="https://{{ request.get_host }}{% translate_url request.path lang_code %}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="https://{{ request.get_host }}{% translate_url request.path 'fr' %}">

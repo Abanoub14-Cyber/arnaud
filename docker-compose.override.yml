@@ -1,0 +1,13 @@
+## Dev-only override : bind-mount source + gunicorn --reload pour live reload
+## Activé automatiquement par docker-compose en local. Ne pas committer le contenu du .env de prod.
+services:
+  web:
+    volumes:
+      - ./app:/app
+      - makeset_data:/app/data
+      - makeset_media:/app/media
+    environment:
+      - DJANGO_SETTINGS_MODULE=core.settings.dev
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    ports:
+      - "8000:8000"

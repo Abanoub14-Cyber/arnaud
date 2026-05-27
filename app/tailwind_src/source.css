@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+@theme {
+  /* Aligné avec le dégradé du logo : #006ced -> #46acf2 -> #03e0ff */
+  --color-primary: #006ced;
+  --color-primary-dim: #0058c4;
+  --color-primary-bright: #46acf2;
+  --color-primary-cyan: #03e0ff;
+  --color-primary-container: #b9dcff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #003a7d;
+
+  /* Surfaces : neutres légèrement teintées cool-blue (pas de lavande) */
+  --color-surface: #f6faff;
+  --color-surface-lowest: #ffffff;
+  --color-surface-container-low: #eef4fa;
+  --color-surface-container: #e6eef6;
+  --color-surface-container-high: #dde7f1;
+  --color-surface-container-highest: #d4dfeb;
+  --color-surface-bright: #f6faff;
+  --color-surface-dim: #cfd9e3;
+  --color-surface-variant: #d6e1ec;
+
+  --color-on-surface: #0c1d33;
+  --color-on-surface-variant: #475467;
+  --color-inverse-surface: #001329;
+  --color-inverse-on-surface: #cdd9e8;
+
+  /* Secondary = teinte cyan (bout du dégradé logo) pour les accents */
+  --color-secondary: #0891b2;
+  --color-secondary-dim: #0e7490;
+  --color-on-secondary: #ffffff;
+  /* Tertiary = harmonique chaude pour contrastes ponctuels (utilisé peu) */
+  --color-tertiary: #46acf2;
+  --color-tertiary-dim: #2989d8;
+  --color-on-tertiary: #ffffff;
+
+  --color-outline: #6a7585;
+  --color-outline-variant: #b8c4d4;
+  --color-error: #b41340;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --text-display-lg: 3.5rem;
+  --text-display-lg--line-height: 1.05;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-md: 2.75rem;
+  --text-display-md--line-height: 1.1;
+  --text-display-md--letter-spacing: -0.02em;
+  --text-headline-lg: 2rem;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-label-sm: 0.6875rem;
+  --text-label-sm--letter-spacing: 0.05em;
+
+  --radius-DEFAULT: 1rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .glass-dark {
+    background: rgba(9, 8, 47, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .ambient-shadow {
+    box-shadow:
+      0 30px 60px -12px rgba(42, 43, 81, 0.06),
+      0 18px 36px -18px rgba(42, 43, 81, 0.10),
+      inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  }
+  .radiant-glow {
+    background:
+      radial-gradient(ellipse at 30% 10%, rgba(3, 224, 255, 0.10) 0%, transparent 55%),
+      radial-gradient(ellipse at 70% 30%, rgba(0, 108, 237, 0.10) 0%, transparent 60%);
+  }
+  .bg-primary-gradient {
+    background-image: linear-gradient(135deg, #0058c4 0%, #006ced 50%, #46acf2 100%);
+  }
+  .text-primary-gradient {
+    background-image: linear-gradient(135deg, #0058c4 0%, #006ced 50%, #46acf2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .ring-primary-gradient {
+    box-shadow: 0 10px 25px -5px rgba(0, 108, 237, 0.35), 0 4px 12px -2px rgba(70, 172, 242, 0.25);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Plus Jakarta Sans — self-hosted variable font (200-800), latin + latin-ext.
+   Saves ~6.8s of render-blocking time on slow networks (no third-party DNS / TLS / CSS hop). */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('/static/fonts/plus-jakarta-sans-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('/static/fonts/plus-jakarta-sans-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('/static/fonts/plus-jakarta-sans-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('/static/fonts/plus-jakarta-sans-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Material Symbols Outlined — self-hosted, subset to 50 icons used on this site.
+   Variable axes: wght 100..700, FILL 0..1. ~22 KB instead of 1 MB from fonts.gstatic.com.
+   font-display: block prevents the literal "arrow_forward" ligature text from flashing. */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('/static/fonts/material-symbols-outlined-subset.woff2') format('woff2');
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Alpine x-cloak: hide elements until Alpine initialises so we don't get a
+   flash of the "hidden" content on initial page load. */
+[x-cloak] { display: none !important; }
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+}
+
+/* Idle motion utilities — perpetual, subtle, attention without anxiety.
+   Both disable themselves under prefers-reduced-motion. */
+@keyframes mks-nudge-x {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(3px); }
+}
+@keyframes mks-soft-pulse {
+  0%, 100% { transform: scale(1);    opacity: 1;   }
+  50%      { transform: scale(1.06); opacity: 0.9; }
+}
+@keyframes mks-shimmer {
+  0%   { background-position: -150% 0; }
+  100% { background-position:  250% 0; }
+}
+
+@utility animate-nudge-x {
+  animation: mks-nudge-x 1.8s ease-in-out infinite;
+}
+
+/* CSS-only tooltip: put `data-mks-tip="..."` on any element wrapped in a
+   container with `relative` to position. Shows on hover or keyboard focus,
+   fades in 120ms. Reliable everywhere (no flaky native title behaviour). */
+[data-mks-tip] {
+  position: relative;
+}
+[data-mks-tip]::after {
+  content: attr(data-mks-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(2px);
+  width: max-content;
+  max-width: 18rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--color-inverse-surface);
+  color: var(--color-inverse-on-surface);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 500;
+  white-space: normal;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease, transform 120ms ease;
+  z-index: 50;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.25);
+}
+[data-mks-tip]::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  border: 5px solid transparent;
+  border-top-color: var(--color-inverse-surface);
+  opacity: 0;
+  transition: opacity 120ms ease, transform 120ms ease;
+  z-index: 50;
+  pointer-events: none;
+}
+[data-mks-tip]:hover::after,
+[data-mks-tip]:focus-visible::after,
+[data-mks-tip]:hover::before,
+[data-mks-tip]:focus-visible::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-mks-tip]::after,
+  [data-mks-tip]::before { transition: opacity 0s; }
+}
+@utility animate-soft-pulse {
+  animation: mks-soft-pulse 2.2s ease-in-out infinite;
+}
+@utility animate-shimmer-overlay {
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255,255,255,0.18) 50%,
+    transparent 70%
+  );
+  background-size: 250% 100%;
+  background-position: -150% 0;
+  animation: mks-shimmer 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-nudge-x,
+  .animate-soft-pulse,
+  .animate-shimmer-overlay { animation: none !important; }
+}

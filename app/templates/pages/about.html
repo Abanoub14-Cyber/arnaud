@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "À propos - Une équipe technique pour PME" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "À propos" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Makeset : une équipe technique au service des PME. Cybersécurité, développement web sur mesure, automatisations IA. Sans intermédiaire, sans bullshit." %}{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{% trans 'Accueil' %}", "item": "https://{{ request.get_host }}{% url 'home' %}"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'À propos' %}", "item": "https://{{ request.get_host }}{{ request.path }}"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+{# ============================================ Hero ============================================ #}
+<section class="relative pt-40 pb-20 md:pt-48 md:pb-24 px-6 overflow-hidden">
+  <div class="absolute inset-0 radiant-glow -z-10"></div>
+  <div class="max-w-4xl mx-auto text-center">
+    <c-eyebrow class="mb-8">{% trans "À propos" %}</c-eyebrow>
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.05] text-balance">
+      {% trans "Une petite équipe qui" %}
+      <span class="text-primary-gradient italic pe-2 [-webkit-box-decoration-break:clone] [box-decoration-break:clone]">{% trans "prend son métier au sérieux." %}</span>
+    </h1>
+    <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-medium text-balance">
+      {% trans "Makeset, c'est une agence digitale basée à Bruxelles. On aide les PME belges à sécuriser leur infrastructure, livrer des produits web qui tiennent, et automatiser ce qui peut l'être." %}
+    </p>
+  </div>
+</section>
+
+{# ============================================ Notre histoire ============================================ #}
+<c-section bg="surface-container-low">
+  <div class="grid lg:grid-cols-5 gap-12 items-start">
+    <div class="lg:col-span-2">
+      <c-eyebrow class="mb-4">{% trans "Notre histoire" %}</c-eyebrow>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface text-balance">
+        {% trans "Né du constat que les PME méritent mieux." %}
+      </h2>
+    </div>
+    <div class="lg:col-span-3 space-y-6 text-lg text-on-surface-variant leading-relaxed">
+      <p>{% trans "Trop de fournisseurs vendent du brouillard : chartes interminables, audits photocopiés, projets web lancés sans réflexion. Pendant que la PME signe, eux passent au client suivant." %}</p>
+      <p>{% trans "Makeset est née pour faire l'inverse : du travail honnête, expliqué clairement, livré dans le scope et les délais. Si on ne peut pas faire mieux que ce que vous avez déjà, on le dit." %}</p>
+      <p>{% trans "On préfère un client content sur dix ans que dix clients déçus en six mois." %}</p>
+    </div>
+  </div>
+</c-section>
+
+{# ============================================ Nos engagements ============================================ #}
+<c-section>
+  <div class="text-center max-w-2xl mx-auto mb-16">
+    <c-eyebrow class="mb-4">{% trans "Nos engagements" %}</c-eyebrow>
+    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface text-balance">
+      {% trans "Trois principes. Non négociables." %}
+    </h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-10">
+    <c-feature-item icon="handshake" title="{% trans 'Sans intermédiaire' %}">
+      {% trans "Vous parlez à la personne qui fait le travail. Pas de chef de projet écran de fumée, pas de sous-traitance offshore qu'on vous cache." %}
+    </c-feature-item>
+    <c-feature-item icon="build" title="{% trans 'Du concret, pas du slide' %}">
+      {% trans "Pas de présentation 80 pages. On audite, on prototype, on livre. Vous voyez l'avancement chaque semaine, pas tous les trois mois." %}
+    </c-feature-item>
+    <c-feature-item icon="all_inclusive" title="{% trans 'Engagement long terme' %}">
+      {% trans "On reste après le go-live. Le support n'est pas une option vendue à part — c'est la suite logique du travail bien fait." %}
+    </c-feature-item>
+  </div>
+</c-section>
+
+{# ============================================ Notre méthode ============================================ #}
+<c-section bg="surface-container-low">
+  <div class="text-center max-w-2xl mx-auto mb-16">
+    <c-eyebrow class="mb-4">{% trans "Notre méthode" %}</c-eyebrow>
+    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface text-balance">
+      {% trans "Trois étapes. Pas une de plus." %}
+    </h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="rounded-xl bg-surface-lowest ambient-shadow p-8">
+      <div class="text-5xl font-extrabold text-primary-gradient mb-6 leading-none">01</div>
+      <h3 class="text-xl font-bold mb-3">{% trans "Diagnostic" %}</h3>
+      <p class="text-on-surface-variant leading-relaxed">{% trans "30 minutes au téléphone pour comprendre votre contexte et vos enjeux. Gratuit, sans engagement, sans relance commerciale agressive." %}</p>
+    </div>
+    <div class="rounded-xl bg-surface-lowest ambient-shadow p-8">
+      <div class="text-5xl font-extrabold text-primary-gradient mb-6 leading-none">02</div>
+      <h3 class="text-xl font-bold mb-3">{% trans "Cadrage" %}</h3>
+      <p class="text-on-surface-variant leading-relaxed">{% trans "Un document court qui pose le problème, le scope, le délai et le prix. Vous validez ou pas. C'est binaire, c'est volontaire." %}</p>
+    </div>
+    <div class="rounded-xl bg-surface-lowest ambient-shadow p-8">
+      <div class="text-5xl font-extrabold text-primary-gradient mb-6 leading-none">03</div>
+      <h3 class="text-xl font-bold mb-3">{% trans "Livraison" %}</h3>
+      <p class="text-on-surface-variant leading-relaxed">{% trans "On exécute. Point d'avancement chaque semaine. À la fin, vous avez le code, la doc, et de quoi être autonome si vous le souhaitez." %}</p>
+    </div>
+  </div>
+</c-section>
+
+{# ============================================ CTA ============================================ #}
+<c-section>
+  <c-cta-banner
+      title="{% trans 'Parlons de votre projet.' %}"
+      cta_label="{% trans 'Discuter avec Arnaud' %}"
+      cta_href="{% url 'contact' %}">
+    {% trans "Un café, un appel, un mail. Le format vous regarde — la première discussion est offerte." %}
+  </c-cta-banner>
+</c-section>
+{% endblock %}

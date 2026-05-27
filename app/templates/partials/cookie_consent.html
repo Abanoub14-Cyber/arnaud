@@ -1,0 +1,131 @@
+{% load i18n %}
+<div x-data="{
+       open: false,
+       prefs: false,
+       analytics: false,
+       marketing: false,
+     }"
+     x-init="
+       if (typeof MksConsent !== 'undefined' && !MksConsent.read()) { open = true; }
+     "
+     @cookie:show.window="open = true"
+     @cookie:show-prefs.window="prefs = true; open = false"
+     @cookie:saved.window="open = false; prefs = false"
+     class="fixed inset-x-0 bottom-0 z-[60]">
+
+  {# Layer 1 : the banner #}
+  <div x-show="open && !prefs"
+       x-transition:enter="transition ease-out duration-200"
+       x-transition:enter-start="opacity-0 translate-y-4"
+       x-transition:enter-end="opacity-100 translate-y-0"
+       x-cloak
+       class="mx-auto max-w-3xl m-4 rounded-md bg-surface-lowest ambient-shadow border border-outline-variant/30 p-6"
+       role="dialog" aria-modal="false" aria-labelledby="cookie-title">
+
+    <h2 id="cookie-title" class="text-lg font-bold mb-2">{% trans "Vos cookies, votre choix." %}</h2>
+    <p class="text-sm text-on-surface-variant mb-5 leading-relaxed">
+      {% blocktrans trimmed %}
+      Nous utilisons des cookies strictement nécessaires au fonctionnement du site. Avec votre accord, nous mesurons aussi l'audience pour améliorer le contenu. Vous pouvez accepter, refuser ou choisir le détail. Aucune décision ne limite votre accès au site.
+      {% endblocktrans %}
+      <a href="{% url 'cookies' %}" class="text-primary hover:underline">{% trans "En savoir plus" %}</a>.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-3">
+      <button @click="MksConsent.reject()"
+              class="flex-1 px-5 py-3 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-bold transition border border-outline-variant/30">
+        {% trans "Tout refuser" %}
+      </button>
+      <button @click="prefs = true"
+              class="flex-1 px-5 py-3 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-bold transition border border-outline-variant/30">
+        {% trans "Personnaliser" %}
+      </button>
+      <button @click="MksConsent.accept()"
+              class="flex-1 px-5 py-3 rounded-full bg-primary-gradient text-on-primary font-bold transition hover:scale-[1.02] active:scale-95 ring-primary-gradient">
+        {% trans "Tout accepter" %}
+      </button>
+    </div>
+  </div>
+
+  {# Layer 2 : the preferences modal #}
+  <div x-show="prefs"
+       x-transition:enter="transition ease-out duration-200"
+       x-transition:enter-start="opacity-0 translate-y-4"
+       x-transition:enter-end="opacity-100 translate-y-0"
+       @keydown.escape.window="prefs = false"
+       x-init="$watch('prefs', v => { if (v) { const c = MksConsent.read(); analytics = c?.a === 1; marketing = c?.m === 1; } })"
+       x-cloak
+       class="mx-auto max-w-2xl m-4 rounded-md bg-surface-lowest ambient-shadow border border-outline-variant/30 p-6 max-h-[85vh] overflow-y-auto"
+       role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+
+    <div class="flex justify-between items-start mb-4">
+      <h2 id="cookie-prefs-title" class="text-xl font-bold">{% trans "Préférences cookies" %}</h2>
+      <button @click="prefs = false; open = false" class="p-1 rounded-full hover:bg-surface-container-low" aria-label="{% trans 'Fermer' %}">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <p class="text-sm text-on-surface-variant mb-6">
+      {% trans "Choisissez les catégories que vous autorisez. Votre choix est conservé 12 mois maximum et révocable à tout moment depuis le pied de page." %}
+    </p>
+
+    <div class="space-y-4">
+      {# Necessary - always on #}
+      <div class="rounded-md border border-outline-variant/30 p-4">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-bold mb-1">{% trans "Strictement nécessaires" %}</h3>
+            <p class="text-sm text-on-surface-variant">
+              {% trans "Indispensables au fonctionnement du site (session, CSRF, langue, consentement). Pas de mesure d'audience." %}
+            </p>
+          </div>
+          <span class="shrink-0 px-3 py-1 rounded-full bg-primary-container/40 text-on-primary-container text-xs font-bold uppercase tracking-widest">
+            {% trans "Toujours actif" %}
+          </span>
+        </div>
+      </div>
+
+      {# Analytics #}
+      <div class="rounded-md border border-outline-variant/30 p-4">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-bold mb-1">{% trans "Mesure d'audience" %}</h3>
+            <p class="text-sm text-on-surface-variant">
+              {% trans "Statistiques anonymisées pour comprendre quels contenus sont utiles. Aucun profilage publicitaire." %}
+            </p>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer shrink-0">
+            <input type="checkbox" x-model="analytics" class="sr-only peer">
+            <div class="w-11 h-6 bg-surface-container peer-checked:bg-primary rounded-full peer-focus:ring-2 peer-focus:ring-primary/30 transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-5"></div>
+          </label>
+        </div>
+      </div>
+
+      {# Marketing #}
+      <div class="rounded-md border border-outline-variant/30 p-4">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-bold mb-1">{% trans "Marketing" %}</h3>
+            <p class="text-sm text-on-surface-variant">
+              {% trans "Aucun cookie marketing n'est actuellement utilisé sur ce site. Cette option reste désactivée." %}
+            </p>
+          </div>
+          <label class="relative inline-flex items-center shrink-0 opacity-50 cursor-not-allowed">
+            <input type="checkbox" disabled class="sr-only peer">
+            <div class="w-11 h-6 bg-surface-container rounded-full"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-3 mt-6">
+      <button @click="MksConsent.reject()"
+              class="flex-1 px-5 py-3 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-bold transition border border-outline-variant/30">
+        {% trans "Tout refuser" %}
+      </button>
+      <button @click="MksConsent.save({ analytics: analytics, marketing: marketing })"
+              class="flex-1 px-5 py-3 rounded-full bg-primary-gradient text-on-primary font-bold transition hover:scale-[1.02] active:scale-95 ring-primary-gradient">
+        {% trans "Enregistrer mes choix" %}
+      </button>
+    </div>
+  </div>
+</div>

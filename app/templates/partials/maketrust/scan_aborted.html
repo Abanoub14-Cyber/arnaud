@@ -1,0 +1,15 @@
+{% load i18n %}
+<div id="scan-progress" class="rounded-xl bg-surface-container ambient-shadow p-8">
+  <div class="flex items-center justify-center gap-3 text-lg text-on-surface">
+    <span class="material-symbols-outlined">cancel</span>
+    <span class="font-bold">{% trans "Scan annulé." %}</span>
+  </div>
+  <p class="text-center text-sm text-on-surface-variant mt-4">
+    {% trans "Votre quota du jour est intact, vous pouvez relancer un scan immédiatement." %}
+  </p>
+  <div class="mt-6 text-center">
+    <a href="{% url 'maketrust:landing' %}" class="text-primary hover:underline font-bold">
+      {% trans "Lancer un nouveau scan" %}
+    </a>
+  </div>
+</div>

@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "MakeTrust - Score de sécurité de votre domaine en 60 secondes" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "MakeTrust - Score de sécurité de votre domaine" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Entrez un domaine. En 60 secondes, MakeTrust audite votre DNS, votre email, vos certificats et vos en-têtes HTTP, puis vous dit exactement quoi corriger." %}{% endblock %}
+{% block og_description %}{% trans "Scan gratuit de votre domaine en 60 secondes : DNS, DNSSEC, SPF, DKIM, DMARC, TLS, en-têtes HTTP, fuites publiques. Score sur 100 et correctifs concrets, sans inscription." %}{% endblock %}
+
+{% block content %}
+<section class="relative pt-40 pb-12 md:pt-48 md:pb-12 px-6 overflow-hidden">
+  <div class="absolute inset-0 radiant-glow -z-10"></div>
+  <div class="max-w-3xl mx-auto text-center">
+    <c-eyebrow class="mb-6">MakeTrust</c-eyebrow>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 leading-[1.05] text-balance">
+      {% trans "Votre domaine est-il" %} <span class="text-primary-gradient">{% trans "vraiment sécurisé" %}</span> ?
+    </h1>
+    <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-medium text-balance">
+      {% trans "Entrez un domaine. En 60 secondes on audite votre DNS, votre email, vos certificats et vos en-têtes HTTP. On vous dit exactement quoi corriger, dans un langage clair." %}
+    </p>
+  </div>
+</section>
+
+<section class="px-6 pb-12">
+  <div class="max-w-2xl mx-auto">
+    <form method="post" action="{% url 'maketrust:landing' %}"
+          x-data='{
+            needsEmail: {% if form.email_required %}true{% else %}false{% endif %},
+            showEmail: {% if form.email.errors or form.email.value %}true{% else %}false{% endif %}
+          }'
+          @submit="if (needsEmail && !showEmail) {
+                     $event.preventDefault();
+                     showEmail = true;
+                     $nextTick(() => $refs.emailInput && $refs.emailInput.focus());
+                   }"
+          class="rounded-xl glass ambient-shadow p-6 md:p-8 space-y-5">
+      {% csrf_token %}
+      {{ form.rescan }}{# hidden #}
+
+      {% if form.is_rescan %}
+        <div class="rounded-md bg-primary/10 border border-primary/30 px-4 py-3 -mx-1 flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary mt-0.5">autorenew</span>
+          <p class="text-sm leading-relaxed">
+            {% if form.initial.domain %}
+              {% blocktrans with domain=form.initial.domain %}Vous relancez un scan sur <strong>{{ domain }}</strong>.{% endblocktrans %}
+            {% else %}
+              {% trans "Vous relancez un scan." %}
+            {% endif %}
+          </p>
+        </div>
+      {% endif %}
+
+      <div>
+        <div class="flex items-baseline justify-between gap-3 mb-3">
+          <label for="{{ form.domain.id_for_label }}" class="text-base font-bold">
+            {% trans "Quel domaine voulez-vous scanner ?" %}
+          </label>
+          {# Tiny (i) hint with a real CSS tooltip — see source.css [data-mks-tip]. #}
+          <span class="shrink-0 inline-flex items-center text-on-surface-variant/60 hover:text-on-surface-variant transition-colors cursor-help"
+                data-mks-tip="{% trans 'Domaine ou adresse email. Si vous entrez un email, on extrait le domaine automatiquement, utile pour les setups email-only.' %}"
+                tabindex="0"
+                aria-label="{% trans 'Aide sur le champ' %}">
+            <span class="material-symbols-outlined text-base">info</span>
+          </span>
+        </div>
+        {{ form.domain }}
+        {% if form.domain.errors %}
+          <p class="text-error text-sm mt-2">{{ form.domain.errors|join:" " }}</p>
+        {% endif %}
+      </div>
+
+      {% if form.email_required %}
+        {% comment %}
+        Hidden by default. Revealed by Alpine on the first click of the
+        "Lancer le scan" button. Manually rendered so we control the
+        `required` HTML attribute via x-bind — Django's automatic
+        `required="required"` on hidden fields would trip the browser's
+        native form validation on submit.
+        {% endcomment %}
+        <div x-show="showEmail"
+             x-cloak
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-2"
+             x-transition:enter-end="opacity-100 translate-y-0">
+          <div class="flex items-baseline justify-between gap-3 mb-3">
+            <label for="id_email" class="flex items-center gap-2 text-base font-bold">
+              <span class="material-symbols-outlined text-base text-tertiary">mail</span>
+              {% trans "Votre email" %} <span class="text-error">*</span>
+            </label>
+            <span class="shrink-0 inline-flex items-center text-on-surface-variant/60 hover:text-on-surface-variant transition-colors cursor-help"
+                  data-mks-tip="{% if form.is_rescan %}{% trans 'Un email pour limiter les rescans automatisés et, le cas échéant, vous recontacter au sujet de vos résultats.' %}{% else %}{% trans 'Vous avez déjà scanné dans les 24 dernières heures. Laissez votre email pour autoriser un nouveau scan.' %}{% endif %}"
+                  tabindex="0"
+                  aria-label="{% trans 'Pourquoi on demande votre email' %}">
+              <span class="material-symbols-outlined text-base">info</span>
+            </span>
+          </div>
+          <input type="email"
+                 name="email"
+                 id="id_email"
+                 value="{{ form.email.value|default:'' }}"
+                 placeholder="{% trans 'vous@entreprise.be' %}"
+                 autocomplete="email"
+                 maxlength="320"
+                 x-ref="emailInput"
+                 :required="showEmail"
+                 class="w-full px-5 py-3 rounded-md bg-surface-lowest border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+          {% if form.email.errors %}
+            <p class="text-error text-sm mt-2">{{ form.email.errors|join:" " }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <button type="submit"
+              class="w-full bg-primary-gradient text-on-primary px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-[1.01] active:scale-95 ring-primary-gradient inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined">policy</span>
+        {% trans "Lancer le scan" %}
+      </button>
+
+      <p class="text-xs text-on-surface-variant text-center leading-relaxed">
+        {% blocktrans %}En lançant un scan, vous garantissez être autorisé à analyser ce domaine et vous acceptez notre <a href="/confidentialite/" class="underline hover:text-primary transition">politique de confidentialité</a>. On conserve le domaine scanné et, le cas échéant, votre email.{% endblocktrans %}
+      </p>
+    </form>
+
+    <div class="mt-10 grid sm:grid-cols-3 gap-4 text-sm">
+      <div class="flex items-center gap-3 px-5 py-4 rounded-md bg-surface-lowest ambient-shadow">
+        <span class="material-symbols-outlined text-primary">bolt</span>
+        <span>{% trans "60 secondes" %}</span>
+      </div>
+      <div class="flex items-center gap-3 px-5 py-4 rounded-md bg-surface-lowest ambient-shadow">
+        <span class="material-symbols-outlined text-primary">verified_user</span>
+        <span>{% trans "Aucun test intrusif" %}</span>
+      </div>
+      <div class="flex items-center gap-3 px-5 py-4 rounded-md bg-surface-lowest ambient-shadow">
+        <span class="material-symbols-outlined text-primary">shield_lock</span>
+        <span>{% trans "Sans inscription" %}</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

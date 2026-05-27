@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Services - Cybersécurité, web, IA, support" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Nos services" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Cybersécurité, développement web, IA et automatisation, support et maintenance. Quatre métiers sous un même toit, pour des PME qui veulent du sérieux sans tarif d'agence enterprise." %}{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{% trans 'Accueil' %}", "item": "https://{{ request.get_host }}{% url 'home' %}"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Services' %}", "item": "https://{{ request.get_host }}{{ request.path }}"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "{% trans 'Services Makeset' %}",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "url": "https://{{ request.get_host }}{% url 'service_cyber' %}", "name": "{% trans 'Cybersécurité' %}"},
+    {"@type": "ListItem", "position": 2, "url": "https://{{ request.get_host }}{% url 'service_web' %}", "name": "{% trans 'Web & Apps' %}"},
+    {"@type": "ListItem", "position": 3, "url": "https://{{ request.get_host }}{% url 'service_ia' %}", "name": "{% trans 'IA & Automatisation' %}"},
+    {"@type": "ListItem", "position": 4, "url": "https://{{ request.get_host }}{% url 'service_support' %}", "name": "{% trans 'Support et maintenance' %}"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<c-service-hero
+  eyebrow="{% trans 'Services' %}"
+  title="{% trans 'Quatre métiers,' %}"
+  accent="{% trans 'une seule équipe.' %}">
+  {% trans "Sécurité, développement, automatisation et support. Vous traitez avec une seule équipe technique, pas avec quatre prestataires qui se renvoient la balle." %}
+</c-service-hero>
+
+<c-section bg="surface-container-low">
+  <div class="grid md:grid-cols-2 gap-6">
+    <c-service-card icon="lock" title="{% trans 'Cybersécurité' %}" href="{% url 'service_cyber' %}">
+      {% trans "Audits, NIS2, GDPR, ISO 27001, SOC 2, formation et réponse incident. On trouve vos vraies faiblesses et on les corrige." %}
+    </c-service-card>
+
+    <c-service-card icon="apps" title="{% trans 'Web & Apps' %}" href="{% url 'service_web' %}" variant="primary">
+      {% trans "Sites vitrine, e-commerce, applications SaaS sur mesure. Performance, SEO, sécurité dès le premier commit." %}
+    </c-service-card>
+
+    <c-service-card icon="smart_toy" title="{% trans 'IA & Automatisation' %}" href="{% url 'service_ia' %}" variant="primary">
+      {% trans "Workflows automatisés, agents sur mesure, traitement de documents, intégrations IA dans vos outils existants." %}
+    </c-service-card>
+
+    <c-service-card icon="support_agent" title="{% trans 'Support et maintenance' %}" href="{% url 'service_support' %}">
+      {% trans "Mises à jour de sécurité, monitoring, sauvegardes, corrections de bugs, optimisation performance." %}
+    </c-service-card>
+  </div>
+</c-section>
+
+<c-section>
+  <c-cta-banner
+    title="{% trans 'Pas sûr de ce dont vous avez besoin ?' %}"
+    cta_label="{% trans 'Échanger 30 minutes' %}"
+    cta_href="/contact/">
+    {% trans "Parlez-nous de votre situation. On vous dit honnêtement quel mix de services aurait le plus d'impact pour vous, sans vous vendre l'inutile." %}
+  </c-cta-banner>
+</c-section>
+{% endblock %}

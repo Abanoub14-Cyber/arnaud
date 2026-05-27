@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Conditions générales" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Conditions générales" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Conditions générales d'utilisation et de service de Makeset : prestations, devis, paiement, propriété intellectuelle, responsabilité, droit applicable." %}{% endblock %}
+
+{% block content %}
+<section class="pt-40 pb-24 px-6 max-w-3xl mx-auto">
+  <c-eyebrow class="mb-4">{% trans "Légal" %}</c-eyebrow>
+  <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4 text-balance">{% trans "Conditions générales" %}</h1>
+  <p class="text-on-surface-variant mb-12">{% trans "Dernière mise à jour : 1er mai 2026." %}</p>
+
+  <div class="space-y-10 text-on-surface-variant leading-relaxed">
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">1. {% trans "Objet" %}</h2>
+      <p>{% trans "Les présentes conditions générales (CG) régissent (i) l'utilisation du site makeset.be et (ii) les prestations fournies par Makeset à ses clients en cybersécurité, développement web, automatisation et support. Toute commande implique l'acceptation sans réserve des CG en vigueur à la date de la commande." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">2. {% trans "Devis et commande" %}</h2>
+      <p>{% trans "Chaque mission donne lieu à un devis écrit décrivant le périmètre, les livrables, le calendrier et le prix. Le devis est valable 30 jours sauf mention contraire. La commande est ferme à compter de la signature ou de la confirmation écrite par le client. Toute modification de périmètre fera l'objet d'un avenant." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">3. {% trans "Prix et paiement" %}</h2>
+      <p>{% trans "Les prix sont exprimés en euros HT. La TVA belge applicable est ajoutée selon le taux en vigueur. Sauf accord particulier, les prestations sont facturées comme suit : 30 % à la commande, 70 % à la livraison ; les contrats de support sont facturés mensuellement ou annuellement à terme à échoir. Le paiement intervient sous 30 jours à compter de la facture. Tout retard donne lieu à un intérêt de retard au taux légal et à une indemnité forfaitaire de 40 € pour frais de recouvrement, conformément à la loi du 2 août 2002." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">4. {% trans "Délais et obligations du client" %}</h2>
+      <p>{% trans "Les délais annoncés sont des estimations basées sur la collaboration normale du client. Le client s'engage à fournir en temps utile les informations, accès et validations nécessaires. Tout retard imputable au client peut entraîner un report équivalent du calendrier." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">5. {% trans "Livraison et acceptation" %}</h2>
+      <p>{% trans "Les livrables sont déposés via le canal convenu (dépôt Git, e-mail, accès SaaS). Le client dispose de 10 jours ouvrés pour formuler des réserves. À défaut, les livrables sont réputés acceptés. Une réception conditionnelle peut être prévue pour les livrables complexes." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">6. {% trans "Propriété intellectuelle" %}</h2>
+      <p>{% trans "À l'issue du paiement intégral, le client acquiert un droit d'utilisation non exclusif sur les livrables conçus spécifiquement pour lui. Makeset conserve la propriété de ses composants génériques, méthodologies, savoir-faire et bibliothèques préexistantes ; un droit d'usage perpétuel et irrévocable est concédé au client pour leur utilisation au sein des livrables. Makeset peut faire mention du client dans ses références sauf opposition écrite." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">7. {% trans "Confidentialité" %}</h2>
+      <p>{% trans "Chaque partie s'engage à préserver la confidentialité des informations échangées dans le cadre du contrat, pendant toute la durée des prestations et 3 ans après leur fin. Les obligations relatives aux données personnelles sont régies par un accord de sous-traitance distinct (article 28 RGPD)." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">8. {% trans "Garantie et responsabilité" %}</h2>
+      <p>{% trans "Makeset s'engage à exécuter ses prestations selon les règles de l'art et avec diligence. Sa responsabilité est limitée aux dommages directs prouvés et plafonnée au montant total payé par le client au titre de la prestation concernée. Sont exclus les dommages indirects (perte de chiffre d'affaires, perte d'image, perte de données après livraison). Aucune limitation n'est applicable en cas de faute lourde, dol ou atteinte à l'intégrité physique." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">9. {% trans "Force majeure" %}</h2>
+      <p>{% trans "Aucune des parties ne pourra être tenue responsable d'un manquement résultant d'un cas de force majeure au sens de l'article 5.226 du Code civil belge (catastrophes naturelles, conflits, pandémies, défaillances majeures d'infrastructures externes, etc.)." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">10. {% trans "Résiliation" %}</h2>
+      <p>{% trans "Tout contrat peut être résilié de plein droit par l'une des parties en cas de manquement grave non remédié 30 jours après mise en demeure. Les contrats de support sont résiliables avec préavis de 60 jours par tout moyen écrit." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">11. {% trans "Droit applicable et juridiction" %}</h2>
+      <p>{% trans "Les CG sont soumises au droit belge. Tout litige sera soumis à la compétence exclusive des tribunaux francophones de l'arrondissement de Bruxelles, sans préjudice des dispositions impératives applicables aux consommateurs." %}</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

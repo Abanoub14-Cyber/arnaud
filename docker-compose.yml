@@ -1,0 +1,60 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: makeset:latest
+    container_name: makeset
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - web
+    volumes:
+      - makeset_data:/app/data
+      - makeset_media:/app/media
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=web
+
+      # Prod router : apex only (new.makeset.be → staging container, see docker-compose.staging.yml)
+      - traefik.http.routers.makeset.rule=Host(`makeset.be`)
+      - traefik.http.routers.makeset.entrypoints=websecure
+      - traefik.http.routers.makeset.tls.certresolver=letsencrypt
+      - traefik.http.services.makeset.loadbalancer.server.port=8000
+      - traefik.http.routers.makeset.middlewares=crowdsec@file,security-headers@file,rate-limit-general@file
+
+      # www -> apex permanent redirect (SEO canonicalization)
+      - traefik.http.middlewares.makeset-www-redirect.redirectregex.regex=^https?://www\.makeset\.be/(.*)
+      - traefik.http.middlewares.makeset-www-redirect.redirectregex.replacement=https://makeset.be/$${1}
+      - traefik.http.middlewares.makeset-www-redirect.redirectregex.permanent=true
+      - traefik.http.routers.makeset-www.rule=Host(`www.makeset.be`)
+      - traefik.http.routers.makeset-www.entrypoints=websecure
+      - traefik.http.routers.makeset-www.tls.certresolver=letsencrypt
+      - traefik.http.routers.makeset-www.service=makeset
+      - traefik.http.routers.makeset-www.middlewares=makeset-www-redirect
+
+  # Background scan queue. Same image as web (only the CMD differs). The web
+  # service is the canonical migrator, so SKIP_MIGRATIONS=1 here to avoid
+  # racing on startup. No Traefik labels — purely internal.
+  qcluster:
+    image: makeset:latest
+    container_name: makeset-qcluster
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - SKIP_MIGRATIONS=1
+    volumes:
+      - makeset_data:/app/data
+      - makeset_media:/app/media
+    depends_on:
+      - web
+    command: python manage.py qcluster
+
+volumes:
+  makeset_data:
+  makeset_media:
+
+networks:
+  web:
+    external: true
+    name: web

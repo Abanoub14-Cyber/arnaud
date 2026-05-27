@@ -1,0 +1,10 @@
+<c-vars question />
+<div x-data="{ open: false }" class="rounded-md bg-surface-lowest ambient-shadow overflow-hidden">
+  <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-5 text-left">
+    <span class="font-bold pr-4">{{ question }}</span>
+    <span class="material-symbols-outlined text-primary transition-transform" :class="open && 'rotate-45'">add</span>
+  </button>
+  <div x-show="open" x-collapse>
+    <div class="px-6 pb-5 text-on-surface-variant leading-relaxed">{{ slot }}</div>
+  </div>
+</div>

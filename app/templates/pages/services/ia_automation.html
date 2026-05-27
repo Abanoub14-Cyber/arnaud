@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "IA & Automatisation pour PME - Workflows, agents" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "IA & Automatisation" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Workflows automatisés, agents IA, traitement de documents, intégrations IA dans vos outils existants. On automatise ce qui ralentit votre équipe." %}{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{% trans 'Accueil' %}", "item": "https://{{ request.get_host }}{% url 'home' %}"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Services' %}", "item": "https://{{ request.get_host }}{% url 'services_index' %}"},
+    {"@type": "ListItem", "position": 3, "name": "{% trans 'IA & Automatisation' %}", "item": "https://{{ request.get_host }}{{ request.path }}"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI Automation",
+  "serviceType": "Automation",
+  "url": "https://{{ request.get_host }}{{ request.path }}",
+  "provider": {"@type": "Organization", "name": "Makeset", "url": "https://makeset.be"},
+  "description": "AI-powered workflow automation, document processing, custom assistants, data pipelines, AI integration."
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<c-service-hero
+  eyebrow="{% trans 'IA & Automatisation' %}"
+  title="{% trans 'Automatisez ce qui ralentit votre équipe.' %}">
+  {% trans "La plupart des entreprises perdent des heures sur des tâches qu'une automatisation bien conçue traiterait en secondes. On construit des workflows IA qui font vraiment gagner du temps - pas qui font joli en démo. Du traitement de documents à l'onboarding client, on automatise ce qui freine." %}
+</c-service-hero>
+
+{# ============================================ Stats ============================================ #}
+<c-section bg="surface-container-low">
+  <div class="text-center mb-14">
+    <c-eyebrow class="mb-4">{% trans "Pourquoi maintenant" %}</c-eyebrow>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-balance max-w-3xl mx-auto">
+      {% trans "Le temps est la seule ressource qu'on ne peut pas racheter." %}
+    </h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <c-stat-card icon="bolt" number="3x">
+      {% trans "plus rapide à l'exécution. Les clients qui automatisent leurs workflows répétitifs voient leurs temps de traitement chuter." %}
+    </c-stat-card>
+    <c-stat-card icon="schedule" number="40%">
+      {% trans "du temps de travail dans la plupart des entreprises est consacré à des tâches automatisables. Près de la moitié de la semaine." %}
+    </c-stat-card>
+    <c-stat-card icon="rocket_launch" number="85%">
+      {% trans "des dirigeants disent que l'IA leur donnera un avantage compétitif d'ici deux ans. La fenêtre est maintenant." %}
+    </c-stat-card>
+  </div>
+</c-section>
+
+{# ============================================ Services détaillés ============================================ #}
+<c-section>
+  <div class="text-center mb-14">
+    <c-eyebrow class="mb-4">{% trans "Ce qu'on automatise" %}</c-eyebrow>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-balance max-w-3xl mx-auto">
+      {% trans "Pas de buzzwords, juste des process qui tournent tous seuls." %}
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <c-service-feature icon="account_tree" title="{% trans 'Workflows automatisés' %}">
+      {% trans "Cartographie de vos process actuels, identification des goulets d'étranglement, construction de pipelines qui tournent sans surveillance. Facturation, génération de rapports, onboarding clients." %}
+    </c-service-feature>
+
+    <c-service-feature icon="description" title="{% trans 'Traitement de documents IA' %}">
+      {% trans "Extraction de données depuis PDFs, emails, contrats. Lecture, classification, routage automatique. Fini le copier-coller manuel pour vos équipes." %}
+    </c-service-feature>
+
+    <c-service-feature icon="smart_toy" title="{% trans 'Agents et chatbots sur mesure' %}">
+      {% trans "Pas le chatbot générique qui agace tout le monde. On construit des assistants entraînés sur vos données réelles, vos produits, votre FAQ. Ils répondent vraiment et escaladent quand il faut." %}
+    </c-service-feature>
+
+    <c-service-feature icon="hub" title="{% trans 'Pipelines de données' %}">
+      {% trans "Connexion entre vos outils : CRM vers facturation, formulaires vers base de données, analytics vers dashboards. Vos données vivent en un seul endroit, plus dans 12 onglets." %}
+    </c-service-feature>
+
+    <c-service-feature icon="psychology" title="{% trans 'Conseil en optimisation' %}">
+      {% trans "Avant d'automatiser quoi que ce soit, on audite votre workflow pour identifier ce qui mérite vraiment d'être automatisé. Tout n'a pas besoin d'IA : parfois un script simple suffit." %}
+    </c-service-feature>
+
+    <c-service-feature icon="extension" title="{% trans 'Intégration IA dans votre stack' %}">
+      {% trans "Vous utilisez Slack, Notion, Google Workspace, un CRM custom ? On branche des capacités IA directement dans votre stack actuelle. Pas besoin de tout migrer." %}
+    </c-service-feature>
+  </div>
+</c-section>
+
+{# ============================================ Final CTA ============================================ #}
+<c-section>
+  <c-cta-banner
+    title="{% trans 'Identifions ensemble ce qui peut être automatisé.' %}"
+    cta_label="{% trans 'Discuter automatisation' %}"
+    cta_href="/contact/?service=ia">
+    {% trans "Parlons de ce qui consomme le temps de votre équipe. On vous dit honnêtement ce qui vaut le coup d'automatiser et ce qui n'en vaut pas la peine." %}
+  </c-cta-banner>
+</c-section>
+{% endblock %}

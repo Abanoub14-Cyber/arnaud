@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Politique de confidentialité" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Politique de confidentialité" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Politique de confidentialité Makeset : données collectées, finalités, base légale, durée de conservation et exercice de vos droits RGPD." %}{% endblock %}
+
+{% block content %}
+<section class="pt-40 pb-24 px-6 max-w-3xl mx-auto">
+  <c-eyebrow class="mb-4">{% trans "Légal" %}</c-eyebrow>
+  <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4 text-balance">{% trans "Politique de confidentialité" %}</h1>
+  <p class="text-on-surface-variant mb-12">{% trans "Dernière mise à jour : 1er mai 2026." %}</p>
+
+  <div class="space-y-10 text-on-surface-variant leading-relaxed">
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">1. {% trans "Responsable du traitement" %}</h2>
+      <p>{% trans "Makeset, dont les coordonnées figurent dans les" %} <a href="{% url 'legal_mentions' %}" class="text-primary hover:underline">{% trans "mentions légales" %}</a>, {% trans "est responsable du traitement des données collectées via ce site, au sens du Règlement (UE) 2016/679 (RGPD) et de la loi belge du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">2. {% trans "Données collectées et finalités" %}</h2>
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-bold text-on-surface mb-1">{% trans "Formulaire de contact" %}</h3>
+          <p>{% trans "Lorsque vous remplissez le formulaire, nous collectons : votre nom, email, entreprise (facultatif), service concerné, message, ainsi que des métadonnées techniques (adresse IP, user-agent, page de provenance, langue) pour la traçabilité et la lutte contre le spam." %}</p>
+          <p class="mt-2"><strong>{% trans "Finalité" %}</strong> : {% trans "répondre à votre demande et conserver une trace de l'échange." %}</p>
+          <p><strong>{% trans "Base légale" %}</strong> : {% trans "exécution de mesures précontractuelles à votre demande (article 6.1.b RGPD) et intérêt légitime à sécuriser nos formulaires (article 6.1.f)." %}</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-on-surface mb-1">{% trans "Cookies et mesure d'audience" %}</h3>
+          <p>{% trans "Avec votre consentement, des cookies de mesure d'audience (Ahrefs Analytics) sont déposés. Ils ne profilent aucun visiteur et ne sont pas partagés avec des tiers à des fins publicitaires. Voir la" %} <a href="{% url 'cookies' %}" class="text-primary hover:underline">{% trans "politique cookies" %}</a> {% trans "pour le détail." %}</p>
+          <p class="mt-2"><strong>{% trans "Base légale" %}</strong> : {% trans "consentement (article 6.1.a RGPD)." %}</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">3. {% trans "Destinataires" %}</h2>
+      <p>{% trans "Vos données sont traitées exclusivement par l'équipe Makeset. Aucune donnée n'est vendue ni transmise à des tiers à des fins commerciales. Les seuls sous-traitants sont nos prestataires techniques (hébergement EU, fournisseur SMTP, fournisseur de mesure d'audience), liés par un accord conforme à l'article 28 RGPD." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">4. {% trans "Transferts hors UE" %}</h2>
+      <p>{% trans "Aucun transfert de données vers un pays hors Union européenne n'est effectué pour les données du formulaire. Les outils de mesure d'audience sont hébergés dans l'UE." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">5. {% trans "Durée de conservation" %}</h2>
+      <ul class="list-disc list-outside pl-5 space-y-2">
+        <li>{% trans "Messages de contact : 3 ans à compter du dernier échange, puis suppression ou archivage anonymisé." %}</li>
+        <li>{% trans "Logs techniques (IP, user-agent) : 12 mois maximum." %}</li>
+        <li>{% trans "Cookies de consentement : 12 mois, puis re-consentement demandé." %}</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">6. {% trans "Vos droits" %}</h2>
+      <p class="mb-3">{% trans "Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants :" %}</p>
+      <ul class="list-disc list-outside pl-5 space-y-2">
+        <li><strong>{% trans "Accès" %}</strong> : {% trans "obtenir confirmation que des données vous concernant sont traitées et en obtenir copie." %}</li>
+        <li><strong>{% trans "Rectification" %}</strong> : {% trans "faire corriger des données inexactes." %}</li>
+        <li><strong>{% trans "Effacement" %}</strong> : {% trans "demander la suppression de vos données dans les cas prévus par la loi." %}</li>
+        <li><strong>{% trans "Limitation" %}</strong> : {% trans "demander que le traitement soit suspendu temporairement." %}</li>
+        <li><strong>{% trans "Portabilité" %}</strong> : {% trans "récupérer vos données dans un format structuré et lisible par machine." %}</li>
+        <li><strong>{% trans "Opposition" %}</strong> : {% trans "vous opposer au traitement fondé sur l'intérêt légitime." %}</li>
+        <li><strong>{% trans "Retrait du consentement" %}</strong> : {% trans "à tout moment, sans rétroactivité, via le bouton « Préférences cookies » en pied de page." %}</li>
+      </ul>
+      <p class="mt-3">{% trans "Pour exercer ces droits, écrivez à" %} <a href="mailto:contact@makeset.be" class="text-primary hover:underline">contact@makeset.be</a>. {% trans "Nous répondons dans un délai d'un mois (extensible à 3 mois pour les demandes complexes)." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">7. {% trans "Réclamation" %}</h2>
+      <p>{% trans "Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de l'Autorité de protection des données belge (APD/GBA), 35 rue de la Presse, 1000 Bruxelles," %} <a href="https://www.autoriteprotectiondonnees.be" class="text-primary hover:underline" target="_blank" rel="noopener">www.autoriteprotectiondonnees.be</a>. {% trans "Vous pouvez aussi vous adresser à l'autorité de contrôle de votre pays de résidence." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">8. {% trans "Sécurité" %}</h2>
+      <p>{% trans "Nous appliquons des mesures techniques et organisationnelles proportionnées au risque : chiffrement HTTPS partout, headers de sécurité (CSP, HSTS), rate-limiting des formulaires, sauvegardes chiffrées, mises à jour régulières et accès restreint aux données. Tout incident de sécurité affectant vos données vous serait notifié dans les délais prévus par l'article 34 RGPD." %}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-on-surface mb-3">9. {% trans "Modifications" %}</h2>
+      <p>{% trans "Cette politique peut évoluer. La date de dernière mise à jour est indiquée en haut. Pour toute évolution majeure, vous serez informé via le bandeau cookies ou un avis sur le site." %}</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

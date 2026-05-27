@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Support et maintenance web pour PME" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Support et maintenance" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Maintenance, monitoring, mises à jour de sécurité, sauvegardes, optimisation. Pour ne jamais vous demander à 3h du matin pourquoi votre site est tombé." %}{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{% trans 'Accueil' %}", "item": "https://{{ request.get_host }}{% url 'home' %}"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Services' %}", "item": "https://{{ request.get_host }}{% url 'services_index' %}"},
+    {"@type": "ListItem", "position": 3, "name": "{% trans 'Support et maintenance' %}", "item": "https://{{ request.get_host }}{{ request.path }}"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Support and Maintenance",
+  "serviceType": "Maintenance",
+  "url": "https://{{ request.get_host }}{{ request.path }}",
+  "provider": {"@type": "Organization", "name": "Makeset", "url": "https://makeset.be"},
+  "description": "Website maintenance, security patching, performance monitoring, backups, content updates, bug fixes."
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<c-service-hero
+  eyebrow="{% trans 'Support' %}"
+  title="{% trans 'Votre site tourne. On gère le reste.' %}">
+  {% trans "Un site qui plante un samedi soir, c'est du chiffre d'affaires perdu et des clients frustrés. On gère les mises à jour, le monitoring et les correctifs pour que vous ne vous réveilliez jamais à 3h du matin en vous demandant pourquoi votre page de paiement est tombée." %}
+</c-service-hero>
+
+{# ============================================ Stats ============================================ #}
+<c-section bg="surface-container-low">
+  <div class="text-center mb-14">
+    <c-eyebrow class="mb-4">{% trans "Pourquoi la maintenance" %}</c-eyebrow>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-balance max-w-3xl mx-auto">
+      {% trans "Un site qu'on néglige est un site qu'on perd." %}
+    </h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <c-stat-card icon="warning" number="73%">
+      {% trans "des cyberattaques exploitent des logiciels obsolètes. Les mises à jour ne sont pas optionnelles : c'est la première ligne de défense." %}
+    </c-stat-card>
+    <c-stat-card icon="hourglass_top" number="53%">
+      {% trans "des utilisateurs abandonnent un site qui met plus de 3 secondes à charger. La performance n'est jamais acquise." %}
+    </c-stat-card>
+    <c-stat-card icon="cloud_done" number="99,9%">
+      {% trans "d'uptime moyen sur les sites que nous gérons. Parce que chaque minute hors ligne vous coûte." %}
+    </c-stat-card>
+  </div>
+</c-section>
+
+{# ============================================ Services détaillés ============================================ #}
+<c-section>
+  <div class="text-center mb-14">
+    <c-eyebrow class="mb-4">{% trans "Ce qu'on couvre" %}</c-eyebrow>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-balance max-w-3xl mx-auto">
+      {% trans "Six leviers pour garder votre site vivant." %}
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <c-service-feature icon="security_update_good" title="{% trans 'Mises à jour de sécurité' %}">
+      {% trans "Surveillance des vulnérabilités et application des patches avant qu'ils ne deviennent un problème. CMS, plugins, server-level. On reste devant pour que les attaquants restent derrière." %}
+    </c-service-feature>
+
+    <c-service-feature icon="monitoring" title="{% trans 'Monitoring temps réel' %}">
+      {% trans "Surveillance continue de la vitesse, du temps de réponse et des erreurs. Quand quelque chose ralentit ou casse, on est au courant avant vos clients." %}
+    </c-service-feature>
+
+    <c-service-feature icon="backup" title="{% trans 'Sauvegardes automatiques' %}">
+      {% trans "Backups quotidiens stockés en sécurité hors site. Si le pire arrive (mauvaise update, hack, erreur humaine) on restaure votre site exactement comme il était." %}
+    </c-service-feature>
+
+    <c-service-feature icon="edit" title="{% trans 'Mises à jour de contenu' %}">
+      {% trans "Besoin de modifier un prix, échanger une image, ajouter une section ? On gère les changements pour que vous puissiez vous concentrer sur votre business plutôt que de batailler avec un CMS." %}
+    </c-service-feature>
+
+    <c-service-feature icon="bug_report" title="{% trans 'Correction de bugs' %}">
+      {% trans "Quelque chose est cassé ? Formulaires qui n'envoient pas ? Bug d'affichage mobile ? On diagnostique et corrige rapidement. La majorité des correctifs en moins de 24 h." %}
+    </c-service-feature>
+
+    <c-service-feature icon="rocket_launch" title="{% trans 'Optimisation performance' %}">
+      {% trans "Sites lents = clients perdus + ranking SEO en chute. On optimise images, code, cache, configuration serveur. Performance qui se mesure, pas qui se promet." %}
+    </c-service-feature>
+  </div>
+</c-section>
+
+{# ============================================ Final CTA ============================================ #}
+<c-section>
+  <c-cta-banner
+    title="{% trans 'Confiez-nous les clés.' %}"
+    cta_label="{% trans 'Parler support' %}"
+    cta_href="/contact/?service=support">
+    {% trans "On regarde ensemble votre site actuel et on vous propose un plan de support adapté à votre criticité. Pas de pack standardisé." %}
+  </c-cta-banner>
+</c-section>
+{% endblock %}

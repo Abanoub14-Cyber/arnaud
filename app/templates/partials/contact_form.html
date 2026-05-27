@@ -1,0 +1,201 @@
+{% load i18n %}
+<form id="contact-form"
+      method="post" action="{% url 'contact' %}"
+      hx-post="{% url 'contact' %}"
+      hx-target="#contact-form"
+      hx-swap="outerHTML"
+      hx-disabled-elt="button[type=submit]"
+      class="space-y-5">
+  {% csrf_token %}
+
+  {% comment %}
+    Honeypot — off-screen + aria-hidden. Bots that fill `nickname` get rejected.
+    Renamed away from the well-known "website" pattern so smarter bots fall in too.
+  {% endcomment %}
+  <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+    <label for="{{ form.nickname.id_for_label }}">{% trans "Surnom" %}</label>
+    {{ form.nickname }}
+  </div>
+
+  {# Signed time-trap — rejects POSTs that come back too fast (<3s) or stale (>4h). #}
+  {{ form.form_token }}
+
+  {% if form.non_field_errors %}
+    <div class="rounded-md bg-error/10 text-error px-4 py-3 text-sm">{{ form.non_field_errors }}</div>
+  {% endif %}
+  {% if error %}
+    <div class="rounded-md bg-error/10 text-error px-4 py-3 text-sm">{{ error }}</div>
+  {% endif %}
+
+  <div class="grid md:grid-cols-2 gap-5">
+    <div>
+      <label for="{{ form.name.id_for_label }}" class="block text-sm font-bold mb-2">{% trans "Nom" %}<span class="text-error">*</span></label>
+      <input type="text" name="{{ form.name.html_name }}" id="{{ form.name.id_for_label }}"
+             value="{{ form.name.value|default:'' }}" required maxlength="120" autocomplete="name"
+             class="w-full px-5 py-3 rounded-md bg-surface-lowest border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+      {% if form.name.errors %}<p class="text-error text-sm mt-1">{{ form.name.errors|join:" " }}</p>{% endif %}
+    </div>
+
+    <div>
+      <label for="{{ form.email.id_for_label }}" class="block text-sm font-bold mb-2">{% trans "Email" %}<span class="text-error">*</span></label>
+      <input type="email" name="{{ form.email.html_name }}" id="{{ form.email.id_for_label }}"
+             value="{{ form.email.value|default:'' }}" required autocomplete="email"
+             class="w-full px-5 py-3 rounded-md bg-surface-lowest border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+      {% if form.email.errors %}<p class="text-error text-sm mt-1">{{ form.email.errors|join:" " }}</p>{% endif %}
+    </div>
+
+    <div>
+      <label for="{{ form.company.id_for_label }}" class="block text-sm font-bold mb-2">{% trans "Entreprise" %}</label>
+      <input type="text" name="{{ form.company.html_name }}" id="{{ form.company.id_for_label }}"
+             value="{{ form.company.value|default:'' }}" maxlength="120" autocomplete="organization"
+             class="w-full px-5 py-3 rounded-md bg-surface-lowest border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+      {% if form.company.errors %}<p class="text-error text-sm mt-1">{{ form.company.errors|join:" " }}</p>{% endif %}
+    </div>
+
+    <div>
+      <label for="{{ form.service.id_for_label }}" class="block text-sm font-bold mb-2">{% trans "Sujet" %}<span class="text-error">*</span></label>
+      {% with current=form.service.value|default:'other' %}
+      <div class="relative" data-ms-dropdown>
+        <input type="hidden" name="{{ form.service.html_name }}" id="{{ form.service.id_for_label }}" value="{{ current }}" required>
+        <button type="button" data-ms-toggle aria-haspopup="listbox" aria-expanded="false"
+                class="w-full text-left pl-5 pr-12 py-3 rounded-md bg-surface-lowest border border-outline-variant hover:border-primary/60 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition cursor-pointer flex items-center justify-between">
+          <span data-ms-label>{% for value, label in form.fields.service.choices %}{% if value == current %}{{ label }}{% endif %}{% endfor %}</span>
+          <span class="material-symbols-outlined text-primary transition-transform duration-200" data-ms-arrow aria-hidden="true">expand_more</span>
+        </button>
+        <ul role="listbox" data-ms-menu
+            class="hidden absolute z-20 mt-2 w-full rounded-md bg-surface-lowest border border-outline-variant ambient-shadow overflow-hidden p-1">
+          {% for value, label in form.fields.service.choices %}
+            <li role="option" data-ms-item data-value="{{ value }}"
+                {% if value == current %}data-ms-selected{% endif %}
+                class="px-4 py-2.5 rounded-md cursor-pointer transition-colors hover:bg-primary-container hover:text-on-primary-container flex items-center justify-between gap-3">
+              <span>{{ label }}</span>
+              <span class="material-symbols-outlined text-primary text-base" data-ms-check aria-hidden="true"{% if value != current %} style="display:none"{% endif %}>check</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endwith %}
+      {% if form.service.errors %}<p class="text-error text-sm mt-1">{{ form.service.errors|join:" " }}</p>{% endif %}
+    </div>
+  </div>
+
+  <div>
+    <label for="{{ form.message.id_for_label }}" class="block text-sm font-bold mb-2">{% trans "Message" %}<span class="text-error">*</span></label>
+    <textarea name="{{ form.message.html_name }}" id="{{ form.message.id_for_label }}" rows="6" required
+              class="w-full px-5 py-3 rounded-md bg-surface-lowest border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition resize-none">{{ form.message.value|default:'' }}</textarea>
+    {% if form.message.errors %}<p class="text-error text-sm mt-1">{{ form.message.errors|join:" " }}</p>{% endif %}
+  </div>
+
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
+    <p class="text-xs text-on-surface-variant">
+      {% trans "En soumettant ce formulaire, vous acceptez d'être recontacté concernant votre demande." %}
+    </p>
+    <button type="submit"
+            class="bg-primary-gradient text-on-primary px-8 py-3 rounded-full font-bold transition-all hover:scale-[1.02] active:scale-95 ring-primary-gradient inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-wait">
+      <span class="htmx-indicator-hide">{% trans "Envoyer" %}</span>
+      <span class="material-symbols-outlined htmx-indicator-hide">send</span>
+      <span class="hidden htmx-indicator">{% trans "Envoi en cours..." %}</span>
+    </button>
+  </div>
+</form>
+
+<style>
+  .htmx-request .htmx-indicator-hide { display: none; }
+  .htmx-request .htmx-indicator { display: inline; }
+
+  [data-ms-item][data-ms-selected] {
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    font-weight: 700;
+  }
+  [data-ms-item][data-ms-active] {
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+  }
+</style>
+
+<script>
+  (function () {
+    function initDropdown(root) {
+      if (root.dataset.msInit) return;
+      root.dataset.msInit = '1';
+      var toggle = root.querySelector('[data-ms-toggle]');
+      var menu = root.querySelector('[data-ms-menu]');
+      var arrow = root.querySelector('[data-ms-arrow]');
+      var labelEl = root.querySelector('[data-ms-label]');
+      var hidden = root.querySelector('input[type="hidden"]');
+      var items = Array.prototype.slice.call(root.querySelectorAll('[data-ms-item]'));
+      var activeIndex = -1;
+
+      function setActive(i) {
+        items.forEach(function (it) { it.removeAttribute('data-ms-active'); });
+        if (i >= 0 && i < items.length) {
+          items[i].setAttribute('data-ms-active', '');
+          items[i].scrollIntoView({ block: 'nearest' });
+        }
+        activeIndex = i;
+      }
+      function open() {
+        menu.classList.remove('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+        arrow.classList.add('rotate-180');
+        var sel = items.findIndex(function (it) { return it.hasAttribute('data-ms-selected'); });
+        setActive(sel >= 0 ? sel : 0);
+      }
+      function close() {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        arrow.classList.remove('rotate-180');
+        setActive(-1);
+      }
+      function pick(item) {
+        items.forEach(function (it) {
+          it.removeAttribute('data-ms-selected');
+          var c = it.querySelector('[data-ms-check]');
+          if (c) c.style.display = 'none';
+        });
+        item.setAttribute('data-ms-selected', '');
+        var checkEl = item.querySelector('[data-ms-check]');
+        if (checkEl) checkEl.style.display = '';
+        hidden.value = item.dataset.value;
+        labelEl.textContent = item.querySelector('span').textContent.trim();
+        hidden.dispatchEvent(new Event('change', { bubbles: true }));
+        close();
+        toggle.focus();
+      }
+
+      toggle.addEventListener('click', function () {
+        menu.classList.contains('hidden') ? open() : close();
+      });
+      items.forEach(function (item, i) {
+        item.addEventListener('mouseenter', function () { setActive(i); });
+        item.addEventListener('click', function () { pick(item); });
+      });
+      document.addEventListener('click', function (e) {
+        if (!root.contains(e.target)) close();
+      });
+      toggle.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          if (menu.classList.contains('hidden')) open(); else setActive(Math.min(activeIndex + 1, items.length - 1));
+        }
+      });
+      root.addEventListener('keydown', function (e) {
+        if (menu.classList.contains('hidden')) return;
+        if (e.key === 'Escape') { e.preventDefault(); close(); toggle.focus(); }
+        else if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(activeIndex + 1, items.length - 1)); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(activeIndex - 1, 0)); }
+        else if (e.key === 'Enter' && activeIndex >= 0) { e.preventDefault(); pick(items[activeIndex]); }
+      });
+    }
+    function initAll() {
+      document.querySelectorAll('[data-ms-dropdown]').forEach(initDropdown);
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAll);
+    } else {
+      initAll();
+    }
+    document.body.addEventListener('htmx:afterSwap', initAll);
+  })();
+</script>

@@ -1,0 +1,16 @@
+{# Usage: <c-button variant="primary|secondary|tertiary" size="md|lg" href="..." class="..."> Label </c-button> #}
+<c-vars variant="primary" size="md" href="" type="button" class="" />
+
+{% if variant == "primary" %}
+  {% with variant_classes="bg-primary-gradient text-on-primary ring-primary-gradient" %}
+    {% include "cotton/_button_inner.html" %}
+  {% endwith %}
+{% elif variant == "secondary" %}
+  {% with variant_classes="bg-surface-lowest hover:bg-surface-container-low text-primary border border-primary-container" %}
+    {% include "cotton/_button_inner.html" %}
+  {% endwith %}
+{% elif variant == "tertiary" %}
+  {% with variant_classes="text-primary hover:underline" %}
+    {% include "cotton/_button_inner.html" %}
+  {% endwith %}
+{% endif %}

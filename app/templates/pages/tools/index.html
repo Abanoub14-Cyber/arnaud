@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Outils gratuits - Audit cybersécurité PME" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Outils gratuits" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Outils gratuits Makeset pour mesurer la sécurité de votre domaine et de vos emails. Sans inscription pour le premier scan, en français clair." %}{% endblock %}
+
+{% block content %}
+<section class="relative pt-40 pb-12 md:pt-48 md:pb-12 px-6 overflow-hidden">
+  <div class="absolute inset-0 radiant-glow -z-10"></div>
+  <div class="max-w-3xl mx-auto text-center">
+    <c-eyebrow class="mb-6">{% trans "Outils gratuits" %}</c-eyebrow>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 leading-[1.05] text-balance">
+      {% trans "Mesurez votre" %} <span class="text-primary-gradient">{% trans "exposition" %}</span> {% trans "en quelques clics" %}.
+    </h1>
+    <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-medium text-balance">
+      {% trans "Des outils pensés pour les PME : on vous dit ce qui ne va pas, en langage clair, avec les correctifs exacts à appliquer." %}
+    </p>
+  </div>
+</section>
+
+{# ============================================ Outil principal : MakeTrust ============================================ #}
+<section class="px-6 pb-12">
+  <div class="max-w-5xl mx-auto">
+    <a href="{% url 'maketrust:landing' %}"
+       class="block rounded-xl bg-inverse-surface ambient-shadow overflow-hidden relative group transition-all hover:scale-[1.005] isolate transform-gpu">
+      <div class="absolute inset-0 opacity-30 pointer-events-none">
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-primary rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-tertiary rounded-full blur-3xl opacity-40"></div>
+      </div>
+
+      <div class="relative z-10 p-10 md:p-14 grid md:grid-cols-[1fr_auto] gap-10 items-center">
+        <div class="space-y-5 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-on-primary text-xs font-bold tracking-widest uppercase">
+            <span class="material-symbols-outlined text-base">bolt</span>
+            {% trans "Disponible" %}
+          </div>
+          <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight text-balance">
+            MakeTrust
+          </h2>
+          <p class="text-lg md:text-xl text-inverse-on-surface font-semibold">
+            {% trans "Score de sécurité de votre site et de votre email en 60 secondes." %}
+          </p>
+          <p class="text-inverse-on-surface/80 leading-relaxed text-balance">
+            {% trans "Entrez un domaine. On vérifie 9 points clés : DNS, DNSSEC, SPF, DKIM, DMARC, certificat HTTPS, redirection, en-têtes de sécurité et fuites publiques. On vous renvoie un score sur 100 et la liste des correctifs concrets à appliquer." %}
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/90 font-mono">DNS</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/90 font-mono">DNSSEC</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/90 font-mono">SPF</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/90 font-mono">DKIM</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/90 font-mono">DMARC</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/90 font-mono">TLS</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/90 font-mono">Headers</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-white/90 font-mono">{% trans "Fuites" %}</span>
+          </div>
+        </div>
+
+        <div class="shrink-0">
+          <span class="inline-flex items-center gap-2 bg-primary-gradient text-on-primary px-8 py-4 rounded-full font-bold text-lg ring-primary-gradient transition-all group-hover:scale-105 whitespace-nowrap">
+            {% trans "Lancer un scan" %}
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-on-surface-variant">
+      <span class="inline-flex items-center gap-2"><span class="material-symbols-outlined text-base text-primary">bolt</span>{% trans "60 secondes" %}</span>
+      <span class="inline-flex items-center gap-2"><span class="material-symbols-outlined text-base text-primary">verified_user</span>{% trans "Aucun test intrusif" %}</span>
+      <span class="inline-flex items-center gap-2"><span class="material-symbols-outlined text-base text-primary">policy</span>{% trans "Sans inscription au premier scan" %}</span>
+    </div>
+  </div>
+</section>
+
+{# ============================================ Outils à venir ============================================ #}
+<section class="px-6 pb-24">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <c-eyebrow class="mb-4">{% trans "Bientôt" %}</c-eyebrow>
+      <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight text-balance">
+        {% trans "Les prochains outils dans la roadmap" %}
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-xl glass ambient-shadow p-8 opacity-70">
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">checklist</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">{% trans "NIS2 Readiness" %}</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          {% trans "Quiz court pour savoir si votre PME est concernée par la loi du 26 avril 2024 transposant NIS2 en Belgique, et par où commencer." %}
+        </p>
+      </div>
+
+      <div class="rounded-xl glass ambient-shadow p-8 opacity-70">
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">cookie</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">{% trans "Audit cookies RGPD" %}</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          {% trans "Détection automatique des trackers déposés par votre site avant consentement, avec verdict de conformité." %}
+        </p>
+      </div>
+
+      <div class="rounded-xl glass ambient-shadow p-8 opacity-70">
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">business_center</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3">{% trans "Lookup BCE / TVA" %}</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          {% trans "Vérification d'une entreprise belge via la Banque-Carrefour des Entreprises et validation TVA via VIES." %}
+        </p>
+      </div>
+    </div>
+
+    <p class="text-center text-sm text-on-surface-variant mt-10">
+      {% trans "Vous avez une idée d'outil ?" %}
+      <a href="{% url 'contact' %}" class="text-primary hover:underline font-bold">{% trans "Dites-le-nous" %}</a>.
+    </p>
+  </div>
+</section>
+{% endblock %}

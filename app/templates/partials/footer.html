@@ -1,0 +1,66 @@
+{% load static i18n %}
+<footer class="mt-32 pt-20 pb-12 bg-surface-container-low">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-12 mb-16">
+      <div class="md:col-span-1">
+        <a href="{% url 'home' %}" class="inline-block mb-4" aria-label="Makeset">
+          <img src="{% static 'images/logodegra.svg' %}" alt="{% trans 'Makeset - Cybersécurité, web et IA pour PME' %}" class="h-8 w-auto" width="131" height="32">
+        </a>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          {% trans "Cybersécurité, développement web et automatisation IA pour PME exigeantes." %}
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-sm uppercase tracking-widest mb-4">{% trans "Services" %}</h3>
+        <ul class="space-y-2 text-on-surface-variant">
+          <li><a href="{% url 'service_cyber' %}" class="hover:text-primary">{% trans "Cybersécurité" %}</a></li>
+          <li><a href="{% url 'service_web' %}" class="hover:text-primary">{% trans "Web & Apps" %}</a></li>
+          <li><a href="{% url 'service_ia' %}" class="hover:text-primary">{% trans "IA & Automatisation" %}</a></li>
+          <li><a href="{% url 'service_support' %}" class="hover:text-primary">{% trans "Support" %}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-sm uppercase tracking-widest mb-4">{% trans "Ressources" %}</h3>
+        <ul class="space-y-2 text-on-surface-variant">
+          <li><a href="{% url 'tools_index' %}" class="hover:text-primary">{% trans "Outils gratuits" %}</a></li>
+          <li><a href="{% url 'blog_list' %}" class="hover:text-primary">{% trans "Blog" %}</a></li>
+          <li><a href="{% url 'about' %}" class="hover:text-primary">{% trans "À propos" %}</a></li>
+          <li><a href="{% url 'contact' %}" class="hover:text-primary">{% trans "Contact" %}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-sm uppercase tracking-widest mb-4">{% trans "Légal" %}</h3>
+        <ul class="space-y-2 text-on-surface-variant">
+          <li><a href="{% url 'legal_mentions' %}" class="hover:text-primary">{% trans "Mentions légales" %}</a></li>
+          <li><a href="{% url 'legal_privacy' %}" class="hover:text-primary">{% trans "Confidentialité" %}</a></li>
+          <li><a href="{% url 'legal_terms' %}" class="hover:text-primary">{% trans "CGV" %}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-on-surface-variant">
+      <div>© {% now "Y" %} Makeset</div>
+      <div class="flex gap-6">
+        {# TODO: re-enable LinkedIn link once the company page is live (planned in the coming months). #}
+        {# <a href="https://www.linkedin.com/company/makeset/" class="hover:text-primary">LinkedIn</a> #}
+        <a href="https://www.instagram.com/makeset.be" class="hover:text-primary">Instagram</a>
+        <a href="mailto:contact@makeset.be" class="hover:text-primary">contact@makeset.be</a>
+      </div>
+    </div>
+
+    {# Mandatory legal info, kept discreet at the very bottom #}
+    <div class="mt-6 pt-4 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-on-surface-variant/80">
+      <div>
+        Makeset · BE 0898.341.645 ·
+        <a href="{% url 'legal_mentions' %}" class="hover:text-primary">{% trans "Mentions légales" %}</a> ·
+        <a href="{% url 'legal_privacy' %}" class="hover:text-primary">{% trans "Confidentialité" %}</a> ·
+        <a href="{% url 'legal_terms' %}" class="hover:text-primary">{% trans "CGV" %}</a> ·
+        <a href="{% url 'cookies' %}" class="hover:text-primary">{% trans "Cookies" %}</a> ·
+        <button type="button" onclick="MksConsent.showPrefs()" class="hover:text-primary underline-offset-2 hover:underline">{% trans "Préférences cookies" %}</button>
+      </div>
+    </div>
+  </div>
+</footer>

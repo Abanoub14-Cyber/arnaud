@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /static/admin/
+
+Sitemap: https://makeset.be/sitemap.xml

@@ -1,0 +1,15 @@
+{% load i18n %}
+<div id="scan-progress" class="rounded-xl bg-error/10 ambient-shadow p-8">
+  <div class="flex items-center justify-center gap-3 text-lg text-error">
+    <span class="material-symbols-outlined">warning</span>
+    <span class="font-bold">{% trans "Le scan n'a pas pu aboutir." %}</span>
+  </div>
+  <p class="text-center text-sm text-on-surface-variant mt-4">
+    {% if scan.error_message %}{{ scan.error_message|truncatechars:200 }}{% endif %}
+  </p>
+  <div class="mt-6 text-center">
+    <a href="{% url 'maketrust:landing' %}" class="text-primary hover:underline font-bold">
+      {% trans "Réessayer avec un autre domaine" %}
+    </a>
+  </div>
+</div>

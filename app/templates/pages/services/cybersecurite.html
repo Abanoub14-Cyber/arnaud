@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Cybersécurité PME - Audits, NIS2, GDPR" %} | Makeset{% endblock %}
+{% block og_title %}{% trans "Cybersécurité pour PME" %} | Makeset{% endblock %}
+{% block meta_description %}{% trans "Audits de sécurité, NIS2, GDPR, ISO 27001, SOC 2, formation, gestion des vulnérabilités, réponse incident. On trouve vos vraies faiblesses et on les corrige." %}{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{% trans 'Accueil' %}", "item": "https://{{ request.get_host }}{% url 'home' %}"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Services' %}", "item": "https://{{ request.get_host }}{% url 'services_index' %}"},
+    {"@type": "ListItem", "position": 3, "name": "{% trans 'Cybersécurité' %}", "item": "https://{{ request.get_host }}{{ request.path }}"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Cybersecurity Services",
+  "serviceType": "Cybersecurity",
+  "url": "https://{{ request.get_host }}{{ request.path }}",
+  "provider": {"@type": "Organization", "name": "Makeset", "url": "https://makeset.be"},
+  "description": "Security audits, NIS2 and GDPR compliance, vulnerability management, security awareness training, incident response.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Security audit"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "GDPR compliance"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "NIS2 compliance"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vulnerability management"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Security training"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Incident response"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ISO 27001 certification support"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SOC 2 compliance"}}
+    ]
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<c-service-hero
+  eyebrow="{% trans 'Cybersécurité' %}"
+  title="{% trans 'Trouvez vos failles avant les attaquants.' %}">
+  {% trans "La plupart des entreprises ne pensent à la sécurité que lorsque quelque chose tourne mal. On corrige ça avant que ça vous coûte. Audits, conformité, formation, réponse incident. Adaptés à votre risque réel, pas à une checklist générique." %}
+</c-service-hero>
+
+{# ============================================ Stats ============================================ #}
+<c-section bg="surface-container-low">
+  <div class="text-center mb-14">
+    <c-eyebrow class="mb-4">{% trans "Pourquoi maintenant" %}</c-eyebrow>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-balance max-w-3xl mx-auto">
+      {% trans "Le coût d'une cyberattaque dépasse largement celui de la prévention." %}
+    </h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <c-stat-card icon="business_center" number="60%">
+      {% trans "des entreprises mettent la clé sous la porte dans les 6 mois suivant une cyberattaque." %}
+    </c-stat-card>
+    <c-stat-card icon="payments" number="21%">
+      {% trans "subissent un impact d'au moins un mois, avec une perte de revenus significative que l'attaque ait abouti ou non." %}
+    </c-stat-card>
+    <c-stat-card icon="trending_up" number="76%">
+      {% trans "ont augmenté leurs dépenses en sécurité après avoir été attaquées. Mieux vaut avant." %}
+    </c-stat-card>
+  </div>
+</c-section>
+
+{# ============================================ Services détaillés ============================================ #}
+<c-section>
+  <div class="text-center mb-14">
+    <c-eyebrow class="mb-4">{% trans "Ce qu'on fait" %}</c-eyebrow>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-balance max-w-3xl mx-auto">
+      {% trans "Six prestations, une seule logique : protéger votre business." %}
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <c-service-feature icon="search" title="{% trans 'Audit de sécurité' %}">
+      {% trans "Évaluation complète de votre infrastructure, vos politiques et vos opérations. Pentesting, contrôles d'accès, recommandations priorisées. Vous repartez avec une feuille de route concrète." %}
+    </c-service-feature>
+
+    <c-service-feature icon="autorenew" title="{% trans 'Revues régulières' %}">
+      {% trans "Évaluation continue de vos mesures pour rester efficaces face aux nouvelles menaces. Revue périodique des accès, firewalls, antivirus et autres composants critiques." %}
+    </c-service-feature>
+
+    <c-service-feature icon="school" title="{% trans 'Formation et sensibilisation' %}">
+      {% trans "Donnez à vos équipes les réflexes pour identifier et bloquer les attaques. Programme de sensibilisation, simulations de phishing, bonnes pratiques de protection des données." %}
+    </c-service-feature>
+
+    <c-service-feature icon="verified" title="{% trans 'Conformité et certifications' %}">
+      {% trans "NIS2, GDPR, ISO 27001, SOC 2. De l'analyse d'écart à la documentation des politiques, en passant par l'accompagnement à l'audit. On sait ce que les auditeurs cherchent parce qu'on l'a déjà fait." %}
+    </c-service-feature>
+
+    <c-service-feature icon="policy" title="{% trans 'Politiques de sécurité' %}">
+      {% trans "Création ou refonte de vos politiques internes : gestion des mots de passe, chiffrement, accès distant, BYOD. Adaptées à votre organisation, pas un copier-coller générique." %}
+    </c-service-feature>
+
+    <c-service-feature icon="emergency" title="{% trans 'Réponse aux incidents' %}">
+      {% trans "Plan de réponse complet : préparation, détection, confinement, éradication, récupération. Pour limiter la casse quand quelque chose passe. Réponse en 4h pour les clients sous contrat support." %}
+    </c-service-feature>
+  </div>
+</c-section>
+
+{# ============================================ Final CTA ============================================ #}
+<c-section>
+  <c-cta-banner
+    title="{% trans 'Prêt à savoir où vous en êtes vraiment ?' %}"
+    cta_label="{% trans 'Demander un audit' %}"
+    cta_href="/contact/?service=cyber">
+    {% trans "Premier échange sans engagement. On regarde ensemble votre exposition réelle, et on vous dit honnêtement ce qui mérite d'être traité en priorité." %}
+  </c-cta-banner>
+</c-section>
+{% endblock %}

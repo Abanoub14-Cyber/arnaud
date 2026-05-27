@@ -1,0 +1,63 @@
+## Staging environment for new.makeset.be — same DB as prod (shared volumes).
+##
+## Usage on the VPS, from /var/www/makeset-staging/:
+##   docker compose -f docker-compose.staging.yml build web-staging
+##   docker compose -f docker-compose.staging.yml up -d web-staging
+##
+## Migrations DO run here. Schema changes are additive (new tables/columns),
+## prod sees them through the shared volume but doesn't reference them until
+## the staging branch lands on main and prod is rebuilt with the new code.
+
+services:
+  web-staging:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: makeset-staging:latest
+    container_name: makeset-staging
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - web
+    volumes:
+      # Same volumes as prod → identical DB and uploaded media.
+      - makeset_data:/app/data
+      - makeset_media:/app/media
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=web
+      - traefik.http.routers.makeset-staging.rule=Host(`new.makeset.be`)
+      - traefik.http.routers.makeset-staging.entrypoints=websecure
+      - traefik.http.routers.makeset-staging.tls.certresolver=letsencrypt
+      - traefik.http.services.makeset-staging.loadbalancer.server.port=8000
+      - traefik.http.routers.makeset-staging.middlewares=crowdsec@file,security-headers@file,rate-limit-general@file
+
+  # MakeTrust scan worker for staging. Same image as web-staging, so it has
+  # the in-development scanner modules. While we iterate on staging, the prod
+  # qcluster service in /var/www/makeset/docker-compose.yml should be stopped
+  # (prod image doesn't have the scanner code yet, so it would fail every task
+  # it picks up from the shared queue table).
+  qcluster-staging:
+    image: makeset-staging:latest
+    container_name: makeset-staging-qcluster
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - makeset_data:/app/data
+      - makeset_media:/app/media
+    depends_on:
+      - web-staging
+    command: python manage.py qcluster
+
+volumes:
+  makeset_data:
+    external: true
+    name: makeset_makeset_data
+  makeset_media:
+    external: true
+    name: makeset_makeset_media
+
+networks:
+  web:
+    external: true
+    name: web
